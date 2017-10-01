@@ -16,34 +16,32 @@
   <el-table
      :data="tableData"
      border
-     style="width: 1000px"
+     width=700
      max-height="500">
      <el-table-column
-       fixed
        prop="id"
        label="词条编号"
-       style="width: 100px">
+       width=130>
      </el-table-column>
      
      <el-table-column
        prop="keyword"
        label="词条名"
-       style="width: 300px">
+       width=200>
      </el-table-column>
      <el-table-column
        prop="prop_keyword"
        label="词条属性">
      </el-table-column>
      <el-table-column
-       fixed="right"
        label="操作"
-       style="width: 100px">
+       width=120>
        <template scope="scope">
          <el-button
            @click.native.prevent="deleteRow(scope.$index, tableData)"
            type="danger"
            size="small">
-           删除该词条
+           删除
          </el-button>
        </template>
      </el-table-column>
@@ -71,7 +69,7 @@ export default {
         search:'',
         hostURL:'/VR',
         activePane: 'first',
-                // items:[
+                // data:[
                 //     {"encyclopedia":
                 //         {"id":2,
                 //          "keyword":"VR应用",
@@ -94,33 +92,28 @@ export default {
                 //               "prop_id":2,
                 //               "prop_keyword":"3.多专业协调",
                 //               "content":"多类型车辆行驶路线与其他布置、净空高度，如道路桥梁仿真。",
-                //               "changenote":"changenote2.2"},
-                //              {"id":2,
-                //               "prop_id":3,
-                //               "prop_keyword":"4.网上看房",
-                //               "content":"租售阶段用户通过互联网身临其境的了解项目的周表环境、空间布置、室内设计 。",
-                //               "changenote":"changenote2.1"}]
+                //               "changenote":"changenote2.2"}]
                 //         }],
-            // tableData:[],
-            tableData:[
-                {"id":2,
-                 "keyword":"VR应用",
-                 "prop_keyword":"1.地产漫游"},
-                {"id":2,
-                 "keyword":"VR应用",
-                 "prop_keyword":"2.虚拟样板间"},
-                {"id":2,
-                 "keyword":"VR应用",
-                 "prop_keyword":"1.地产漫游"},
-                {"id":2,
-                 "keyword":"VR应用",
-                 "prop_keyword":"2.虚拟样板间"},
-                 {"id":2,
-                 "keyword":"VR应用",
-                 "prop_keyword":"1.地产漫游"},
-                {"id":2,
-                 "keyword":"VR应用",
-                 "prop_keyword":"2.虚拟样板间"},],
+            tableData:[],
+            // tableData:[
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"1.地产漫游"},
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"2.虚拟样板间"},
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"1.地产漫游"},
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"2.虚拟样板间"},
+            //      {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"1.地产漫游"},
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"2.虚拟样板间"},],
         // encyclopediaList:[
         //     {
         //         id:1,
@@ -219,7 +212,7 @@ export default {
             for(var i=0;i<data.length;i++){
                 var sub=data[i].encyclopedia_prop;
                 for(var j=0;j<sub.length;j++){
-                    tableData.push({id:data[i].encyclopedia.id,
+                    self.tableData.push({id:data[i].encyclopedia.id,
                                 keyword:data[i].encyclopedia.keyword,
                                 prop_keyword:sub[j].prop_keyword});
                 }

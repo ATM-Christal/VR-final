@@ -12,11 +12,11 @@
 		        <h4>Search for what you want to know</h4>
 	      </div>
         <div class="awa" id="about">
-		        <div class="container">
-                <div class="box">
-                    <input type="text" v-model="search" placeholder="search pedias" />
+		    <div class="pedia-container">
+                <div class="pedia-box">
+                    <input type="text" v-model="search" placeholder=" 输入词条关键字" />
                     <!--<button class="search-btn" @click="search()">search</button>-->
-                    <el-button type="primary" class="search-btn" @click="getEncyclopedia()">search</el-button>
+                    <el-button type="primary" class="search-btn" @click="getEncyclopedia()">搜索</el-button>
                 </div>
                 <div id="show-pedias">
                   
@@ -179,7 +179,7 @@
     }
 </script>
 
-<style scoped>
+<style>
 /*.{
 	padding: 0;
 	margin: 0;
@@ -235,7 +235,7 @@
   background: #778899;
 }
 
-.box {
+.pedia-box {
     height: 45px;
     width: 800px;
     margin: 0 10%;
@@ -243,7 +243,7 @@
     position: relative;
 }
 
-.box input {
+.pedia-box input {
     border: 1px solid #e4e4e4;
     box-sizing: border-box;
     width: 700px;

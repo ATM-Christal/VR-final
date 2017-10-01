@@ -18,15 +18,14 @@
     @row-click='handleRowHandle'
 		>
 
-    <el-table-column  prop="requireid"  label="请求号"  width="100">  </el-table-column>
+    <el-table-column  prop="requireid"  label="请求号"  width="120">  </el-table-column>
     <el-table-column    prop="keyword"  label="词条名"  width="300"></el-table-column>
     <el-table-column  prop="prop_keyword"  label="词条属性"  ></el-table-column>
 		<el-table-column
-
       label="操作"
       width="100">
       <template scope="scope">
-        <el-button @click="handleClick" type="text" size="small">查看</el-button>
+        <el-button @click="handleClick" size="small">查看</el-button>
 
       </template>
       </el-table-column>

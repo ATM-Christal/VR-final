@@ -69,21 +69,21 @@
                         label="邮箱状态"
                         width="150">
                         <template scope="scope">
-                            <el-button @click="handleEmailState(scope.$index)" :disabled="handleDisabled(scope.$index)" type="text" size="small">{{(tableData1[scope.$index].activated)==0?"待激活":"已激活"}}</el-button>
+                            <el-button @click="handleEmailState(scope.$index)" :disabled="handleDisabled(scope.$index)" size="small">{{(tableData1[scope.$index].activated)==0?"待激活":"已激活"}}</el-button>
                         </template>
                     </el-table-column>
                     <el-table-column
                         width="160"
                         label="用户账号操作">
                         <template scope="scope">
-                            <el-button @click="handleToOffsale1(scope.$index)" :plain="true" type="info" size="small">{{(tableData1[scope.$index].banned)==1?"激活":"禁用"}}</el-button>
+                            <el-button @click="handleToOffsale1(scope.$index)" :plain="true" size="small">{{(tableData1[scope.$index].banned)==1?"激活":"禁用"}}</el-button>
                         </template>
                     </el-table-column>
                     <el-table-column
                         width="120"
                         label="操作">
                         <template scope="scope">
-                           <el-button @click="handleDelete1(scope.$index)" type="text" size="small" style="color:#FF4949">删除</el-button>
+                           <el-button @click="handleDelete1(scope.$index)" type="danger" size="small">删除</el-button>
                         </template>
                     </el-table-column>
                 </el-table>         
@@ -441,7 +441,7 @@ import{MessageBox} from 'element-ui';
             getProducts1(){
                 var self = this;
                 //测试用数据
-                //self.getPartProducts1(1);
+                // self.getPartProducts1(1);
                 self.$axios({
                     url: 'admin/getAllUsers',
                     //url: 'admin/getAllInOnePCAll?condition=0',

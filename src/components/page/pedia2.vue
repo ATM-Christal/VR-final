@@ -11,7 +11,7 @@
 		        <h2><span>VR </span></h2>
 	      </div>
         <div class="about-w3-agile" id="about">
-            <div class="container">
+            <!--<div class="container">-->
                 <el-row >
                     <el-col :span="6">
                     <div id="navigation">
@@ -26,7 +26,7 @@
                     </div>
                     </el-col>
                     <el-col :span="18">
-                    <div id="show-pedias">
+                    <div id="show-items">
                         <div v-for="item in items" class="sing-item" @click="encyclopediaClick(item)">
                             <a href="javascript:void(0);" class="link-tit" title=""></a>
                             <h1>{{item.keyword}}</h1>
@@ -35,7 +35,7 @@
                     </div>
                     </el-col>
                 </el-row>
-          </div>
+          <!--</div>-->
     </div>
 
 
@@ -198,6 +198,7 @@
                 self.$router.push('/user/encyclopedia-prop?'+item.id);
             }
         },
+        
 
         mounted(){
             var self = this;
@@ -205,6 +206,7 @@
             if(user_name==""){
                 this.$router.replace('/login');
             }
+            //$(function(){ $(window).scrollTop(0)});
             //self.getTypes();
             self.selected("VR简介");
         }
@@ -253,43 +255,8 @@
 	padding:10px 0px;
   text-align: center;
 }
-#show-pedias{
-  max-width:800px;
-  margin:0 auto;
-  cursor:pointer;
-  /*margin-left: 220px;*/
-}
-#navigation{
-  float:left;
-  width:200px;
-  font-family:Arial;
-}
-#navigation ul {
-list-style-type:none; /* 不显示项目符号 */
-margin:0px;
-padding:0px;
-}
-#navigation li {
-border-bottom:1px solid #fff; /* 添加下划线 */
-}
-#navigation li{
-height:45px;
-display:block; /* 区块显示 */
-padding:5px 5px 5px 0.5em;
-text-decoration:none;
-border-left:12px solid #00bcd4; /* 左边的粗红边 */
-border-right:1px solid #fff; /* 右侧阴影 */
-background-color:#778899;
-color:#FFFFFF;
-}
-#navigation li:link, #navigation li a:visited{
-background-color:#c11136;
-color:#FFFFFF;
-}
-#navigation li :hover{ /* 鼠标经过时 */
-background-color:#FFC107; /* 改变背景色 */
-color:#ffff00; /* 改变文字颜色 */
-}
+
+
 
 .about-w3-agile{
 	padding:50px 0px;
@@ -335,14 +302,50 @@ color:#ffff00; /* 改变文字颜色 */
   box-sizing:border-box;
   background:#eee;
 }
+
+#navigation{
+  float:left;
+  width:200px;
+  font-family:Arial;
+}
+#navigation ul {
+list-style-type:none; /* 不显示项目符号 */
+margin:0px;
+padding:0px;
+}
+#navigation li {
+border-bottom:1px solid #fff; /* 添加下划线 */
+}
+#navigation li{
+height:45px;
+display:block; /* 区块显示 */
+padding:5px 5px 5px 0.5em;
+text-decoration:none;
+border-left:12px solid #00bcd4; /* 左边的粗红边 */
+border-right:1px solid #fff; /* 右侧阴影 */
+background-color:#778899;
+color:#FFFFFF;
+}
+#navigation li:link, #navigation li a:visited{
+background-color:#c11136;
+color:#FFFFFF;
+}
+#navigation li :hover{ /* 鼠标经过时 */
+background-color:#FFC107; /* 改变背景色 */
+color:#ffff00; /* 改变文字颜色 */
+}
+#show-items{
+  max-width:800px;
+  margin:0 auto;
+  cursor:pointer;
+  /*margin-left: 220px;*/
+}
 .sing-item{
-  position:absolute;
   padding:20px;
   margin:20px 0;
   box-sizing:border-box;
   background:#eee;
 }
-
 .pagination{
     margin-left:50px;
 }

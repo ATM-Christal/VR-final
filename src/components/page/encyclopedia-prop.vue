@@ -11,13 +11,13 @@
            <div class="container">
 			        <h3 class="wthree_head">
                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                 <span>EDIT</span>
+                 <span>编辑</span>
               </h3>
-              <el-input placeholder="keyword" id="keySpace" v-model="keyword"></el-input>
-              <el-input placeholder="prop_keyword" id="pkSpace" v-model="prop_keyword"></el-input>
-              <textarea placeholder="content" id="conSpace" v-model="content"></textarea>
-              <el-button class="or-btn" style="margin-left:30%;margin-top:10px" type="primary" @click="submit()">submit</el-button>
-              <el-button class="or-btn" style="margin-top:10px" type="primary" @click="close()">close</el-button>
+              <el-input placeholder="词条名" id="keySpace" v-model="keyword"></el-input>
+              <el-input placeholder="词条属性" id="pkSpace" v-model="prop_keyword"></el-input>
+              <textarea placeholder="内容" id="conSpace" v-model="content"></textarea>
+              <el-button class="or-btn" style="margin-left:30%;margin-top:10px" type="primary" @click="submit()">提交</el-button>
+              <el-button class="or-btn" style="margin-top:10px" type="primary" @click="close()">关闭</el-button>
           </div>
         </div>
 
@@ -35,7 +35,7 @@
                                    <span class="news-title">{{encyclopedia_prop.prop_keyword}}</span>
                                    <span class="news-desc">{{encyclopedia_prop.content}}</span>
                                 </a>
-                                <el-button style="float:right" type="warning" @click="edit(encyclopedia_prop)">edit</el-button>
+                                <el-button style="float:right" type="warning" @click="edit(encyclopedia_prop)">编辑</el-button>
                             </li>
                         </ul>
                    </div>
@@ -65,7 +65,7 @@
                 prop_id:"1",
                 keyword:"",
                 prop_keyword:"",
-                content:"a",
+                content:"",
                 upvote:1,
                 downvote:1,
                 changenote:"a1",

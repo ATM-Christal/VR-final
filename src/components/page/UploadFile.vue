@@ -7,7 +7,7 @@
                             <el-row>
                                 <div class="table-title">一体机</div>
                                 <div class="operation">
-                                    <el-button type="warning" @click="handleAllOffsale1">一键下架</el-button>
+                                    <el-button @click="handleAllOffsale1">一键下架</el-button>
                                     <el-button type="danger" @click="handleAllDelete1">一键删除</el-button>
                                     <el-input class="search-input"
                                         placeholder="请输入产品型号"
@@ -154,10 +154,10 @@
                                     <el-table-column
                                         fixed="right"
                                         label="操作"
-                                        width="160">
+                                        width="180">
                                     <template scope="scope">
-                                        <el-button @click="handleToOffsale1(scope.$index)" type="warning" size="small">下架</el-button>
-                                        <el-button @click="handleDelete1(scope.$index)" type="text" size="small" style="color:#FF4949">删除</el-button>
+                                        <el-button @click="handleToOffsale1(scope.$index)" size="small">下架</el-button>
+                                        <el-button @click="handleDelete1(scope.$index)" size="small" type="danger">删除</el-button>
                                     </template>
                                     </el-table-column>
                                 </el-table>         
@@ -176,7 +176,7 @@
                             <el-row>
                                 <div class="table-title">PC头显</div>
                                 <div class="operation">
-                                    <el-button type="warning" @click="handleAllOffsale2">一键下架</el-button>
+                                    <el-button @click="handleAllOffsale2">一键下架</el-button>
                                     <el-button type="danger" @click="handleAllDelete2">一键删除</el-button>
                                     <el-input class="search-input"
                                         placeholder="请输入产品型号"
@@ -308,10 +308,10 @@
                                     <el-table-column
                                         fixed="right"
                                         label="操作"
-                                        width="160">
+                                        width="180">
                                     <template scope="scope">
-                                        <el-button @click="handleToOffsale2(scope.$index)" type="warning" size="small">下架</el-button>
-                                        <el-button @click="handleDelete2(scope.$index)" type="text" size="small" style="color:#FF4949">删除</el-button>
+                                        <el-button @click="handleToOffsale2(scope.$index)" size="small">下架</el-button>
+                                        <el-button @click="handleDelete2(scope.$index)" type="danger" size="small">删除</el-button>
                                     </template>
                                     </el-table-column>
                                 </el-table>   
@@ -330,7 +330,7 @@
                             <el-row>
                                 <div class="table-title">手机盒子</div>
                                 <div class="operation">
-                                    <el-button type="warning" @click="handleAllOffsale3">一键下架</el-button>
+                                    <el-button @click="handleAllOffsale3">一键下架</el-button>
                                     <el-button type="danger" @click="handleAllDelete3">一键删除</el-button>
                                     <el-input class="search-input"
                                         placeholder="请输入产品型号"
@@ -437,10 +437,10 @@
                                     <el-table-column
                                         fixed="right"
                                         label="操作"
-                                        width="160">
+                                        width="180">
                                     <template scope="scope">
-                                        <el-button @click="handleToOffsale3(scope.$index)" type="warning" size="small">下架</el-button>
-                                        <el-button @click="handleDelete3(scope.$index)" type="text" size="small" style="color:#FF4949">删除</el-button>
+                                        <el-button @click="handleToOffsale3(scope.$index)" size="small">下架</el-button>
+                                        <el-button @click="handleDelete3(scope.$index)" type="danger" size="small">删除</el-button>
                                     </template>
                                     </el-table-column>
                                 </el-table> 
@@ -462,7 +462,7 @@
                             <el-row>
                                 <div class="table-title">一体机</div>
                                 <div class="operation">
-                                    <el-button type="primary" @click="handleAllUpsale1">一键上架</el-button>
+                                    <el-button @click="handleAllUpsale1">一键上架</el-button>
                                     <el-button type="danger" @click="handleAllDelete4">一键删除</el-button>
                                     <el-input class="search-input"
                                         placeholder="请输入产品型号"
@@ -609,10 +609,10 @@
                                     <el-table-column
                                         fixed="right"
                                         label="操作"
-                                        width="160">
+                                        width="180">
                                     <template scope="scope">
-                                        <el-button @click="handleToUpsale1(scope.$index)" type="primary" size="small">上架</el-button>
-                                        <el-button @click="handleDelete4(scope.$index)" type="text" size="small" style="color:#FF4949">删除</el-button>
+                                        <el-button @click="handleToUpsale1(scope.$index)" size="small">上架</el-button>
+                                        <el-button @click="handleDelete4(scope.$index)" type="danger" size="small">删除</el-button>
                                     </template>
                                     </el-table-column>
                                 </el-table>         
@@ -631,7 +631,7 @@
                             <el-row>
                                 <div class="table-title">PC头显</div>
                                 <div class="operation">
-                                    <el-button type="primary" @click="handleAllUpsale2">一键上架</el-button>
+                                    <el-button @click="handleAllUpsale2">一键上架</el-button>
                                     <el-button type="danger" @click="handleAllDelete5">一键删除</el-button>
                                     <el-input class="search-input"
                                         placeholder="请输入产品型号"
@@ -763,10 +763,10 @@
                                     <el-table-column
                                         fixed="right"
                                         label="操作"
-                                        width="160">
+                                        width="180">
                                     <template scope="scope">
-                                        <el-button @click="handleToUpsale2(scope.$index)" type="primary" size="small">上架</el-button>
-                                        <el-button @click="handleDelete5(scope.$index)" type="text" size="small" style="color:#FF4949">删除</el-button>
+                                        <el-button @click="handleToUpsale2(scope.$index)" size="small">上架</el-button>
+                                        <el-button @click="handleDelete5(scope.$index)" type="danger" size="small" >删除</el-button>
                                     </template>
                                     </el-table-column>
                                 </el-table>   
@@ -785,7 +785,7 @@
                             <el-row>
                                 <div class="table-title">手机盒子</div>
                                 <div class="operation">
-                                    <el-button type="primary" @click="handleAllUpsale3">一键上架</el-button>
+                                    <el-button @click="handleAllUpsale3">一键上架</el-button>
                                     <el-button type="danger" @click="handleAllDelete6">一键删除</el-button>
                                     <el-input class="search-input"
                                         placeholder="请输入产品型号"
@@ -892,10 +892,10 @@
                                     <el-table-column
                                         fixed="right"
                                         label="操作"
-                                        width="160">
+                                        width="180">
                                     <template scope="scope">
-                                        <el-button @click="handleToUpsale3(scope.$index)" type="primary" size="small">上架</el-button>
-                                        <el-button @click="handleDelete6(scope.$index)" type="text" size="small" style="color:#FF4949">删除</el-button>
+                                        <el-button @click="handleToUpsale3(scope.$index)" size="small">上架</el-button>
+                                        <el-button @click="handleDelete6(scope.$index)" type="danger" size="small">删除</el-button>
                                     </template>
                                     </el-table-column>
                                 </el-table> 
@@ -936,7 +936,7 @@
                                 multiple>
                                 <i class="el-icon-upload"></i>
                                 <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-                                <div class="el-upload__tip" slot="tip">只能上传zip文件，且不超过1,000,000B</div>
+                                <div class="el-upload__tip" slot="tip">只能上传zip文件，且不超过10MB</div>
                             </el-upload>
                         </el-tab-pane>
                     </el-tabs>
@@ -980,131 +980,137 @@
                 iupPageTotal:5,
                 iupPageSize:5,
                 iupPages:2,
-                allData1:[{
-                    id:130,remark:null,brand:"大朋",salesmodel:"DeePoon M2",productmodel:"DeePoon M2",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:140,remark:null,brand:"HTC",salesmodel:"HTC-VIVE",productmodel:"HTC-VIVE",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:143,remark:null,brand:"HTC1",salesmodel:"HTC-VIVE1",productmodel:"HTC-VIVE1",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:1402,remark:null,brand:"HTC2",salesmodel:"HTC-VIVE2",productmodel:"HTC-VIVE2",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:14033,remark:null,brand:"HTC3",salesmodel:"HTC-VIVE3",productmodel:"HTC-VIVE3",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:1408,remark:null,brand:"HTC4",salesmodel:"HTC-VIVE4",productmodel:"HTC-VIVE4",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                }],
+                allData1:[
+                //     {
+                //     id:130,remark:null,brand:"大朋",salesmodel:"DeePoon M2",productmodel:"DeePoon M2",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:140,remark:null,brand:"HTC",salesmodel:"HTC-VIVE",productmodel:"HTC-VIVE",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:143,remark:null,brand:"HTC1",salesmodel:"HTC-VIVE1",productmodel:"HTC-VIVE1",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:1402,remark:null,brand:"HTC2",salesmodel:"HTC-VIVE2",productmodel:"HTC-VIVE2",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:14033,remark:null,brand:"HTC3",salesmodel:"HTC-VIVE3",productmodel:"HTC-VIVE3",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:1408,remark:null,brand:"HTC4",salesmodel:"HTC-VIVE4",productmodel:"HTC-VIVE4",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // }
+                ],
                 /////////////////////
                 supsaleText:'',
                 supPageNum:1,
                 supPageTotal:5,
                 supPageSize:5,
                 supPages:5,
-                allData2:[{
-                    id:1,remark:"remark",brand:"HTC",salesmodel:"salesmodel1",productmodel:"productmodel1",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:2,remark:"remark",brand:"HTC1",salesmodel:"salesmodel2",productmodel:"productmodel2",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:3,remark:"remark",brand:"HTC",salesmodel:"salesmodel3",productmodel:"productmodel3",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:4,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel4",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:5,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel5",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:6,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel6",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                }],
+                allData2:[
+                //     {
+                //     id:1,remark:"remark",brand:"HTC",salesmodel:"salesmodel1",productmodel:"productmodel1",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:2,remark:"remark",brand:"HTC1",salesmodel:"salesmodel2",productmodel:"productmodel2",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:3,remark:"remark",brand:"HTC",salesmodel:"salesmodel3",productmodel:"productmodel3",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:4,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel4",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:5,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel5",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:6,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel6",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // }
+                ],
                 /////////////////////
                 eupsaleText:'',
                 eupPageNum:1,
                 eupPageTotal:5,
                 eupPageSize:5,
                 eupPages:5,
-                allData3:[{
-                    id:1,name:"name1",brand:1,salesmodel:'name',productmodel:"name1",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:12,name:"name1",brand:1,salesmodel:'name',productmodel:"name2",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:122,name:"name1",brand:1,salesmodel:'name',productmodel:"name3",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:1222,name:"name1",brand:1,salesmodel:'name',productmodel:"name4",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:12222,name:"name1",brand:1,salesmodel:'name',productmodel:"name5",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:1212,name:"name1",brand:1,salesmodel:'name',productmodel:"name6",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                }],
+                allData3:[
+                //     {
+                //     id:1,name:"name1",brand:1,salesmodel:'name',productmodel:"name1",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:12,name:"name1",brand:1,salesmodel:'name',productmodel:"name2",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:122,name:"name1",brand:1,salesmodel:'name',productmodel:"name3",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:1222,name:"name1",brand:1,salesmodel:'name',productmodel:"name4",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:12222,name:"name1",brand:1,salesmodel:'name',productmodel:"name5",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:1212,name:"name1",brand:1,salesmodel:'name',productmodel:"name6",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // }
+                ],
                 /////////////////////
 
                 ioffsaleText:'',
@@ -1112,131 +1118,137 @@
                 ioffPageTotal:5,
                 ioffPageSize:5,
                 ioffPages:2,
-                allData4:[{
-                    id:130,remark:null,brand:"大朋",salesmodel:"DeePoon M9",productmodel:"DeePoon M9",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:1420,remark:null,brand:"HTC",salesmodel:"HTC-VIVE",productmodel:"HTC1",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:1420,remark:null,brand:"HTC1",salesmodel:"HTC-VIVE1",productmodel:"HTC2",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:140,remark:null,brand:"HTC2",salesmodel:"HTC-VIVE2",productmodel:"HTC3",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:12240,remark:null,brand:"HTC3",salesmodel:"HTC-VIVE3",productmodel:"HTC4",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                },{ id:1340,remark:null,brand:"HTC4",salesmodel:"HTC-VIVE4",productmodel:"HTC5",
-                    screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
-                    soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
-                    radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
-                    systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
-                    cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
-                    hot:null,offsale:0
-                }],
+                allData4:[
+                //     {
+                //     id:130,remark:null,brand:"大朋",salesmodel:"DeePoon M9",productmodel:"DeePoon M9",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:1420,remark:null,brand:"HTC",salesmodel:"HTC-VIVE",productmodel:"HTC1",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:1420,remark:null,brand:"HTC1",salesmodel:"HTC-VIVE1",productmodel:"HTC2",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:140,remark:null,brand:"HTC2",salesmodel:"HTC-VIVE2",productmodel:"HTC3",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:12240,remark:null,brand:"HTC3",salesmodel:"HTC-VIVE3",productmodel:"HTC4",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // },{ id:1340,remark:null,brand:"HTC4",salesmodel:"HTC-VIVE4",productmodel:"HTC5",
+                //     screentype:"AMOLED",monocularresolution:"1280*1440",weight:"0.398",workingtemperature:"54.1",bluerayirradiance:"1.9",
+                //     soundpressurelevel:"98.24",maximumoutputvoltage:"95.8",broadbandcharacteristicvoltageofearphone:"55.9",boundarywarning:"保持坐姿或固定状态下使用",
+                //     radiationdisturbance:"链接到图片",electrostaticdischarge:"链接到图片",fieldangle:"96.0",refreshrate:"70.0",
+                //     systemdelay:"19.0",trackingmode:"9轴",trackingrange:"固定",meanchangeofvisualacuity:"0.1",ssqmean:"110.0",cvsmean:"124.0",
+                //     cpu:"2.1",memory:"3.0",batteryCapacity:"3000.0",picLocation:"http://img14.360buyimg.com/n5/jfs/t3868/15/943450328/28673/a07918ad/58633a3fNfda89e9c.jpg",
+                //     hot:null,offsale:0
+                // }
+                ],
                 /////////////////////
                 soffsaleText:'',
                 soffPageNum:1,
                 soffPageTotal:5,
                 soffPageSize:5,
                 soffPages:5,
-                allData5:[{
-                    id:1,remark:"remark",brand:"HTC",salesmodel:"salesmodel1",productmodel:"productmodel11",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:19,remark:"remark",brand:"HTC1",salesmodel:"salesmodel2",productmodel:"productmodel12",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:199,remark:"remark",brand:"HTC",salesmodel:"salesmodel3",productmodel:"productmodel13",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:1999,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel14",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:19999,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel15",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                },{
-                    id:199554,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel16",
-                    screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
-                    bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
-                    broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
-                    electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
-                    trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
-                }],
+                allData5:[
+                //     {
+                //     id:1,remark:"remark",brand:"HTC",salesmodel:"salesmodel1",productmodel:"productmodel11",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:19,remark:"remark",brand:"HTC1",salesmodel:"salesmodel2",productmodel:"productmodel12",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:199,remark:"remark",brand:"HTC",salesmodel:"salesmodel3",productmodel:"productmodel13",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:1999,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel14",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:19999,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel15",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // },{
+                //     id:199554,remark:"remark",brand:"HTC1",salesmodel:"salesmodel1",productmodel:"productmodel16",
+                //     screentype:"screentype",monocularresolution:"monocaluarresolution",weight:1,workingtemperature:"workingtemperature",
+                //     bluerayirradiance:"bluerayirradiance",soundpressurelevel:"soundpressurelevel",maximumoutputvoltage:"maximumoutputvoltage",
+                //     broadbandcharacteristicvoltageofearphone:"bbcvop",boundarywarning:"bw",radiationdisturbance:"/static/img/img.jpg",
+                //     electrostaticdischarge:"/static/img/img.jpg",fieldangle:"fieldangle",refreshrate:"rsr",systemdelay:"smy",trackingmode:"tm",
+                //     trackingrange:"tr",meanchangeofvisualacuity:"mcova",ssqmean:"ssqmean",cvsmean:"cvsmean",picLocation:"/static/img/img.jpg",
+                // }
+                ],
                 /////////////////////
                 eoffsaleText:'',
                 eoffPageNum:1,
                 eoffPageTotal:5,
                 eoffPageSize:5,
                 eoffPages:5,
-                allData6:[{
-                    id:1,name:"name1",brand:1,salesmodel:'name',productmodel:"name11",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:144,name:"name1",brand:1,salesmodel:'name',productmodel:"name12",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:1444,name:"name1",brand:1,salesmodel:'name',productmodel:"name13",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:1565,name:"name1",brand:1,salesmodel:'name',productmodel:"name14",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:1990,name:"name1",brand:1,salesmodel:'name',productmodel:"name15",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                },{id:19955,name:"name1",brand:1,salesmodel:'name',productmodel:"name16",picLocation:"./static/img/img.jpg",
-                    weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
-                    boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
-                    fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
-                }],
+                allData6:[
+                //     {
+                //     id:1,name:"name1",brand:1,salesmodel:'name',productmodel:"name11",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:144,name:"name1",brand:1,salesmodel:'name',productmodel:"name12",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:1444,name:"name1",brand:1,salesmodel:'name',productmodel:"name13",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:1565,name:"name1",brand:1,salesmodel:'name',productmodel:"name14",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:1990,name:"name1",brand:1,salesmodel:'name',productmodel:"name15",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // },{id:19955,name:"name1",brand:1,salesmodel:'name',productmodel:"name16",picLocation:"./static/img/img.jpg",
+                //     weight:1,workingtemperature:1,bluerayirradiance:1,broadbandcharacteristicvoltageofearphone:5555,
+                //     boundarywarning:"222222222",radiationdisturbance:"./static/img/img.jpg",electrostaticdischarge:"./static/img/img.jpg",
+                //     fieldangle:1,systemdelay:1,trackingmode:1,trackingrange:1,meanchangeofvisualacuity:1,ssqmean:1,cvsmean:1
+                // }
+                ],
                 /////////////////////
                 
                 multiSelection1:[],

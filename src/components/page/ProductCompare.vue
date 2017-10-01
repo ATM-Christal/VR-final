@@ -227,9 +227,13 @@
                             辐射骚扰
                         </strong></th>
                         <td v-for="data in datas">
-                            <div class="param-content">
+                            <el-button type="text" @click="checkVisible = true">点击查看</el-button>
+                            <el-dialog title="辐射骚扰" :visible.sync="checkVisible" >
                                 <img :src="data.radiationdisturbance">
-                            </div>
+                                <div slot="footer" class="dialog-footer">
+                                    <el-button type="primary" @click="checkVisible = false">确 定</el-button>
+                                </div>
+                            </el-dialog>
                         </td>
                     </tr>
                     <tr class="param-list">
