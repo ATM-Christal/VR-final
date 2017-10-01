@@ -11,7 +11,7 @@
         <el-row style="margin-top: 20px">
             <el-col  v-if="mseList.length">
                 <el-row :gutter="20" class="list-header">
-                    <el-col :span="12">
+                    <el-col :span="11">
                         <div>
                             <span class="">
                                 文章标题
@@ -30,7 +30,7 @@
                             </span>
                         </div>
                     </el-col>
-                    <el-col :span="4">
+                    <el-col :span="5">
                         <div>
                             操作
                         </div>
@@ -39,10 +39,10 @@
                 <ul class="">
                     <li v-for="mse in mseList" :key="mse" class="mse-item">
                         <el-row :gutter="20">
-                            <el-col :span="12">
+                            <el-col :span="11">
                                 <div class="grid-content">
                                     <span class="title">
-                                    <em>{{ mse.evaluationTitle}}</em>
+                                    <p>{{ mse.evaluationTitle}}</p>
                                     </span>
                                 </div>
                             </el-col>
@@ -67,11 +67,11 @@
                                     </span>
                                 </div>
                             </el-col>
-                            <el-col :span="4">
+                            <el-col :span="5">
                                 <div>
-                                    <el-button @click="handleView(mse)" type="text" size="small">查看</el-button>
-                                    <el-button @click="handleEdit(mse)" type="text" size="small">编辑</el-button>
-                                    <el-button @click="handleDel(mse)" type="text" size="small">删除</el-button>
+                                    <el-button @click="handleView(mse)" type="primary" size="small">查看</el-button>
+                                    <el-button @click="handleEdit(mse)" type="" size="small">编辑</el-button>
+                                    <el-button @click="handleDel(mse)" type="danger" size="small">删除</el-button>
                                 </div>
                             </el-col>
                         </el-row>
@@ -386,11 +386,12 @@
         font-size: 22px;
         font-weight: bold;
         color: #48576a;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        display: block;
+        position: relative;
         overflow: hidden;
+        white-space: nowrap;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
     }
     .time {
         font-size: 12px;

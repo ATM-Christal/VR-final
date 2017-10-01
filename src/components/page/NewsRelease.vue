@@ -38,7 +38,7 @@
                 </el-form-item>
 
                 <el-form-item label="新闻内容" prop="content">
-                    <quill-editor ref="myTextEditor" v-model="news.content" :config="editorOption" style="width: 800px;"></quill-editor>
+                    <quill-editor ref="myTextEditor" v-model="news.content" :options="editorOption" style="line-height: 1;width: 800px;"></quill-editor>
                 </el-form-item>
 
                 <el-form-item>
@@ -54,6 +54,9 @@
 <script>
     import { quillEditor } from 'vue-quill-editor';
     export default {
+        components: {
+            quillEditor
+        },
         data: function(){
             return {
                 hostURL:'/VR',
@@ -77,7 +80,15 @@
                     type: null
                 },
                 editorOption: {
-                    // something config
+                    modules: {
+                        toolbar: [
+                            [{ 'header': [2, 3, false] }],
+                            ['bold', 'italic'],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            ['image']
+                        ]
+                    },
+                    placeholder: '请编写您的新闻内容...',
                 },
                 rules: {
                     title: [
@@ -113,9 +124,7 @@
                 return this.$refs.myTextEditor.quillEditor;
             }
         },
-        components: {
-            quillEditor
-        },
+
         methods: {
             onEditorChange({ editor, html, text }) {
                 this.news.content = html;
