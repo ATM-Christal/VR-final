@@ -91,8 +91,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -101,7 +99,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             search: '',
             hostURL: '/VR',
             activePane: 'first',
-            // items:[
+            // data:[
             //     {"encyclopedia":
             //         {"id":2,
             //          "keyword":"VR应用",
@@ -124,27 +122,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             //               "prop_id":2,
             //               "prop_keyword":"3.多专业协调",
             //               "content":"多类型车辆行驶路线与其他布置、净空高度，如道路桥梁仿真。",
-            //               "changenote":"changenote2.2"},
-            //              {"id":2,
-            //               "prop_id":3,
-            //               "prop_keyword":"4.网上看房",
-            //               "content":"租售阶段用户通过互联网身临其境的了解项目的周表环境、空间布置、室内设计 。",
-            //               "changenote":"changenote2.1"}]
+            //               "changenote":"changenote2.2"}]
             //         }],
-            // tableData:[],
-            tableData: [{ "id": 2,
-                "keyword": "VR应用",
-                "prop_keyword": "1.地产漫游" }, { "id": 2,
-                "keyword": "VR应用",
-                "prop_keyword": "2.虚拟样板间" }, { "id": 2,
-                "keyword": "VR应用",
-                "prop_keyword": "1.地产漫游" }, { "id": 2,
-                "keyword": "VR应用",
-                "prop_keyword": "2.虚拟样板间" }, { "id": 2,
-                "keyword": "VR应用",
-                "prop_keyword": "1.地产漫游" }, { "id": 2,
-                "keyword": "VR应用",
-                "prop_keyword": "2.虚拟样板间" }],
+            tableData: [],
+            // tableData:[
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"1.地产漫游"},
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"2.虚拟样板间"},
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"1.地产漫游"},
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"2.虚拟样板间"},
+            //      {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"1.地产漫游"},
+            //     {"id":2,
+            //      "keyword":"VR应用",
+            //      "prop_keyword":"2.虚拟样板间"},],
             // encyclopediaList:[
             //     {
             //         id:1,
@@ -240,7 +239,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 for (var i = 0; i < data.length; i++) {
                     var sub = data[i].encyclopedia_prop;
                     for (var j = 0; j < sub.length; j++) {
-                        tableData.push({ id: data[i].encyclopedia.id,
+                        self.tableData.push({ id: data[i].encyclopedia.id,
                             keyword: data[i].encyclopedia.keyword,
                             prop_keyword: sub[j].prop_keyword });
                     }
@@ -313,30 +312,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_vm._v("搜索")]), _vm._v(" "), _c('el-table', {
-    staticStyle: {
-      "width": "1000px"
-    },
     attrs: {
       "data": _vm.tableData,
       "border": "",
+      "width": "700",
       "max-height": "500"
     }
   }, [_c('el-table-column', {
-    staticStyle: {
-      "width": "100px"
-    },
     attrs: {
-      "fixed": "",
       "prop": "id",
-      "label": "词条编号"
+      "label": "词条编号",
+      "width": "130"
     }
   }), _vm._v(" "), _c('el-table-column', {
-    staticStyle: {
-      "width": "300px"
-    },
     attrs: {
       "prop": "keyword",
-      "label": "词条名"
+      "label": "词条名",
+      "width": "200"
     }
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
@@ -344,12 +336,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "label": "词条属性"
     }
   }), _vm._v(" "), _c('el-table-column', {
-    staticStyle: {
-      "width": "100px"
-    },
     attrs: {
-      "fixed": "right",
-      "label": "操作"
+      "label": "操作",
+      "width": "120"
     },
     scopedSlots: _vm._u([{
       key: "default",
@@ -365,7 +354,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
               _vm.deleteRow(scope.$index, _vm.tableData)
             }
           }
-        }, [_vm._v("\r\n           删除该词条\r\n         ")])]
+        }, [_vm._v("\r\n           删除\r\n         ")])]
       }
     }])
   })], 1), _vm._v(" "), _c('div', {

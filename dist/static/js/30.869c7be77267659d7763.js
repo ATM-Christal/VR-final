@@ -86,6 +86,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        quillEditor: __WEBPACK_IMPORTED_MODULE_0_vue_quill_editor__["quillEditor"]
+    },
     data: function () {
         return {
             hostURL: '/VR',
@@ -109,7 +112,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 type: null
             },
             editorOption: {
-                // something config
+                modules: {
+                    toolbar: [[{ 'header': [2, 3, false] }], ['bold', 'italic'], [{ 'list': 'ordered' }, { 'list': 'bullet' }], ['image']]
+                },
+                placeholder: '请编写您的新闻内容...'
             },
             rules: {
                 title: [{ required: true, message: '请输入新闻标题', trigger: 'blur' }],
@@ -128,9 +134,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.$refs.myTextEditor.quillEditor;
         }
     },
-    components: {
-        quillEditor: __WEBPACK_IMPORTED_MODULE_0_vue_quill_editor__["quillEditor"]
-    },
+
     methods: {
         onEditorChange({ editor, html, text }) {
             this.news.content = html;
@@ -429,10 +433,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('quill-editor', {
     ref: "myTextEditor",
     staticStyle: {
+      "line-height": "1",
       "width": "800px"
     },
     attrs: {
-      "config": _vm.editorOption
+      "options": _vm.editorOption
     },
     model: {
       value: (_vm.news.content),

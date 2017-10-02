@@ -96,7 +96,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -335,7 +334,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "prop": "requireid",
       "label": "请求号",
-      "width": "100"
+      "width": "120"
     }
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
@@ -358,7 +357,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       fn: function(scope) {
         return [_c('el-button', {
           attrs: {
-            "type": "text",
             "size": "small"
           },
           on: {

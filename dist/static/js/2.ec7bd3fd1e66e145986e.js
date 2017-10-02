@@ -259,6 +259,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -268,6 +269,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted() {
         console.log("home active");
+
         // console.log(sessionStorage.getItem('ms_type'));
         // var sessionType = sessionStorage.getItem('ms_type')
         // if(sessionType != 0){
@@ -542,8 +544,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "content"
   }, [_c('transition', {
     attrs: {
-      "name": "move",
-      "mode": "out-in"
+      "name": "move"
     }
   }, [_c('router-view')], 1)], 1)], 1)
 },staticRenderFns: []}

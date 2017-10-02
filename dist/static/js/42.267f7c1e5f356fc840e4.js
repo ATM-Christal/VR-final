@@ -385,7 +385,7 @@ exports = module.exports = __webpack_require__(58)(undefined);
 
 
 // module
-exports.push([module.i, ".crumbs{text-decoration:none}.pagination{margin-left:50px}li,ul{list-style:none;margin:0;padding:0}a{cursor:pointer}a:hover{text-decoration:none;color:#5188a6!important}.list-header{margin-bottom:20px;color:#607590}.mse-item{margin-bottom:15px;border-bottom:1px dotted #ccc}.mse-title{font-size:22px;font-weight:700;color:#48576a;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}.time{font-size:12px;color:#999}.cai-count,.comment-count,.zan-count{color:#999;margin-right:8px}.not-found{font-size:24px;color:#bac4ce;width:240px;margin:0 auto;padding-top:20px}.content{float:left;width:70%}", ""]);
+exports.push([module.i, ".crumbs{text-decoration:none}.pagination{margin-left:50px}li,ul{list-style:none;margin:0;padding:0}a{cursor:pointer}a:hover{text-decoration:none;color:#5188a6!important}.list-header{margin-bottom:20px;color:#607590}.mse-item{margin-bottom:15px;border-bottom:1px dotted #ccc}.mse-title{font-size:22px;font-weight:700;color:#48576a;display:block;position:relative;overflow:hidden;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}.time{font-size:12px;color:#999}.cai-count,.comment-count,.zan-count{color:#999;margin-right:8px}.not-found{font-size:24px;color:#bac4ce;width:240px;margin:0 auto;padding-top:20px}.content{float:left;width:70%}", ""]);
 
 // exports
 
@@ -418,7 +418,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('el-col', {
     attrs: {
-      "span": 10
+      "span": 9
     }
   }, [_c('div', [_c('span', {}, [_vm._v("\n                            文章标题\n                        ")])])]), _vm._v(" "), _c('el-col', {
     attrs: {
@@ -430,11 +430,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', [_c('span', {}, [_vm._v("发表时间")])])]), _vm._v(" "), _c('el-col', {
     attrs: {
-      "span": 5
+      "span": 4
     }
   }, [_c('div', [_c('span', {}, [_vm._v("\n                            评测评价\n                        ")])])]), _vm._v(" "), _c('el-col', {
     attrs: {
-      "span": 3
+      "span": 5
     }
   }, [_c('div', [_vm._v("\n                        操作\n                    ")])])], 1), _vm._v(" "), _c('ul', {}, _vm._l((_vm.mseList), function(mse) {
     return _c('li', {
@@ -446,11 +446,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('el-col', {
       attrs: {
-        "span": 10
+        "span": 9
       }
-    }, [_c('div', [_c('span', {
+    }, [_c('div', {
       staticClass: "mse-title"
-    }, [_c('em', [_vm._v(_vm._s(mse.evaluationTitle))])])])]), _vm._v(" "), _c('el-col', {
+    }, [_c('span', [_c('p', [_vm._v(_vm._s(mse.evaluationTitle))])])])]), _vm._v(" "), _c('el-col', {
       attrs: {
         "span": 3
       }
@@ -464,7 +464,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "time"
     }, [_vm._v(_vm._s(_vm.timeFomat(mse.updateTime)))])])]), _vm._v(" "), _c('el-col', {
       attrs: {
-        "span": 5
+        "span": 4
       }
     }, [_c('div', {
       staticClass: "mse-info"
@@ -482,11 +482,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "fa fa-commenting-o"
     }), _vm._v(" "), _c('em', [_vm._v(_vm._s(mse.comments))])])])]), _vm._v(" "), _c('el-col', {
       attrs: {
-        "span": 3
+        "span": 5
       }
     }, [_c('div', [_c('el-button', {
       attrs: {
-        "type": "text",
+        "type": "primary",
         "size": "small"
       },
       on: {
@@ -496,7 +496,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("查看")]), _vm._v(" "), _c('el-button', {
       attrs: {
-        "type": "text",
+        "type": "",
         "size": "small"
       },
       on: {
@@ -506,7 +506,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
       attrs: {
-        "type": "text",
+        "type": "danger",
         "size": "small"
       },
       on: {

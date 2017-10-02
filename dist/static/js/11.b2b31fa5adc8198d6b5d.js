@@ -13,7 +13,7 @@ var Component = __webpack_require__(132)(
   /* template */
   __webpack_require__(722),
   /* scopeId */
-  "data-v-48f6e0cd",
+  null,
   /* cssModules */
   null
 )
@@ -214,7 +214,7 @@ exports = module.exports = __webpack_require__(58)(undefined);
 
 
 // module
-exports.push([module.i, ".crumbs[data-v-48f6e0cd]{text-decoration:none}.banner[data-v-48f6e0cd]{background:url(" + __webpack_require__(679) + ") no-repeat 0 0;background-size:cover;min-height:500px;min-width:640px}.banner h3[data-v-48f6e0cd]{font-size:30px;padding-top:18%;font-weight:600}.banner h2[data-v-48f6e0cd],.banner h3[data-v-48f6e0cd]{color:#fff;letter-spacing:1px;text-transform:uppercase;text-align:center}.banner h2[data-v-48f6e0cd]{font-size:50px;font-weight:700;margin:30px 0}.banner h2 span[data-v-48f6e0cd]{color:#00bcd4}.banner h4[data-v-48f6e0cd]{color:#fff;font-size:14px;letter-spacing:1px;text-transform:uppercase;background:#00bcd4;width:20%;margin:0 auto;padding:10px 0;text-align:center}.awa[data-v-48f6e0cd]{padding:50px 0;background:#789}.box[data-v-48f6e0cd]{height:45px;width:800px;margin:0 10%;margin-top:0;position:relative}.box input[data-v-48f6e0cd]{border:1px solid #e4e4e4;box-sizing:border-box;width:700px;height:45px;font-size:18px;float:left;padding-left:0;padding-right:10px;overflow:hidden}.search-btn[data-v-48f6e0cd]{height:45px;width:100px;border:1px solid #ffc107;background-color:#ffc107;color:#fff;font-size:16px;font-weight:700;float:left;cursor:pointer}.link-tit[data-v-48f6e0cd]{color:#e9c06c}#show-pedias[data-v-48f6e0cd]{max-width:800px;margin:0 auto}.eg-item[data-v-48f6e0cd],.single-item[data-v-48f6e0cd]{padding:20px;margin:20px 0;box-sizing:border-box;background:#eee;cursor:pointer}.pagination[data-v-48f6e0cd]{margin-right:120px}", ""]);
+exports.push([module.i, ".crumbs{text-decoration:none}.banner{background:url(" + __webpack_require__(679) + ") no-repeat 0 0;background-size:cover;min-height:500px;min-width:640px}.banner h3{font-size:30px;padding-top:18%;font-weight:600}.banner h2,.banner h3{color:#fff;letter-spacing:1px;text-transform:uppercase;text-align:center}.banner h2{font-size:50px;font-weight:700;margin:30px 0}.banner h2 span{color:#00bcd4}.banner h4{color:#fff;font-size:14px;letter-spacing:1px;text-transform:uppercase;background:#00bcd4;width:20%;margin:0 auto;padding:10px 0;text-align:center}.awa{padding:50px 0;background:#789}.pedia-box{height:45px;width:800px;margin:0 10%;margin-top:0;position:relative}.pedia-box input{border:1px solid #e4e4e4;box-sizing:border-box;width:700px;height:45px;font-size:18px;float:left;padding-left:0;padding-right:10px;overflow:hidden}.search-btn{height:45px;width:100px;border:1px solid #ffc107;background-color:#ffc107;color:#fff;font-size:16px;font-weight:700;float:left;cursor:pointer}.link-tit{color:#e9c06c}#show-pedias{max-width:800px;margin:0 auto}.eg-item,.single-item{padding:20px;margin:20px 0;box-sizing:border-box;background:#eee;cursor:pointer}.pagination{margin-right:120px}", ""]);
 
 // exports
 
@@ -250,9 +250,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "about"
     }
   }, [_c('div', {
-    staticClass: "container"
+    staticClass: "pedia-container"
   }, [_c('div', {
-    staticClass: "box"
+    staticClass: "pedia-box"
   }, [_c('input', {
     directives: [{
       name: "model",
@@ -262,7 +262,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     attrs: {
       "type": "text",
-      "placeholder": "search pedias"
+      "placeholder": " 输入词条关键字"
     },
     domProps: {
       "value": (_vm.search)
@@ -283,7 +283,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.getEncyclopedia()
       }
     }
-  }, [_vm._v("search")])], 1), _vm._v(" "), _c('div', {
+  }, [_vm._v("搜索")])], 1), _vm._v(" "), _c('div', {
     attrs: {
       "id": "show-pedias"
     }
@@ -340,7 +340,7 @@ var content = __webpack_require__(650);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(133)("3187c422", content, true);
+var update = __webpack_require__(133)("5c549a76", content, true);
 
 /***/ })
 

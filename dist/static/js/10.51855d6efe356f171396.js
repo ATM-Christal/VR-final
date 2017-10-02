@@ -183,7 +183,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         search(onetype, pageNum) {
             var self = this;
-            self.items = [];
+            //self.items=[];
             var dirtype = {
                 type: "",
                 pageNum: 1
@@ -230,6 +230,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (user_name == "") {
             this.$router.replace('/login');
         }
+        //$(function(){ $(window).scrollTop(0)});
         //self.getTypes();
         self.selected("VR简介");
     }
@@ -245,7 +246,7 @@ exports = module.exports = __webpack_require__(58)(undefined);
 
 
 // module
-exports.push([module.i, ".crumbs{text-decoration:none}.banner{background:url(" + __webpack_require__(680) + ") no-repeat 0 0;background-size:cover;min-height:600px;min-width:850px}.banner h3{font-size:30px;padding-top:18%;font-weight:600}.banner h2,.banner h3{color:#fff;letter-spacing:1px;text-transform:uppercase;text-align:center}.banner h2{font-size:50px;font-weight:700;margin:30px 0}.banner h2 span{color:#00bcd4}.banner h4{color:#fff;font-size:14px;letter-spacing:1px;text-transform:uppercase;background:#00bcd4;width:20%;margin:0 auto;padding:10px 0;text-align:center}#show-pedias{max-width:800px;margin:0 auto;cursor:pointer}#navigation{float:left;width:200px;font-family:Arial}#navigation ul{list-style-type:none;margin:0;padding:0}#navigation li{border-bottom:1px solid #fff;height:45px;display:block;padding:5px 5px 5px .5em;text-decoration:none;border-left:12px solid #00bcd4;border-right:1px solid #fff;background-color:#789;color:#fff}#navigation li:link,#navigation li a:visited{background-color:#c11136;color:#fff}#navigation li :hover{background-color:#ffc107;color:#ff0}.about-w3-agile{padding:50px 0}.about-w3-agile box{color:#000;text-transform:uppercase;font-size:25px;letter-spacing:2px;font-weight:700;text-align:left;position:relative;margin-bottom:50px}.about-w3-agile box:before{background:#d9d9d9;width:45%}.about-w3-agile box:before,.about-w3-agile h3:after{content:\"\";height:3px;position:absolute;top:170%;left:0}.about-w3-agile h3:after{background:#fff;width:10%}.about-w3-agile h3:before{width:25%}.about-w3-agile h3{margin-top:30px}.eg-item,.single-item{padding:20px;margin:20px 0;box-sizing:border-box;background:#eee}.pagination{margin-left:50px}", ""]);
+exports.push([module.i, ".crumbs{text-decoration:none}.banner{background:url(" + __webpack_require__(680) + ") no-repeat 0 0;background-size:cover;min-height:600px;min-width:850px}.banner h3{font-size:30px;padding-top:18%;font-weight:600}.banner h2,.banner h3{color:#fff;letter-spacing:1px;text-transform:uppercase;text-align:center}.banner h2{font-size:50px;font-weight:700;margin:30px 0}.banner h2 span{color:#00bcd4}.banner h4{color:#fff;font-size:14px;letter-spacing:1px;text-transform:uppercase;background:#00bcd4;width:20%;margin:0 auto;padding:10px 0;text-align:center}.about-w3-agile{padding:50px 0}.about-w3-agile box{color:#000;text-transform:uppercase;font-size:25px;letter-spacing:2px;font-weight:700;text-align:left;position:relative;margin-bottom:50px}.about-w3-agile box:before{background:#d9d9d9;width:45%}.about-w3-agile box:before,.about-w3-agile h3:after{content:\"\";height:3px;position:absolute;top:170%;left:0}.about-w3-agile h3:after{background:#fff;width:10%}.about-w3-agile h3:before{width:25%}.about-w3-agile h3{margin-top:30px}.eg-item{padding:20px;margin:20px 0;box-sizing:border-box;background:#eee}#navigation{float:left;width:200px;font-family:Arial}#navigation ul{list-style-type:none;margin:0;padding:0}#navigation li{border-bottom:1px solid #fff;height:45px;display:block;padding:5px 5px 5px .5em;text-decoration:none;border-left:12px solid #00bcd4;border-right:1px solid #fff;background-color:#789;color:#fff}#navigation li:link,#navigation li a:visited{background-color:#c11136;color:#fff}#navigation li :hover{background-color:#ffc107;color:#ff0}#show-items{max-width:800px;margin:0 auto;cursor:pointer}.sing-item{padding:20px;margin:20px 0;box-sizing:border-box;background:#eee}.pagination{margin-left:50px}", ""]);
 
 // exports
 
@@ -280,8 +281,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "about"
     }
-  }, [_c('div', {
-    staticClass: "container"
   }, [_c('el-row', [_c('el-col', {
     attrs: {
       "span": 6
@@ -313,11 +312,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', {
     attrs: {
-      "id": "show-pedias"
+      "id": "show-items"
     }
   }, _vm._l((_vm.items), function(item) {
     return _c('div', {
-      staticClass: "single-item",
+      staticClass: "sing-item",
       on: {
         "click": function($event) {
           _vm.encyclopediaClick(item)
@@ -330,7 +329,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "title": ""
       }
     }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(item.keyword))]), _vm._v(" "), _c('article', [_vm._v(_vm._s(item.firstprop))])])
-  }))])], 1)], 1)]), _vm._v(" "), _c('div', {
+  }))])], 1)], 1), _vm._v(" "), _c('div', {
     staticClass: "pagination"
   }, [_c('el-pagination', {
     attrs: {

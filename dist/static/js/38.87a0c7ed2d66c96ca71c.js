@@ -382,7 +382,7 @@ exports = module.exports = __webpack_require__(58)(undefined);
 
 
 // module
-exports.push([module.i, ".crumbs[data-v-6a5faf9e]{text-decoration:none}.pagination[data-v-6a5faf9e]{margin-left:50px}li[data-v-6a5faf9e],ul[data-v-6a5faf9e]{list-style:none;margin:0;padding:0}a[data-v-6a5faf9e]{cursor:pointer}a[data-v-6a5faf9e]:hover{text-decoration:none;color:#5188a6!important}.list-header[data-v-6a5faf9e]{margin-bottom:20px;color:#607590}.mse-item[data-v-6a5faf9e]{margin-bottom:15px;border-bottom:1px dotted #ccc}.title[data-v-6a5faf9e]{font-size:22px;font-weight:700;color:#48576a;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}.time[data-v-6a5faf9e]{font-size:12px;color:#999}.cai-count[data-v-6a5faf9e],.comment-count[data-v-6a5faf9e],.zan-count[data-v-6a5faf9e]{color:#999;margin-right:8px}.not-found[data-v-6a5faf9e]{font-size:24px;color:#bac4ce;width:240px;margin:0 auto;padding-top:20px}", ""]);
+exports.push([module.i, ".crumbs[data-v-6a5faf9e]{text-decoration:none}.pagination[data-v-6a5faf9e]{margin-left:50px}li[data-v-6a5faf9e],ul[data-v-6a5faf9e]{list-style:none;margin:0;padding:0}a[data-v-6a5faf9e]{cursor:pointer}a[data-v-6a5faf9e]:hover{text-decoration:none;color:#5188a6!important}.list-header[data-v-6a5faf9e]{margin-bottom:20px;color:#607590}.mse-item[data-v-6a5faf9e]{margin-bottom:15px;border-bottom:1px dotted #ccc}.title[data-v-6a5faf9e]{font-size:22px;font-weight:700;color:#48576a;display:block;position:relative;overflow:hidden;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}.time[data-v-6a5faf9e]{font-size:12px;color:#999}.cai-count[data-v-6a5faf9e],.comment-count[data-v-6a5faf9e],.zan-count[data-v-6a5faf9e]{color:#999;margin-right:8px}.not-found[data-v-6a5faf9e]{font-size:24px;color:#bac4ce;width:240px;margin:0 auto;padding-top:20px}", ""]);
 
 // exports
 
@@ -412,7 +412,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('el-col', {
     attrs: {
-      "span": 12
+      "span": 11
     }
   }, [_c('div', [_c('span', {}, [_vm._v("\n                            文章标题\n                        ")])])]), _vm._v(" "), _c('el-col', {
     attrs: {
@@ -428,7 +428,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', [_c('span', {}, [_vm._v("\n                            评测评价\n                        ")])])]), _vm._v(" "), _c('el-col', {
     attrs: {
-      "span": 4
+      "span": 5
     }
   }, [_c('div', [_vm._v("\n                        操作\n                    ")])])], 1), _vm._v(" "), _c('ul', {}, _vm._l((_vm.mseList), function(mse) {
     return _c('li', {
@@ -440,13 +440,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('el-col', {
       attrs: {
-        "span": 12
+        "span": 11
       }
     }, [_c('div', {
       staticClass: "grid-content"
     }, [_c('span', {
       staticClass: "title"
-    }, [_c('em', [_vm._v(_vm._s(mse.evaluationTitle))])])])]), _vm._v(" "), _c('el-col', {
+    }, [_c('p', [_vm._v(_vm._s(mse.evaluationTitle))])])])]), _vm._v(" "), _c('el-col', {
       attrs: {
         "span": 4
       }
@@ -474,11 +474,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "fa fa-commenting-o"
     }), _vm._v(" "), _c('em', [_vm._v(_vm._s(mse.comments))])])])]), _vm._v(" "), _c('el-col', {
       attrs: {
-        "span": 4
+        "span": 5
       }
     }, [_c('div', [_c('el-button', {
       attrs: {
-        "type": "text",
+        "type": "primary",
         "size": "small"
       },
       on: {
@@ -488,7 +488,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("查看")]), _vm._v(" "), _c('el-button', {
       attrs: {
-        "type": "text",
+        "type": "",
         "size": "small"
       },
       on: {
@@ -498,7 +498,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
       attrs: {
-        "type": "text",
+        "type": "danger",
         "size": "small"
       },
       on: {

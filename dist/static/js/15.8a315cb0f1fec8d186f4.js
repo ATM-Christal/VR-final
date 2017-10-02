@@ -401,6 +401,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -960,13 +964,42 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })], 2), _vm._v(" "), _c('tr', {
     staticClass: "param-list"
   }, [_vm._m(13), _vm._v(" "), _vm._l((_vm.datas), function(data) {
-    return _c('td', [_c('div', {
-      staticClass: "param-content"
+    return _c('td', [_c('el-button', {
+      attrs: {
+        "type": "text"
+      },
+      on: {
+        "click": function($event) {
+          _vm.checkVisible = true
+        }
+      }
+    }, [_vm._v("点击查看")]), _vm._v(" "), _c('el-dialog', {
+      attrs: {
+        "title": "辐射骚扰",
+        "visible": _vm.checkVisible
+      },
+      on: {
+        "update:visible": function($event) {
+          _vm.checkVisible = $event
+        }
+      }
     }, [_c('img', {
       attrs: {
         "src": data.radiationdisturbance
       }
-    })])])
+    }), _vm._v(" "), _c('div', {
+      staticClass: "dialog-footer",
+      slot: "footer"
+    }, [_c('el-button', {
+      attrs: {
+        "type": "primary"
+      },
+      on: {
+        "click": function($event) {
+          _vm.checkVisible = false
+        }
+      }
+    }, [_vm._v("确 定")])], 1)])], 1)
   })], 2), _vm._v(" "), _c('tr', {
     staticClass: "param-list"
   }, [_vm._m(14), _vm._v(" "), _vm._l((_vm.datas), function(data) {

@@ -28,6 +28,10 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_quill_editor__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_quill_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_quill_editor__);
+//
+//
 //
 //
 //
@@ -343,16 +347,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        quillEditor: __WEBPACK_IMPORTED_MODULE_0_vue_quill_editor__["quillEditor"]
+    },
     data() {
         return {
+            editorOption: {
+                modules: {
+                    toolbar: [[{ 'header': [2, 3, false] }], ['bold', 'italic'], [{ 'list': 'ordered' }, { 'list': 'bullet' }], ['image']]
+                },
+                placeholder: '请编写您的内容...'
+            },
             tableData1: [],
-            tableData2: [],
-            tableData3: [],
+            //                tableData1:[{id:1,title:'fff',contents:'jfSjkefndbsrvklaefblvkdfblkvhsfbjv',date:'8888888',posterId:55,posterName:'ddd',totalComments:56,theme:'ff',upvote:0,downvote:0,good:false}],
+            tableData2: [{}],
+            tableData3: [{}],
             hostURL: '/VR',
             display_comm: false,
             display_subcomm: false,
-
             dialogFormVisible1: false,
             dialogFormVisible2: false,
             dialogFormVisible3: false,
@@ -927,12 +941,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "label-width": _vm.formLabelWidth,
       "prop": "contents"
     }
-  }, [_c('el-input', {
-    staticClass: "class1",
+  }, [_c('quill-editor', {
+    ref: "myTextEditor2",
+    staticStyle: {
+      "line-height": "1"
+    },
     attrs: {
-      "type": "textarea",
-      "rows": 15,
-      "auto-complete": "off"
+      "options": _vm.editorOption
     },
     model: {
       value: (_vm.ruleForm.contents),
@@ -1108,24 +1123,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "prop": "upvote",
       "label": "点赞数",
-      "width": "80"
+      "width": "150"
     }
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
       "prop": "downvote",
       "label": "踩数",
-      "width": "80"
+      "width": "120"
     }
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
       "prop": "good",
       "label": "精品贴",
-      "width": "100"
+      "width": "150"
     }
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
       "label": "操作",
-      "width": "180"
+      "width": "350"
     },
     scopedSlots: _vm._u([{
       key: "default",
@@ -1144,7 +1159,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }, [_vm._v("查看")]), _vm._v(" "), _c('el-button', {
           staticClass: "list-btn-ground",
           attrs: {
-            "type": "primary",
+            "type": "",
             "size": "small"
           },
           on: {
@@ -1250,12 +1265,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
             "label-width": _vm.formLabelWidth,
             "prop": "contents"
           }
-        }, [_c('el-input', {
-          staticClass: "class1",
+        }, [_c('quill-editor', {
+          ref: "myTextEditor",
+          staticStyle: {
+            "line-height": "1"
+          },
           attrs: {
-            "type": "textarea",
-            "rows": 15,
-            "auto-complete": "off"
+            "options": _vm.editorOption
           },
           model: {
             value: (_vm.ruleForm.contents),

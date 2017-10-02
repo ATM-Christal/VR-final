@@ -448,7 +448,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getProducts1() {
             var self = this;
             //测试用数据
-            //self.getPartProducts1(1);
+            // self.getPartProducts1(1);
             self.$axios({
                 url: 'admin/getAllUsers',
                 //url: 'admin/getAllInOnePCAll?condition=0',
@@ -831,7 +831,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         return [_c('el-button', {
           attrs: {
             "disabled": _vm.handleDisabled(scope.$index),
-            "type": "text",
             "size": "small"
           },
           on: {
@@ -853,7 +852,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         return [_c('el-button', {
           attrs: {
             "plain": true,
-            "type": "info",
             "size": "small"
           },
           on: {
@@ -873,11 +871,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       key: "default",
       fn: function(scope) {
         return [_c('el-button', {
-          staticStyle: {
-            "color": "#FF4949"
-          },
           attrs: {
-            "type": "text",
+            "type": "danger",
             "size": "small"
           },
           on: {

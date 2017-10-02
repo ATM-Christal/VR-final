@@ -96,7 +96,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             prop_id: "1",
             keyword: "",
             prop_keyword: "",
-            content: "a",
+            content: "",
             upvote: 1,
             downvote: 1,
             changenote: "a1",
@@ -400,7 +400,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_vm._m(0), _vm._v(" "), _c('el-input', {
     attrs: {
-      "placeholder": "keyword",
+      "placeholder": "词条名",
       "id": "keySpace"
     },
     model: {
@@ -412,7 +412,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('el-input', {
     attrs: {
-      "placeholder": "prop_keyword",
+      "placeholder": "词条属性",
       "id": "pkSpace"
     },
     model: {
@@ -430,7 +430,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "content"
     }],
     attrs: {
-      "placeholder": "content",
+      "placeholder": "内容",
       "id": "conSpace"
     },
     domProps: {
@@ -456,7 +456,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.submit()
       }
     }
-  }, [_vm._v("submit")]), _vm._v(" "), _c('el-button', {
+  }, [_vm._v("提交")]), _vm._v(" "), _c('el-button', {
     staticClass: "or-btn",
     staticStyle: {
       "margin-top": "10px"
@@ -469,7 +469,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.close()
       }
     }
-  }, [_vm._v("close")])], 1)]) : _vm._e(), _vm._v(" "), _c('div', {
+  }, [_vm._v("关闭")])], 1)]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "events"
   }, [_c('div', {
     staticClass: "container"
@@ -506,7 +506,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.edit(encyclopedia_prop)
         }
       }
-    }, [_vm._v("edit")])], 1)
+    }, [_vm._v("编辑")])], 1)
   }))]), _vm._v(" "), _c('div', {
     staticClass: "news-comment"
   }, [_c('el-button-group', [_c('el-button', {
@@ -539,7 +539,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  }), _vm._v(" "), _c('span', [_vm._v("EDIT")])])
+  }), _vm._v(" "), _c('span', [_vm._v("编辑")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "borderline clearfix"
