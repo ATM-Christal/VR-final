@@ -18,7 +18,8 @@
                                         <el-input class="class1" v-model="ruleForm.title" auto-complete="off"></el-input>
                                     </el-form-item>
                                     <el-form-item label="内容" :label-width="formLabelWidth" prop="contents">
-                                        <el-input type="textarea" :rows="15" class="class1" v-model="ruleForm.contents" auto-complete="off"></el-input>
+                                        <quill-editor ref="myTextEditor2" v-model="ruleForm.contents" :options="editorOption" style="line-height: 1;"></quill-editor>
+                                        <!--<el-input type="textarea" :rows="15" class="class1" v-model="ruleForm.contents" auto-complete="off"></el-input>-->
                                     </el-form-item>
                                     <el-form-item  class="class1" prop="theme">
                                         <el-select v-model="ruleForm.theme" placeholder="请选择主题">
@@ -111,24 +112,24 @@
             <el-table-column
                     prop="upvote"
                     label="点赞数"
-                    width="80">
+                    width="150">
             </el-table-column>
             <el-table-column
                     prop="downvote"
                     label="踩数"
-                    width="80">
+                    width="120">
             </el-table-column>
             <el-table-column
                     prop="good"
                     label="精品贴"
-                    width="100">
+                    width="150">
             </el-table-column>
             <el-table-column
                     label="操作"
-                    width="180">
+                    width="350">
                 <template scope="scope">
                     <el-button class="list-btn-ground" type="primary" size="small" @click="getData2(scope.row)" >查看</el-button>
-                    <el-button class="list-btn-ground" type="primary" size="small" @click="dialogFormVisible1 = true">编辑</el-button>
+                    <el-button class="list-btn-ground" type="" size="small" @click="dialogFormVisible1 = true">编辑</el-button>
                     <el-button class="list-btn-ground" v-show="scope.row.good=='否'" type="success" @click="up(scope.row)" size="small" icon="edit">加精</el-button>
                     <el-button class="list-btn-ground" v-show="scope.row.good=='是'" type="warning" @click="down(scope.row)" size="small" icon="check">取精</el-button>
                     <!-- <el-button class="list-btn-ground" :plain="true" type="warning" size="small" @click="up(scope.row)">加精</el-button>-->
@@ -142,7 +143,8 @@
                                         <el-input class="class1" v-model="ruleForm.title" auto-complete="off"></el-input>
                                     </el-form-item>
                                     <el-form-item label="内容" :label-width="formLabelWidth" prop="contents">
-                                        <el-input type="textarea" :rows="15" class="class1" v-model="ruleForm.contents" auto-complete="off"></el-input>
+                                        <quill-editor ref="myTextEditor" v-model="ruleForm.contents" :options="editorOption" style="line-height: 1;"></quill-editor>
+                                        <!--<el-input type="textarea" :rows="15" class="class1" v-model="ruleForm.contents" auto-complete="off"></el-input>-->
                                     </el-form-item>
                                     <el-form-item  class="class1" prop="theme">
                                         <el-select v-model="ruleForm.theme" placeholder="请选择主题">
@@ -313,16 +315,31 @@
 </template>
 
 <script>
+    import { quillEditor } from 'vue-quill-editor';
     export default {
+        components: {
+            quillEditor
+        },
         data() {
             return {
+                editorOption: {
+                    modules: {
+                        toolbar: [
+                            [{ 'header': [2, 3, false] }],
+                            ['bold', 'italic'],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            ['image']
+                        ]
+                    },
+                    placeholder: '请编写您的内容...',
+                },
                 tableData1:[],
-                tableData2:[],
-                tableData3:[],
+//                tableData1:[{id:1,title:'fff',contents:'jfSjkefndbsrvklaefblvkdfblkvhsfbjv',date:'8888888',posterId:55,posterName:'ddd',totalComments:56,theme:'ff',upvote:0,downvote:0,good:false}],
+                tableData2:[{}],
+                tableData3:[{}],
                 hostURL:'/VR',
                 display_comm:false,
                 display_subcomm:false,
-
                 dialogFormVisible1: false,
                 dialogFormVisible2: false,
                 dialogFormVisible3: false,

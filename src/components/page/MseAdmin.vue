@@ -9,7 +9,7 @@
         <el-row style="margin-top: 20px">
             <el-col  v-if="mseList.length">
                 <el-row :gutter="20" class="list-header">
-                    <el-col :span="10">
+                    <el-col :span="9">
                         <div>
                             <span class="">
                                 文章标题
@@ -26,14 +26,14 @@
                             <span class="">发表时间</span>
                         </div>
                     </el-col>
-                    <el-col :span="5">
+                    <el-col :span="4">
                         <div>
                             <span class="">
                                 评测评价
                             </span>
                         </div>
                     </el-col>
-                    <el-col :span="3">
+                    <el-col :span="5">
                         <div>
                             操作
                         </div>
@@ -42,10 +42,10 @@
                 <ul class="">
                     <li v-for="mse in mseList" :key="mse" class="mse-item">
                         <el-row :gutter="20">
-                            <el-col :span="10">
-                                <div>
-                                    <span class="mse-title">
-                                    <em>{{ mse.evaluationTitle}}</em>
+                            <el-col :span="9">
+                                <div class="mse-title">
+                                    <span>
+                                    <p>{{ mse.evaluationTitle}}</p>
                                     </span>
                                 </div>
                             </el-col>
@@ -59,7 +59,7 @@
                                     <span class="time">{{ timeFomat(mse.updateTime) }}</span>
                                 </div>
                             </el-col>
-                            <el-col :span="5">
+                            <el-col :span="4">
                                 <div class="mse-info">
                                     <span class="zan-count">
                                         <i class="fa fa-thumbs-o-up"></i>
@@ -75,11 +75,11 @@
                                     </span>
                                 </div>
                             </el-col>
-                            <el-col :span="3">
+                            <el-col :span="5">
                                 <div>
-                                    <el-button @click="handleView(mse)" type="text" size="small">查看</el-button>
-                                    <el-button @click="handleEdit(mse)" type="text" size="small">编辑</el-button>
-                                    <el-button @click="handleDel(mse)" type="text" size="small">删除</el-button>
+                                    <el-button @click="handleView(mse)" type="primary" size="small">查看</el-button>
+                                    <el-button @click="handleEdit(mse)" type="" size="small">编辑</el-button>
+                                    <el-button @click="handleDel(mse)" type="danger" size="small">删除</el-button>
                                 </div>
                             </el-col>
                         </el-row>
@@ -390,12 +390,23 @@
         font-size: 22px;
         font-weight: bold;
         color: #48576a;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        display: block;
+        position: relative;
         overflow: hidden;
+        white-space: nowrap;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
     }
+    /*.mse-title:after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #FFFFFF 50%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    bottom: 0;
+    content: "...";
+    font-weight: bold;
+    padding: 0 20px 1px 45px;
+    position: absolute;
+    right: 0;
+    }*/
+
     .time {
         font-size: 12px;
         color: #999;
