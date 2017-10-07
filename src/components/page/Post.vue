@@ -22,11 +22,17 @@
                         <el-input v-model="ruleForm.title" placeholder="请输入帖子标题" :maxlength="30" @change="computeRestSize"></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col :span="3" ><div class="title-size">还可输入<b class = "size-num">{{restSize}}</b>个字符</div></el-col>
+                <el-col :span="5" ><div class="title-size">还可输入<b class = "size-num">{{restSize}}</b>个字符</div></el-col>
             </el-row>
             <el-form-item prop="content">
                 <el-col :span = "18">
-                    <el-input type="textarea" :rows="20" v-model="ruleForm.content" placeholder="请输入帖子内容"   resize=none ></el-input>
+                    <quill-editor
+                            red="quil"
+                            v-model="ruleForm.content"
+                            :options="editorOption"
+                            style="line-height: 1">
+                    </quill-editor>
+                    <!--<el-input type="textarea" :rows="20" v-model="ruleForm.content" placeholder="请输入帖子内容"   resize=none ></el-input>-->
                 </el-col>
             </el-form-item>
             <el-form-item>
@@ -37,13 +43,27 @@
 </template>
 <script>
     import ElRow from "../../../node_modules/element-ui/packages/row/src/row";
+    import { quillEditor } from 'vue-quill-editor';
     export default {
         components: {
-            ElRow},
+            ElRow,
+            quillEditor
+        },
         data() {
             return {
                 hostURL:'/VR',
                 restSize: 30,
+                editorOption: {
+                    modules: {
+                        toolbar: [
+                            [{ 'header': [2, 3, false] }],
+                            ['bold', 'italic'],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            ['image']
+                        ]
+                    },
+                    placeholder: '请编写您的内容...',
+                },
                 options: [
                     {label:'讨论', name:'discussion'},
                     {label:'分享', name:'share'},
