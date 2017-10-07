@@ -67,7 +67,8 @@
                 @selection-change="handleSelectionChange1">
             <el-table-column
                     type="selection"
-                    width="80">
+                    width="80"
+                    fixed>
             </el-table-column>
             <el-table-column
                     prop="id"
