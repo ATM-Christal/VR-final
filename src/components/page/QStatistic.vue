@@ -116,6 +116,7 @@
                 }
             },
             getData(){
+                console.log("get statistic")
                 var self = this;
                 self.data={
                     statistic:[{

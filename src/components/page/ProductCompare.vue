@@ -136,7 +136,9 @@
                 </tr>
                 <tr class="param-list">
                         <th class="cate-title"><strong>
-                            工作温度(℃)<img :src="pic_hint" style="{width:25px; height:25px;}" title='工作温度小于55℃表示正常'>
+                            工作温度(℃)<el-tooltip content="工作温度小于55℃表示正常" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong>
                         <br>
                         </th>
@@ -148,7 +150,7 @@
                     </tr>
                     <tr class="param-list">
                         <th class="cate-title"><strong>
-                            蓝光辐照度(W·m^－2·sr^－1)<img :src="pic_hint" style="{width:25px; height:25px;}" title='声压小于100dB表示正常'>
+                            蓝光辐照度(W·m^－2·sr^－1)
                          </strong>
                          <br>
                          <br>
@@ -162,7 +164,9 @@
                     </tr>
                      <tr class="param-list">
                         <th class="cate-title"><strong>
-                            声压(dB(A))<img :src="pic_hint" style="{width:25px; height:25px;}" title='声压小于100dB表示正常'>
+                            声压(dB(A))<el-tooltip content="声压小于100dB表示正常" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong>
                         </th>
                         <td v-for="data in datas">
@@ -173,7 +177,9 @@
                     </tr>
                     <tr class="param-list">
                         <th class="cate-title"><strong>
-                            播放器最大输出电压(mV)<img :src="pic_hint" style="{width:25px; height:25px;}" title='最大输出电压小于150mV表示正常'>
+                            播放器最大输出电压(mV)<el-tooltip content="最大输出电压小于150mV表示正常" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong>
                         <br>
 
@@ -186,7 +192,9 @@
                     </tr>
                     <tr class="param-list">
                         <th class="cate-title"><strong>
-                            耳机的宽带特征电压(mV)<img :src="pic_hint" style="{width:25px; height:25px;}" title='特征电压大于75mV表示正常'>
+                            耳机的宽带特征电压(mV)<el-tooltip content="特征电压大于75mV表示正常" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong>
                         <br>
                     
@@ -263,7 +271,9 @@
                 </tr>
                 <tr class="param-list">
                         <th class="cate-title"><strong>
-                            视场角(°)<img :src="pic_hint" style="{width:25px; height:25px;}" title='级别划分：一级：000-010，二级：010-020，三级：020-030'>
+                            视场角(°)<el-tooltip content="≥100为一级，＜100为二级" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong>
                         </th>
                         <td v-for="data in datas">
@@ -274,7 +284,9 @@
                     </tr>
                     <tr class="param-list">
                         <th class="cate-title"><strong>
-                            刷新率(Hz)<img :src="pic_hint" style="{width:25px; height:25px;}" title='级别划分：一级：000-010，二级：010-020，三级：020-030'>
+                            刷新率(Hz)<el-tooltip content="＞80为一级，≤80为二级" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong></th>
                         <td v-for="data in datas">
                             <div class="param-content">
@@ -284,7 +296,9 @@
                     </tr>
                     <tr class="param-list">
                         <th class="cate-title"><strong>
-                            系统延迟(ms)<img :src="pic_hint" style="{width:25px; height:25px;}" title='级别划分：一级：000-010，二级：010-020，三级：020-030'>
+                            系统延迟(ms)<el-tooltip content="≤20为一级，＞20为二级" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong></th>
                         <td v-for="data in datas">
                             <div class="param-content">
@@ -330,7 +344,9 @@
                 </tr>
                  <tr class="param-list">
                         <th class="cate-title"><strong>
-                            视力变化均值<img :src="pic_hint" style="{width:25px; height:25px;}" title='级别划分：一级：000-010，二级：010-020，三级：020-030'>
+                            视力变化均值<el-tooltip content="＜0.1为一级，≥0.1为二级" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong></th>
                         <td v-for="data in datas">
                             <div class="param-content">
@@ -340,7 +356,9 @@
                     </tr>
                     <tr class="param-list">
                         <th class="cate-title"><strong>
-                            SSQ均值<img :src="pic_hint" style="{width:25px; height:25px;}" title='级别划分：一级：000-010，二级：010-020，三级：020-030'>
+                            SSQ均值<el-tooltip content="≤90为一级，＞90为二级" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong></th>
                         <td v-for="data in datas">
                             <div class="param-content">
@@ -350,7 +368,9 @@
                     </tr>
                     <tr class="param-list">
                         <th class="cate-title"><strong>
-                            CVS均值<img :src="pic_hint" style="{width:25px; height:25px;}" title='级别划分：一级：000-010，二级：010-020，三级：020-030'>
+                            CVS均值<el-tooltip content="≤80为一级，＞80为二级" placement="top">
+                                                        <img :src="pic_hint" style="width:15px">
+                                                    </el-tooltip>
                         </strong></th>
                         <td v-for="data in datas">
                             <div class="param-content">

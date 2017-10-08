@@ -137,7 +137,11 @@
                                     <div class="tab-content">
                                         <ul class="category">
                                             <li>
-                                                <span class="para-name">工作温度(℃)</span>
+                                                <span class="para-name">工作温度(℃)
+                                                <el-tooltip content="工作温度小于55℃表示正常" placement="top">
+                                                        <img :src="hint_logo" style="width:15px">
+                                                    </el-tooltip>
+                                                </span>
                                                 <span class="para-val">{{data.workingtemperature}}</span>
                                             </li>
                                             <li>
@@ -153,7 +157,11 @@
                                                 <span class="para-val">{{data.maximumoutputvoltage}}</span>
                                             </li>-->
                                             <li>
-                                                <span class="para-name">耳机的宽带特征电压(mV)</span>
+                                                <span class="para-name">耳机的宽带特征电压(mV)
+                                                <el-tooltip content="特征电压大于75mV表示正常" placement="top">
+                                                        <img :src="hint_logo" style="width:15px">
+                                                    </el-tooltip>
+                                                </span>
                                                 <span class="para-val">{{data.broadbandcharacteristicvoltageofearphone}}</span>
                                             </li>
                                             <li>

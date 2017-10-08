@@ -46,7 +46,7 @@
                         title: '产品中心',
                         subs: [
                             {
-                                index: '/user/product-list',
+                                index: '01',
                                 title: '产品列表'
                             },
                         ]
