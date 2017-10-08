@@ -405,6 +405,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -852,16 +872,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        工作温度(℃)"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        工作温度(℃)"), _c('el-tooltip', {
+    attrs: {
+      "content": "工作温度小于55℃表示正常",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "工作温度小于55℃表示正常"
+      "src": _vm.pic_hint
     }
-  })]), _vm._v(" "), _c('br')]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1), _vm._v(" "), _c('br')]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -869,18 +892,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(data.workingtemperature))])])])
   })], 2), _vm._v(" "), _c('tr', {
     staticClass: "param-list"
-  }, [_c('th', {
-    staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        蓝光辐照度(W·m^－2·sr^－1)"), _c('img', {
-    staticStyle: {
-      "{width": "25px",
-      "height": "25px"
-    },
-    attrs: {
-      "src": _vm.pic_hint,
-      "title": "声压小于100dB表示正常"
-    }
-  })]), _vm._v(" "), _c('br'), _vm._v(" "), _c('br')]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  }, [_vm._m(11), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -890,16 +902,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        声压(dB(A))"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        声压(dB(A))"), _c('el-tooltip', {
+    attrs: {
+      "content": "声压小于100dB表示正常",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "声压小于100dB表示正常"
+      "src": _vm.pic_hint
     }
-  })])]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1)]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -909,16 +924,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        播放器最大输出电压(mV)"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        播放器最大输出电压(mV)"), _c('el-tooltip', {
+    attrs: {
+      "content": "最大输出电压小于150mV表示正常",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "最大输出电压小于150mV表示正常"
+      "src": _vm.pic_hint
     }
-  })]), _vm._v(" "), _c('br')]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1), _vm._v(" "), _c('br')]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -928,16 +946,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        耳机的宽带特征电压(mV)"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        耳机的宽带特征电压(mV)"), _c('el-tooltip', {
+    attrs: {
+      "content": "特征电压大于75mV表示正常",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "特征电压大于75mV表示正常"
+      "src": _vm.pic_hint
     }
-  })]), _vm._v(" "), _c('br')]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1), _vm._v(" "), _c('br')]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -945,7 +966,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(data.broadbandcharacteristicvoltageofearphone))])])])
   })], 2), _vm._v(" "), _c('tr', {
     staticClass: "param-list"
-  }, [_vm._m(11), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  }, [_vm._m(12), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', [_vm._v(_vm._s(data.boundarywarning))])])])
@@ -953,7 +974,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "compare-table"
   }, [_c('tbody', [_c('tr', {
     staticClass: "cate-tr"
-  }, [_vm._m(12), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  }, [_vm._m(13), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('img', {
@@ -963,7 +984,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })])])
   })], 2), _vm._v(" "), _c('tr', {
     staticClass: "param-list"
-  }, [_vm._m(13), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  }, [_vm._m(14), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('el-button', {
       attrs: {
         "type": "text"
@@ -1002,7 +1023,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v("确 定")])], 1)])], 1)
   })], 2), _vm._v(" "), _c('tr', {
     staticClass: "param-list"
-  }, [_vm._m(14), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  }, [_vm._m(15), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('img', {
@@ -1014,7 +1035,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "compare-table"
   }, [_c('tbody', [_c('tr', {
     staticClass: "cate-tr"
-  }, [_vm._m(15), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  }, [_vm._m(16), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('img', {
@@ -1026,16 +1047,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        视场角(°)"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        视场角(°)"), _c('el-tooltip', {
+    attrs: {
+      "content": "≥100为一级，＜100为二级",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "级别划分：一级：000-010，二级：010-020，三级：020-030"
+      "src": _vm.pic_hint
     }
-  })])]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1)]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -1045,16 +1069,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        刷新率(Hz)"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        刷新率(Hz)"), _c('el-tooltip', {
+    attrs: {
+      "content": "＞80为一级，≤80为二级",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "级别划分：一级：000-010，二级：010-020，三级：020-030"
+      "src": _vm.pic_hint
     }
-  })])]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1)]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -1064,16 +1091,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        系统延迟(ms)"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        系统延迟(ms)"), _c('el-tooltip', {
+    attrs: {
+      "content": "≤20为一级，＞20为二级",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "级别划分：一级：000-010，二级：010-020，三级：020-030"
+      "src": _vm.pic_hint
     }
-  })])]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1)]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -1081,13 +1111,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(data.systemdelay))])])])
   })], 2), _vm._v(" "), _c('tr', {
     staticClass: "param-list"
-  }, [_vm._m(16), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  }, [_vm._m(17), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', [_vm._v(_vm._s(data.trackingmode))])])])
   })], 2), _vm._v(" "), _c('tr', {
     staticClass: "param-list"
-  }, [_vm._m(17), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  }, [_vm._m(18), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', [_vm._v(_vm._s(data.trackingrange))])])])
@@ -1095,7 +1125,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "compare-table"
   }, [_c('tbody', [_c('tr', {
     staticClass: "cate-tr"
-  }, [_vm._m(18), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  }, [_vm._m(19), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('img', {
@@ -1107,16 +1137,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        视力变化均值"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        视力变化均值"), _c('el-tooltip', {
+    attrs: {
+      "content": "＜0.1为一级，≥0.1为二级",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "级别划分：一级：000-010，二级：010-020，三级：020-030"
+      "src": _vm.pic_hint
     }
-  })])]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1)]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -1126,16 +1159,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        SSQ均值"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        SSQ均值"), _c('el-tooltip', {
+    attrs: {
+      "content": "≤90为一级，＞90为二级",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "级别划分：一级：000-010，二级：010-020，三级：020-030"
+      "src": _vm.pic_hint
     }
-  })])]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1)]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -1145,16 +1181,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "param-list"
   }, [_c('th', {
     staticClass: "cate-title"
-  }, [_c('strong', [_vm._v("\n                        CVS均值"), _c('img', {
+  }, [_c('strong', [_vm._v("\n                        CVS均值"), _c('el-tooltip', {
+    attrs: {
+      "content": "≤80为一级，＞80为二级",
+      "placement": "top"
+    }
+  }, [_c('img', {
     staticStyle: {
-      "{width": "25px",
-      "height": "25px"
+      "width": "15px"
     },
     attrs: {
-      "src": _vm.pic_hint,
-      "title": "级别划分：一级：000-010，二级：010-020，三级：020-030"
+      "src": _vm.pic_hint
     }
-  })])]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
+  })])], 1)]), _vm._v(" "), _vm._l((_vm.datas), function(data) {
     return _c('td', [_c('div', {
       staticClass: "param-content"
     }, [_c('span', {
@@ -1205,6 +1244,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('td', {
     staticClass: "cate-title"
   }, [_c('strong', [_vm._v("产品外观")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('th', {
+    staticClass: "cate-title"
+  }, [_c('strong', [_vm._v("\n                        蓝光辐照度(W·m^－2·sr^－1)\n                     ")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('br')])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('th', {
     staticClass: "cate-title"

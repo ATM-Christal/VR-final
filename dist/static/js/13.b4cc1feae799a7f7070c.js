@@ -331,6 +331,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -724,7 +732,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "category"
   }, [_c('li', [_c('span', {
     staticClass: "para-name"
-  }, [_vm._v("工作温度(℃)")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("工作温度(℃)\n                                            "), _c('el-tooltip', {
+    attrs: {
+      "content": "工作温度小于55℃表示正常",
+      "placement": "top"
+    }
+  }, [_c('img', {
+    staticStyle: {
+      "width": "15px"
+    },
+    attrs: {
+      "src": _vm.hint_logo
+    }
+  })])], 1), _vm._v(" "), _c('span', {
     staticClass: "para-val"
   }, [_vm._v(_vm._s(_vm.data.workingtemperature))])]), _vm._v(" "), _c('li', [_c('span', {
     staticClass: "para-name"
@@ -732,7 +752,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "para-val"
   }, [_vm._v(_vm._s(_vm.data.bluerayirradiance))])]), _vm._v(" "), _c('li', [_c('span', {
     staticClass: "para-name"
-  }, [_vm._v("耳机的宽带特征电压(mV)")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("耳机的宽带特征电压(mV)\n                                            "), _c('el-tooltip', {
+    attrs: {
+      "content": "特征电压大于75mV表示正常",
+      "placement": "top"
+    }
+  }, [_c('img', {
+    staticStyle: {
+      "width": "15px"
+    },
+    attrs: {
+      "src": _vm.hint_logo
+    }
+  })])], 1), _vm._v(" "), _c('span', {
     staticClass: "para-val"
   }, [_vm._v(_vm._s(_vm.data.broadbandcharacteristicvoltageofearphone))])]), _vm._v(" "), _c('li', [_c('span', {
     staticClass: "para-name"

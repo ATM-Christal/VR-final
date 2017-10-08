@@ -70,7 +70,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 index: '0',
                 title: '产品中心',
                 subs: [{
-                    index: '/user/product-list',
+                    index: '01',
                     title: '产品列表'
                 }]
             }, {

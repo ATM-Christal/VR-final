@@ -277,7 +277,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 //发送数据后跳转
                 localStorage.setItem('pro_type', self.pro_type.value);
                 localStorage.setItem('pro_sale', self.pro_sales.value);
-                self.$router.push('/user/questionaire/statistic');
+                self.$router.replace('/user/questionaire/statistic');
             } else {
                 self.$message('还有内容未填写！');
             }

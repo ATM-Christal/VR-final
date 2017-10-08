@@ -146,6 +146,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         getData() {
+            console.log("get statistic");
             var self = this;
             self.data = {
                 statistic: [{

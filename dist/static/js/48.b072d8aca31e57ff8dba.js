@@ -89,7 +89,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function () {
         return {
             editorOption: {
-                // something config
+                modules: {
+                    toolbar: [[{ 'header': [2, 3, false] }], ['bold', 'italic'], [{ 'list': 'ordered' }, { 'list': 'bullet' }], ['image']]
+                },
+                placeholder: '请编写您的内容...'
             },
             hostURL: '/VR',
             select_cast: '',
@@ -448,10 +451,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('quill-editor', {
     ref: "myTextEditor",
     staticStyle: {
+      "line-height": "1",
       "width": "800px"
     },
     attrs: {
-      "config": _vm.editorOption
+      "options": _vm.editorOption
     },
     model: {
       value: (_vm.news.content),

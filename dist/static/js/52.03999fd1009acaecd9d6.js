@@ -346,6 +346,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -846,7 +847,7 @@ exports = module.exports = __webpack_require__(58)(undefined);
 
 
 // module
-exports.push([module.i, ".content{float:left;width:70%}.list-btn-ground{margin:10px auto;text-align:left;margin:20px}.title1{font-size:20px;font-weight:700;margin:20px}.class1{text-align:center}.class2{font-size:30px;text-align:left;margin:30px}.class3{text-align:left;margin:20px}", ""]);
+exports.push([module.i, ".content{float:left;width:70%}.list-btn-ground{text-align:left}.title1{font-size:20px;font-weight:700;margin:20px}.class1{text-align:center}.class2{font-size:30px;text-align:left;margin:30px}.class3{text-align:left;margin:20px}", ""]);
 
 // exports
 
@@ -1069,7 +1070,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('el-table-column', {
     attrs: {
       "type": "selection",
-      "width": "80"
+      "width": "80",
+      "fixed": ""
     }
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
@@ -1140,7 +1142,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
       "label": "操作",
-      "width": "350"
+      "width": "430"
     },
     scopedSlots: _vm._u([{
       key: "default",

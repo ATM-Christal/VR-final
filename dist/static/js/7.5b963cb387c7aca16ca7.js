@@ -123,6 +123,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_element_ui_packages_row_src_row__ = __webpack_require__(557);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_element_ui_packages_row_src_row___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__node_modules_element_ui_packages_row_src_row__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_quill_editor__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_quill_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_quill_editor__);
 //
 //
 //
@@ -160,15 +162,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
-        ElRow: __WEBPACK_IMPORTED_MODULE_0__node_modules_element_ui_packages_row_src_row___default.a },
+        ElRow: __WEBPACK_IMPORTED_MODULE_0__node_modules_element_ui_packages_row_src_row___default.a,
+        quillEditor: __WEBPACK_IMPORTED_MODULE_1_vue_quill_editor__["quillEditor"]
+    },
     data() {
         return {
             hostURL: '/VR',
             restSize: 30,
+            editorOption: {
+                modules: {
+                    toolbar: [[{ 'header': [2, 3, false] }], ['bold', 'italic'], [{ 'list': 'ordered' }, { 'list': 'bullet' }], ['image']]
+                },
+                placeholder: '请编写您的内容...'
+            },
             options: [{ label: '讨论', name: 'discussion' }, { label: '分享', name: 'share' }, { label: '求助', name: 'help' }, { label: '教程', name: 'tutorial' }, { label: '评测', name: 'evaluation' }, { label: '手机VR', name: 'phonevr' }, { label: '电脑VR', name: 'computervr' }],
             ruleForm: {
                 theme: '',
@@ -328,7 +345,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1)], 1), _vm._v(" "), _c('el-col', {
     attrs: {
-      "span": 3
+      "span": 5
     }
   }, [_c('div', {
     staticClass: "title-size"
@@ -342,12 +359,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "span": 18
     }
-  }, [_c('el-input', {
+  }, [_c('quill-editor', {
+    staticStyle: {
+      "line-height": "1"
+    },
     attrs: {
-      "type": "textarea",
-      "rows": 20,
-      "placeholder": "请输入帖子内容",
-      "resize": "none"
+      "red": "quil",
+      "options": _vm.editorOption
     },
     model: {
       value: (_vm.ruleForm.content),
