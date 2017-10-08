@@ -61,6 +61,7 @@
         },
         data: function () {
             return {
+//                hostURL: 'http://116.56.140.85:8080/VR',
                 hostURL: '/VR',
                 load: false,
                 select_cast: '',
@@ -191,8 +192,8 @@
                 self.$refs[formName].validate((valid)=> {
                     if (valid) {
                         self.$axios({
-                            url: '/NewsRelease' ,
-                            /*+ '?author=' + self.news.author +
+                            url: '/NewsRelease'
+                            + '?author=' + self.news.author +
                             '&lastEditTime=' + self.news.lastEditTime +
                             '&newsAbstract=' + self.news.newsAbstract +
                             '&picLocation=' + self.news.picLocation +
@@ -200,8 +201,8 @@
                             '&title=' + self.news.title +
                             '&type=' + self.news.type +
                             "&content=" + self.news.content +
-                            "&path=" + self.news.path*/
-                            data:{
+                            "&path=" + self.news.path,
+                            /*data:{
                                 author:self.news.author,
                                 lastEditTime:self.news.lastEditTime,
                                 newsAbstract:self.news.newsAbstract,
@@ -211,7 +212,7 @@
                                 type:self.news.type,
                                 content:self.news.content,
                                 path:self.news.path
-                            },
+                            },*/
                             method: 'post',
                             baseURL: self.hostURL
                         }).catch((error)=> {
