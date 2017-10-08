@@ -7,7 +7,7 @@
             </el-breadcrumb>
         </div>
         <div class="form-box">
-            <el-form ref="news" :rules="rules"  :model="news" label-width="80px">
+            <el-form ref="news" :rules="rules" :model="news" label-width="80px">
                 <el-form-item label="新闻标题" prop="title">
                     <el-input v-model="news.title" placeholder="请输入新闻标题"></el-input>
                 </el-form-item>
@@ -34,15 +34,17 @@
                     <el-input v-model="news.picLocation" style="width: 600px;" placeholder="请输入图片的URL"></el-input>
                 </el-form-item>
                 <el-form-item label="内容概述" prop="newsAbstract">
-                    <el-input type="textarea" v-model="news.newsAbstract" style="width: 600px;" placeholder="请输入新闻概述"></el-input>
+                    <el-input type="textarea" v-model="news.newsAbstract" style="width: 600px;"
+                              placeholder="请输入新闻概述"></el-input>
                 </el-form-item>
 
                 <el-form-item label="新闻内容" prop="content">
-                    <quill-editor ref="myTextEditor" v-model="news.content" :options="editorOption" style="line-height: 1;width: 800px;"></quill-editor>
+                    <quill-editor ref="myTextEditor" v-model="news.content" :options="editorOption"
+                                  style="line-height: 1;width: 800px;"></quill-editor>
                 </el-form-item>
 
                 <el-form-item>
-                    <el-button type="primary" @click="onSubmit('news')" :loading="load" >发布</el-button>
+                    <el-button type="primary" @click="onSubmit('news')" :loading="load">发布</el-button>
                     <el-button @click="resetForm('news')">重置</el-button>
                 </el-form-item>
             </el-form>
@@ -52,17 +54,17 @@
 </template>
 
 <script>
-    import { quillEditor } from 'vue-quill-editor';
+    import {quillEditor} from 'vue-quill-editor';
     export default {
         components: {
             quillEditor
         },
-        data: function(){
+        data: function () {
             return {
-                hostURL:'/VR',
+                hostURL: '/VR',
                 load: false,
                 select_cast: '',
-                news:{
+                news: {
                     id: null,
                     tag: null,
                     title: null,
@@ -82,9 +84,9 @@
                 editorOption: {
                     modules: {
                         toolbar: [
-                            [{ 'header': [2, 3, false] }],
+                            [{'header': [2, 3, false]}],
                             ['bold', 'italic'],
-                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            [{'list': 'ordered'}, {'list': 'bullet'}],
                             ['image']
                         ]
                     },
@@ -92,29 +94,29 @@
                 },
                 rules: {
                     title: [
-                    { required: true, message:'请输入新闻标题', trigger: 'blur'}
+                        {required: true, message: '请输入新闻标题', trigger: 'blur'}
                     ],
                     type: [
-                    { required: true, message: '请选择新闻类型', trigger: 'change'}
+                        {required: true, message: '请选择新闻类型', trigger: 'change'}
                     ],
                     author: [
-                    { required: true, message:'请输入作者', trigger: 'blur'}
+                        {required: true, message: '请输入作者', trigger: 'blur'}
                     ],
                     source: [
-                    { required: true, message:'请输入来源', trigger: 'blur'}
+                        {required: true, message: '请输入来源', trigger: 'blur'}
                     ],
                     lastEditTime: [
-                    { required: true, message:'请输入时间', trigger:'blur'}
+                        {required: true, message: '请输入时间', trigger: 'blur'}
                     ],
                     picLocation: [
-                    { required: true, type:'url', message:'请输入图片的URL', trigger: 'blur'}
+                        {required: true, type: 'url', message: '请输入图片的URL', trigger: 'blur'}
                     ],
                     newsAbstract: [
-                    { required: true, message:'请输入新闻概述', trigger: 'blur'},
-                    { min: 5, max: 100, message: '长度在5到100个字符', trigger:'blur'}
+                        {required: true, message: '请输入新闻概述', trigger: 'blur'},
+                        {min: 5, max: 100, message: '长度在5到100个字符', trigger: 'blur'}
                     ],
                     content: [
-                    { required: true, message:'请输入新闻内容', trigger:'blur'}
+                        {required: true, message: '请输入新闻内容', trigger: 'blur'}
                     ]
                 }
             }
@@ -126,7 +128,7 @@
         },
 
         methods: {
-            onEditorChange({ editor, html, text }) {
+            onEditorChange({editor, html, text}) {
                 this.news.content = html;
             },
             codeParsing(code) {
@@ -137,7 +139,7 @@
                         type: 'error'
                     });
                 };
-                switch(code) {
+                switch (code) {
                     case -1:
                         msg('系统错误', '未知错误，请上报管理员');
                         break;
@@ -187,17 +189,37 @@
             onSubmit(formName) {
                 var self = this;
                 self.$refs[formName].validate((valid)=> {
-                    if(valid) {
-                    self.$axios({
-                    url:'/NewsRelease'+'?author='+self.news.author+'&lastEditTime='+self.news.lastEditTime+'&newsAbstract='+self.news.newsAbstract+'&picLocation='+self.news.picLocation+'&source='+self.news.source+'&title='+self.news.title+'&type='+self.news.type+"&content="+self.news.content+"&path="+self.news.path,
-                    method:'post',
-                    baseURL: self.hostURL
-                    }).catch((error)=>{
-                        console.log(error);
-                     });
-                    self.$message.success('发布成功！');
-                    self.$refs[formName].resetFields();
-                    self.$router.push('/admin/news-editor');
+                    if (valid) {
+                        self.$axios({
+                            url: '/NewsRelease' ,
+                            /*+ '?author=' + self.news.author +
+                            '&lastEditTime=' + self.news.lastEditTime +
+                            '&newsAbstract=' + self.news.newsAbstract +
+                            '&picLocation=' + self.news.picLocation +
+                            '&source=' + self.news.source +
+                            '&title=' + self.news.title +
+                            '&type=' + self.news.type +
+                            "&content=" + self.news.content +
+                            "&path=" + self.news.path*/
+                            data:{
+                                author:self.news.author,
+                                lastEditTime:self.news.lastEditTime,
+                                newsAbstract:self.news.newsAbstract,
+                                picLocation:self.news.picLocation,
+                                source:self.news.source,
+                                title:self.news.title,
+                                type:self.news.type,
+                                content:self.news.content,
+                                path:self.news.path
+                            },
+                            method: 'post',
+                            baseURL: self.hostURL
+                        }).catch((error)=> {
+                            console.log(error);
+                        });
+                        self.$message.success('发布成功！');
+                        self.$refs[formName].resetFields();
+                        self.$router.push('/admin/news-editor');
                     }
                     else {
                         self.$message.error('请输入全部信息！');
