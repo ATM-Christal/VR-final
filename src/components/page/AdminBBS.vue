@@ -67,7 +67,8 @@
                 @selection-change="handleSelectionChange1">
             <el-table-column
                     type="selection"
-                    width="80">
+                    width="80"
+                    fixed>
             </el-table-column>
             <el-table-column
                     prop="id"
@@ -126,7 +127,7 @@
             </el-table-column>
             <el-table-column
                     label="操作"
-                    width="350">
+                    width="430">
                 <template scope="scope">
                     <el-button class="list-btn-ground" type="primary" size="small" @click="getData2(scope.row)" >查看</el-button>
                     <el-button class="list-btn-ground" type="" size="small" @click="dialogFormVisible1 = true">编辑</el-button>
@@ -839,9 +840,9 @@
         width: 70%;
     }
     .list-btn-ground {
-        margin: 10px auto;
+        /*margin: 10px auto;*/
         text-align: left;   
-        margin: 20px;             
+        /*margin: 20px;             */
     }
     .title1{
         font-size: 20px;

@@ -38,7 +38,7 @@
                 </el-form-item>
 
                 <el-form-item label="新闻内容" prop='content'>
-                    <quill-editor ref="myTextEditor" v-model="news.content" :config="editorOption" style="width: 800px;"></quill-editor>
+                    <quill-editor ref="myTextEditor" v-model="news.content" :options="editorOption" style="line-height: 1;width: 800px;"></quill-editor>
                 </el-form-item>
 
                 <el-form-item>
@@ -57,7 +57,15 @@
         data: function(){
             return {
                 editorOption: {
-                    // something config
+                    modules: {
+                        toolbar: [
+                            [{ 'header': [2, 3, false] }],
+                            ['bold', 'italic'],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            ['image']
+                        ]
+                    },
+                    placeholder: '请编写您的内容...',
                 },
                 hostURL:'/VR',
                 select_cast: '',

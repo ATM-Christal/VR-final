@@ -12,11 +12,7 @@
       <h2 class="title"><el-tag class = "theme">{{tieZiData.theme}}</el-tag>{{tieZiData.title}}</h2>
       <div class="borderline"></div>
       <div  class="artinfo"><pre><span class="author">{{tieZiData.posterName}}</span>    发表于{{tieZiData.date}}</pre></div>
-      <div class="article">
-        <p>
-          {{tieZiData.contents}}
-        </p>
-      </div>
+        <div class="article" v-html="content(tieZiData.contents)"></div>
 
       <div class="tieZi-comment">
         <div class="comment">
@@ -122,7 +118,7 @@
                     theme: '讨论',
                     good: false,
                     title: '是的尽快发货健康就好刷卡的房间黑科技好看下次时代峰峻和新街口 ',
-                    contents: '开学到现在还没发过什么贴呢，然而我只爱吃。所以这是一个美食贴。fdvfdbf',
+                    contents: '<p>开学到现在还没发过什么贴呢，然而我只爱吃。所以这是一个美食贴。fdvfdbf</p>',
                     date: '2017/8/10',
                     posterId: 'kijj',
                     posterName: '我',
@@ -217,6 +213,13 @@
         //     },
         // },
         methods:{
+            content(str){
+                var res = String(str).replace(/<p/g, "<p style=\"margin-bottom\:20px\"");
+                res = res.replace(/<h2/g, "<h2 style=\"margin-bottom\:20px\"");
+                res = res.replace(/<h3/g, "<h3 style=\"margin-bottom\:20px\"");
+                res = res.replace(/<img/g, "<img style=\"display\:block\;margin\: auto\"");
+                return res;
+            },
             codeParsing(code) {
                 var msg = (Title, MessageTitle, Message) => {
                     this.$message({
