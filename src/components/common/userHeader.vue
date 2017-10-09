@@ -46,7 +46,7 @@
                         title: '产品中心',
                         subs: [
                             {
-                                index: '01',
+                                index: '/user/product-list',
                                 title: '产品列表'
                             },
                         ]
@@ -57,7 +57,7 @@
                         title: '产品对比',
                         subs: [
                             {
-                                index: '/user/product-compare',
+                                index: '11',
                                 title: '查看对比'
                             }
                         ]
