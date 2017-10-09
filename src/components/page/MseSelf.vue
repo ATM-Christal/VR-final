@@ -386,12 +386,12 @@
         font-size: 22px;
         font-weight: bold;
         color: #48576a;
-        display: block;
+        /*display: block;
         position: relative;
         overflow: hidden;
         white-space: nowrap;
         -o-text-overflow: ellipsis;
-        text-overflow: ellipsis;
+        text-overflow: ellipsis;*/
     }
     .time {
         font-size: 12px;
