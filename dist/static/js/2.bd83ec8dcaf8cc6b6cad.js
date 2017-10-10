@@ -78,7 +78,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 index: '1',
                 title: '产品对比',
                 subs: [{
-                    index: '11',
+                    index: '',
                     title: '查看对比'
                 }]
             }, {
