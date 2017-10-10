@@ -70,7 +70,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 index: '0',
                 title: '产品中心',
                 subs: [{
-                    index: '01',
+                    index: '/user/product-list',
                     title: '产品列表'
                 }]
             }, {
@@ -78,7 +78,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 index: '1',
                 title: '产品对比',
                 subs: [{
-                    index: '/user/product-compare',
+                    index: '11',
                     title: '查看对比'
                 }]
             }, {

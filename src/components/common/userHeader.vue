@@ -57,7 +57,7 @@
                         title: '产品对比',
                         subs: [
                             {
-                                index: '11',
+                                index: '',
                                 title: '查看对比'
                             }
                         ]
