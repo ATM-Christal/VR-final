@@ -7,8 +7,56 @@
             </el-breadcrumb>
         </div>
         <el-row style="margin-top: 20px">
-            <el-col  v-if="mseList.length">
-                <el-row :gutter="20" class="list-header">
+            <el-col v-if="mseList.length">
+                <el-table
+                        :data="mseList"
+                        border
+                        tooltip-effect="dark"
+                        style="width: 100%">
+                    <el-table-column
+                            prop="evaluationTitle"
+                            label="文章标题"
+                            width="340">
+                    </el-table-column>
+                    <el-table-column
+                            prop="authorName"
+                            label="作者"
+                            width="120">
+                    </el-table-column>
+                    <el-table-column
+                            prop="updateTime"
+                            label="发表时间"
+                            width="200">
+                        <template scope="scope">
+                            <span style="">{{ timeFomat(scope.row.updateTime) }}</span>
+                        </template>
+                    </el-table-column>
+                    <el-table-column
+                            prop="ups"
+                            label="点赞数"
+                            width="120">
+                    </el-table-column>
+                    <el-table-column
+                            prop="downs"
+                            label="踩数"
+                            width="120">
+                    </el-table-column>
+                    <el-table-column
+                            prop="comments"
+                            label="评论数"
+                            width="120">
+                    </el-table-column>
+                    <el-table-column
+                            label="操作"
+                            width="240">
+                        <template scope="scope">
+                            <el-button @click="handleView(scope.row)" type="primary" size="small">查看</el-button>
+                            <el-button @click="handleEdit(scope.row)" type="" size="small">编辑</el-button>
+                            <el-button @click="handleDel(scope.row)" type="danger" size="small">删除</el-button>
+                        </template>
+                    </el-table-column>
+                </el-table>
+                <!--<el-row :gutter="20" class="list-header">
                     <el-col :span="9">
                         <div>
                             <span class="">
@@ -84,7 +132,7 @@
                             </el-col>
                         </el-row>
                     </li>
-                </ul>
+                </ul>-->
 
                 <div class="pagination">
                     <el-pagination
@@ -108,85 +156,145 @@
 
     export default {
 
-        data: function(){
+        data: function () {
             return {
 //                hostURL:'http://116.56.140.85:8080/VR',
-                hostURL:'/VR',
+                hostURL: '/VR',
                 searchData: '',
-                mseList:[
+                mseList: [
                     {
                         evaluationId: 12,
                         titlePic: 'static/img/bg.jpg',
-                        authorId:'1',
-                        authorName:'dawn',
-                        evaluationTitle:'很正经的文章标题很正经的文章标题很正经的文章标题很正经的文章标题很正经的文章标题很正经的文章标题',
-                        postTime:'2017/08/01',
-                        updateTime:'2017/08/01',
-                        type:null,
+                        authorId: '1',
+                        authorName: 'dawn',
+                        evaluationTitle: '很正经的文章标题很正经的文章标题很正经的文章标题很正经的文章标题很正经的文章标题很正经的文章标题',
+                        postTime: '2017/08/01',
+                        updateTime: 1507567810000,
+                        type: null,
                         evaluationText: '',
-                        ups:2,
-                        downs:5,
-                        comments:2,
+                        ups: 2,
+                        downs: 5,
+                        comments: 2,
                         view: 0,
                     },
                     {
                         evaluationId: 1,
                         titlePic: 'static/img/bg.jpg',
-                        authorId:'1',
-                        authorName:'dawn',
-                        evaluationTitle:'很正经的文章标题',
-                        postTime:'2017/08/01',
-                        updateTime:'2017/08/01',
-                        type:null,
+                        authorId: '1',
+                        authorName: 'dawn',
+                        evaluationTitle: '很正经的文章标题',
+                        postTime: '2017/08/01',
+                        updateTime: 1507567810,
+                        type: null,
                         evaluationText: '',
-                        ups:2,
-                        downs:5,
-                        comments:2,
+                        ups: 2,
+                        downs: 5,
+                        comments: 2,
                         view: 0,
                     },
                     {
                         evaluationId: 1,
                         titlePic: 'static/img/bg.jpg',
-                        authorId:'1',
-                        authorName:'dawn',
-                        evaluationTitle:'很正经的文章标题',
-                        postTime:'2017/08/01',
-                        updateTime:'2017/08/01',
-                        type:null,
+                        authorId: '1',
+                        authorName: 'dawn',
+                        evaluationTitle: '很正经的文章标题',
+                        postTime: '2017/08/01',
+                        updateTime: '2017/08/01',
+                        type: null,
                         evaluationText: '',
-                        ups:2,
-                        downs:5,
-                        comments:2,
+                        ups: 2,
+                        downs: 5,
+                        comments: 2,
                         view: 0,
                     },
                     {
                         evaluationId: 1,
                         titlePic: 'static/img/bg.jpg',
-                        authorId:'1',
-                        authorName:'dawn',
-                        evaluationTitle:'很正经的文章标题',
-                        postTime:'2017/08/01',
-                        updateTime:'2017/08/01',
-                        type:null,
+                        authorId: '1',
+                        authorName: 'dawn',
+                        evaluationTitle: '很正经的文章标题',
+                        postTime: '2017/08/01',
+                        updateTime: '2017/08/01',
+                        type: null,
                         evaluationText: '',
-                        ups:2,
-                        downs:5,
-                        comments:2,
+                        ups: 2,
+                        downs: 5,
+                        comments: 2,
                         view: 0,
                     },
                     {
                         evaluationId: 1,
                         titlePic: 'static/img/bg.jpg',
-                        authorId:'1',
-                        authorName:'dawn',
-                        evaluationTitle:'很正经的文章标题',
-                        postTime:'2017/08/01',
-                        updateTime:'2017/08/01',
-                        type:null,
+                        authorId: '1',
+                        authorName: 'dawn',
+                        evaluationTitle: '很正经的文章标题',
+                        postTime: '2017/08/01',
+                        updateTime: '2017/08/01',
+                        type: null,
                         evaluationText: '',
-                        ups:2,
-                        downs:5,
-                        comments:2,
+                        ups: 2,
+                        downs: 5,
+                        comments: 2,
+                        view: 0,
+                    },
+                    {
+                        evaluationId: 1,
+                        titlePic: 'static/img/bg.jpg',
+                        authorId: '1',
+                        authorName: 'dawn',
+                        evaluationTitle: '很正经的文章标题',
+                        postTime: '2017/08/01',
+                        updateTime: '2017/08/01',
+                        type: null,
+                        evaluationText: '',
+                        ups: 2,
+                        downs: 5,
+                        comments: 2,
+                        view: 0,
+                    },
+                    {
+                        evaluationId: 1,
+                        titlePic: 'static/img/bg.jpg',
+                        authorId: '1',
+                        authorName: 'dawn',
+                        evaluationTitle: '很正经的文章标题',
+                        postTime: '2017/08/01',
+                        updateTime: '2017/08/01',
+                        type: null,
+                        evaluationText: '',
+                        ups: 2,
+                        downs: 5,
+                        comments: 2,
+                        view: 0,
+                    },
+                    {
+                        evaluationId: 1,
+                        titlePic: 'static/img/bg.jpg',
+                        authorId: '1',
+                        authorName: 'dawn',
+                        evaluationTitle: '很正经的文章标题',
+                        postTime: '2017/08/01',
+                        updateTime: '2017/08/01',
+                        type: null,
+                        evaluationText: '',
+                        ups: 2,
+                        downs: 5,
+                        comments: 2,
+                        view: 0,
+                    },
+                    {
+                        evaluationId: 1,
+                        titlePic: 'static/img/bg.jpg',
+                        authorId: '1',
+                        authorName: 'dawn',
+                        evaluationTitle: '很正经的文章标题',
+                        postTime: '2017/08/01',
+                        updateTime: '2017/08/01',
+                        type: null,
+                        evaluationText: '',
+                        ups: 2,
+                        downs: 5,
+                        comments: 2,
                         view: 0,
                     },
                 ],
@@ -195,7 +303,7 @@
                 pageSize: 10
             }
         },
-        methods:{
+        methods: {
             codeParsing(code) {
                 let self = this;
                 var msg = (err_title, err_message) => {
@@ -253,42 +361,42 @@
                 }
             },
             timeFomat(str){
-                if(str === '刚刚')
+                if (str === '刚刚')
                     return str;
                 else {
                     let date = new Date(str);
                     let fmt = "yyyy-MM-dd hh:mm";
                     var o = {
-                        "M+" : date.getMonth()+1,                 //月份
-                        "d+" : date.getDate(),                    //日
-                        "h+" : date.getHours(),                   //小时
-                        "m+" : date.getMinutes(),                 //分
-                        "s+" : date.getSeconds(),                 //秒
-                        "q+" : Math.floor((date.getMonth()+3)/3), //季度
-                        "S"  : date.getMilliseconds()             //毫秒
+                        "M+": date.getMonth() + 1,                 //月份
+                        "d+": date.getDate(),                    //日
+                        "h+": date.getHours(),                   //小时
+                        "m+": date.getMinutes(),                 //分
+                        "s+": date.getSeconds(),                 //秒
+                        "q+": Math.floor((date.getMonth() + 3) / 3), //季度
+                        "S": date.getMilliseconds()             //毫秒
                     };
-                    if(/(y+)/.test(fmt))
-                        fmt=fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length));
-                    for(var k in o)
-                        if(new RegExp("("+ k +")").test(fmt))
-                            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+                    if (/(y+)/.test(fmt))
+                        fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+                    for (var k in o)
+                        if (new RegExp("(" + k + ")").test(fmt))
+                            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
                     return fmt;
                 }
             },
             getMseList(pageNum){
                 var self = this;
-                self.mseList=[];
+                self.mseList = [];
                 self.$axios({
-                    url:'/evaluations/list?size=10&page='+pageNum,
-                    method:'get',
+                    url: '/evaluations/list?size=10&page=' + pageNum,
+                    method: 'get',
                     baseURL: self.hostURL,
-                }).then((response)=>{
+                }).then((response)=> {
                     self.mseList = [];
                     self.mseList = response.data.object['list'];
                     console.log(response.data);
                     self.pageTotal = response.data.object['page'].pageNum * self.pageSize;
                     console.log(self.pageTotal);
-                }).catch((error)=>{
+                }).catch((error)=> {
                     console.log(error);
                     self.codeParsing(error.response.status);
                 });
@@ -300,17 +408,17 @@
                 self.getMseList(self.pageNum);
             },
             handleView(mse){
-                var self=this;
+                var self = this;
                 console.log(mse);
-                self.$router.push('/admin/mseAdminView?'+mse.evaluationId);
+                self.$router.push('/admin/mseAdminView?' + mse.evaluationId);
             },
             handleEdit(mse){
-                var self=this;
+                var self = this;
                 console.log(mse);
-                self.$router.push('/admin/mseAdminEdit?'+mse.evaluationId);
+                self.$router.push('/admin/mseAdminEdit?' + mse.evaluationId);
             },
             handleDel(mse){
-                var self=this;
+                var self = this;
                 self.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
@@ -322,10 +430,10 @@
                     });
                     //del
                     self.$axios({
-                        url:'/admins/evaluations/' + mse.evaluationId,
-                        method:'DELETE',
+                        url: '/admins/evaluations/' + mse.evaluationId,
+                        method: 'DELETE',
                         baseURL: self.hostURL,
-                    }).then((response)=>{
+                    }).then((response)=> {
                         console.log(response.data.object);
                         /*self.picValue = null;
                          self.picTitle = '';
@@ -338,7 +446,7 @@
                             type: 'success'
                         });
                         self.getMseList(self.pageNum);
-                    }).catch((error)=>{
+                    }).catch((error)=> {
                         console.log(error);
                         self.codeParsing(error.response.status);
                     });
@@ -358,35 +466,41 @@
 </script>
 
 <style>
-    .crumbs{
+    .crumbs {
         text-decoration: none;
     }
 
-    .pagination{
-        margin-left:50px;
+    .pagination {
+        margin-left: 50px;
     }
+
     /**/
     li, ul {
         list-style: none;
         margin: 0;
         padding: 0;
     }
-    a{
+
+    a {
         cursor: pointer;
     }
-    a:hover{
+
+    a:hover {
         text-decoration: none;
-        color: #5188a6!important;
+        color: #5188a6 !important;
     }
-    .list-header{
+
+    .list-header {
         margin-bottom: 20px;
         color: #607590;
     }
-    .mse-item{
+
+    .mse-item {
         margin-bottom: 15px;
-        border-bottom:dotted 1px #ccc;
+        border-bottom: dotted 1px #ccc;
     }
-    .mse-title{
+
+    .mse-title {
         font-size: 22px;
         font-weight: bold;
         color: #48576a;
@@ -397,6 +511,7 @@
         -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
     }
+
     /*.mse-title:after {
     background: linear-gradient(to right, rgba(255, 255, 255, 0), #FFFFFF 50%) repeat scroll 0 0 rgba(0, 0, 0, 0);
     bottom: 0;
@@ -411,18 +526,21 @@
         font-size: 12px;
         color: #999;
     }
-    .comment-count, .zan-count, .cai-count{
+
+    .comment-count, .zan-count, .cai-count {
         color: #999;
         margin-right: 8px;
     }
-    .not-found{
+
+    .not-found {
         font-size: 24px;
         color: #bac4ce;
         width: 240px;
         margin: 0 auto;
         padding-top: 20px;
     }
-    .content{
+
+    .content {
         float: left;
         width: 70%;
     }

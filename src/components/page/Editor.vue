@@ -34,11 +34,13 @@
                     <el-input v-model="news.picLocation" style="width: 600px;" placeholder="请输入图片的URL"></el-input>
                 </el-form-item>
                 <el-form-item label="内容概述" prop='newsAbstract'>
-                    <el-input type="textarea" v-model="news.newsAbstract" style="width: 600px;" placeholder="请输入新闻概述"></el-input>
+                    <el-input type="textarea" v-model="news.newsAbstract" style="width: 600px;"
+                              placeholder="请输入新闻概述"></el-input>
                 </el-form-item>
 
                 <el-form-item label="新闻内容" prop='content'>
-                    <quill-editor ref="myTextEditor" v-model="news.content" :options="editorOption" style="line-height: 1;width: 800px;"></quill-editor>
+                    <quill-editor ref="myTextEditor" v-model="news.content" :options="editorOption"
+                                  style="line-height: 1;width: 800px;"></quill-editor>
                 </el-form-item>
 
                 <el-form-item>
@@ -52,24 +54,24 @@
 </template>
 
 <script>
-    import { quillEditor } from 'vue-quill-editor';
+    import {quillEditor} from 'vue-quill-editor';
     export default {
-        data: function(){
+        data: function () {
             return {
                 editorOption: {
                     modules: {
                         toolbar: [
-                            [{ 'header': [2, 3, false] }],
+                            [{'header': [2, 3, false]}],
                             ['bold', 'italic'],
-                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            [{'list': 'ordered'}, {'list': 'bullet'}],
                             ['image']
                         ]
                     },
                     placeholder: '请编写您的内容...',
                 },
-                hostURL:'/VR',
+                hostURL: '/VR',
                 select_cast: '',
-                news:{
+                news: {
                     id: 3,
                     tag: null,
                     title: "痛失手机江山的联想，想要在VR热潮中分一杯羹",
@@ -88,29 +90,29 @@
                 },
                 rules: {
                     title: [
-                    { required: true, message:'请输入新闻标题', trigger: 'blur'}
+                        {required: true, message: '请输入新闻标题', trigger: 'blur'}
                     ],
                     type: [
-                    { required: true, message: '请选择新闻类型', trigger: 'change'}
+                        {required: true, message: '请选择新闻类型', trigger: 'change'}
                     ],
                     author: [
-                    { required: true, message:'请输入作者', trigger: 'blur'}
+                        {required: true, message: '请输入作者', trigger: 'blur'}
                     ],
                     source: [
-                    { required: true, message:'请输入来源', trigger: 'blur'}
+                        {required: true, message: '请输入来源', trigger: 'blur'}
                     ],
                     lastEditTime: [
-                    { required: true, message:'请输入时间', trigger:'blur'}
+                        {required: true, message: '请输入时间', trigger: 'blur'}
                     ],
                     picLocation: [
-                    { required: true, type:'url', message:'请输入图片的URL', trigger: 'blur'}
+                        {required: true, type: 'url', message: '请输入图片的URL', trigger: 'blur'}
                     ],
                     newsAbstract: [
-                    { required: true, message:'请输入新闻概述', trigger: 'blur'},
-                    { min: 5, max: 100, message: '长度在5到100个字符', trigger:'blur'}
+                        {required: true, message: '请输入新闻概述', trigger: 'blur'},
+                        {min: 5, max: 100, message: '长度在5到100个字符', trigger: 'blur'}
                     ],
                     content: [
-                    { required: true, message:'请输入新闻内容', trigger:'blur'}
+                        {required: true, message: '请输入新闻内容', trigger: 'blur'}
                     ]
                 }
             }
@@ -124,7 +126,7 @@
             quillEditor
         },
         methods: {
-            onEditorChange({ editor, html, text }) {
+            onEditorChange({editor, html, text}) {
                 this.content = html;
             },
             codeParsing(code) {
@@ -135,7 +137,7 @@
                         type: 'error'
                     });
                 };
-                switch(code) {
+                switch (code) {
                     case -1:
                         msg('系统错误', '未知错误，请上报管理员');
                         break;
@@ -183,47 +185,60 @@
                 }
             },
             getNewsData(id){
-            var self = this;
-            self.news = {};
-            self.$axios({
-                url:'/news/'+id,
-                method:'get',
-                baseURL: self.hostURL
-            }).then((response)=>{
-                self.news = response.data;
-                self.news.type = self.news.type.toString();
-            }).catch((error)=>{
-                console.log(error);
-            });
-        },
-            onSubmit(formName) {
                 var self = this;
-                self.$refs[formName].validate((valid)=>{
-                    if(valid){
-                        self.$axios({
-                    url:'/NewsSubmit'+'?id='+self.news.id+'&author='+self.news.author+'&lastEditTime='+self.news.lastEditTime+'&newsAbstract='+self.news.newsAbstract+'&picLocation='+self.news.picLocation+'&source='+self.news.source+'&title='+self.news.title+'&type='+self.news.type+"&content="+self.news.content+"&path="+self.news.path,
-                    method:'post',
-                    baseURL: self.hostURL,
-                }).catch((error)=>{
+                self.news = {};
+                self.$axios({
+                    url: '/news/' + id,
+                    method: 'get',
+                    baseURL: self.hostURL
+                }).then((response)=> {
+                    self.news = response.data;
+                    self.news.type = self.news.type.toString();
+                }).catch((error)=> {
                     console.log(error);
                 });
-                self.$message.success('修改成功！');
-                self.$router.push("/admin/news-editor");
+            },
+            onSubmit(formName) {
+                var self = this;
+                self.$refs[formName].validate((valid)=> {
+                    if (valid) {
+                        self.$axios({
+//                            url: '/NewsSubmit' + '?id=' + self.news.id + '&author=' + self.news.author + '&lastEditTime=' + self.news.lastEditTime + '&newsAbstract=' + self.news.newsAbstract + '&picLocation=' + self.news.picLocation + '&source=' + self.news.source + '&title=' + self.news.title + '&type=' + self.news.type + "&content=" + self.news.content + "&path=" + self.news.path,
+                            url: '/NewsSubmit',
+                            method: 'post',
+                            data: {
+                                id:self.news.id,
+                                author: self.news.author,
+                                lastEditTime: self.news.lastEditTime,
+                                newsAbstract: self.news.newsAbstract,
+                                picLocation: self.news.picLocation,
+                                source: self.news.source,
+                                title: self.news.title,
+                                type: self.news.type,
+                                content: self.news.content,
+                                path: self.news.path
+                            },
+                            baseURL: self.hostURL,
+                        }).catch((error)=> {
+                            console.log(error);
+                        });
+                        self.$message.success('修改成功！');
+                        self.$router.push("/admin/news-editor");
                     }
                     else {
                         self.$message.error('请输入全部信息！');
                     }
                 })
-                
+
             },
             onCancel() {
                 this.$router.push("/admin/news-editor");
             },
         },
         mounted(){
-            var self= this;
-            var user_name=localStorage.getItem("ms_username");
-            if(user_name==""){
+            var self = this;
+            var user_name = localStorage.getItem("ms_username");
+            if (user_name == "") {
                 this.$router.replace('/login');
             }
             var arr = location.href.split('?');
@@ -237,8 +252,8 @@
 </script>
 
 <style>
-.content {
-    float: left;
-    width: 70%;
-}
+    .content {
+        float: left;
+        width: 70%;
+    }
 </style>

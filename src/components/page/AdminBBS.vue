@@ -4,7 +4,7 @@
         <p class="title1">
             帖子列表
         </p>
-        <div class="list-btn-ground">
+        <div class="list-btn-ground" style="margin-bottom: 20px">
             <el-row>
                 <el-col :span="8">
                     <el-button type="danger" @click="del1">删除选中帖</el-button>

@@ -196,7 +196,7 @@
             check(item){
                 if(item.title=='查看对比'){
                     var t=JSON.parse(localStorage.getItem('compare_data'));
-                    if(t.data.length==0)
+                    if(t.data.length===0)
                     {
                         this.$message("您还没有加入对比的产品");
                     }else{
