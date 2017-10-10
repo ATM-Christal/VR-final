@@ -272,7 +272,7 @@
                 var self = this;
                 self.mseList=[];
                 self.$axios({
-                    url:'/evaluations/list?size=10&page='+pageNum,
+                    url:'/evaluations/mylist?size=10&page='+pageNum,
                     method:'get',
                     baseURL: self.hostURL,
                 }).then((response)=>{

@@ -230,7 +230,7 @@
         methods: {
             codeParsing(code) {
                 let self = this;
-                var msg = (err_title, err_message) => {
+                var msg = (err_title, err_message)=> {
                     self.$notify({
                         title: err_title,
                         message: err_message,
@@ -336,12 +336,12 @@
                     url: '/evaluations/' + self.mse.evaluationId + '/parentComment?content=' + self.textarea,
                     method: 'post',
                     baseURL: self.hostURL,
-                }).then((response)=> {
+                }).then((response)=>{
                     console.log(response.data);
                     self.userCurrent = response.data.object.userName;
-                    console.log(self.userCurrent);
+//                    console.log(self.userCurrent);
                     self.new_data.new_comments.reverse();
-                    console.log(response.data.object.id)
+//                    console.log(response.data.object.id)
                     self.new_data.new_comments.push({
                         id: response.data.object.id,
                         userId: response.data.object.userId,
@@ -360,6 +360,10 @@
                             textarea: ""
                         });
                     self.textarea = "";
+                    /*if(self.activeName2==="first"){
+                        self.activeName2==="second";
+
+                    }*/
                     self.refreshComment();
                 }).catch((error)=> {
                     self.codeParsing(error.response.status);

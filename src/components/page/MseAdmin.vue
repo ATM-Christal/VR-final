@@ -430,7 +430,7 @@
                     });
                     //del
                     self.$axios({
-                        url: '/admins/evaluations/' + mse.evaluationId,
+                        url: '/evaluations/evaluation/admin/' + mse.evaluationId,
                         method: 'DELETE',
                         baseURL: self.hostURL,
                     }).then((response)=> {
