@@ -136,6 +136,7 @@
                     <!-- <el-button class="list-btn-ground" :plain="true" type="warning" size="small" @click="up(scope.row)">加精</el-button>-->
                     <el-button class="list-btn-ground" type="success" size="small" @click="edit1(scope.row)" >完成并刷新</el-button>
 
+                    <!--<el-dialog class="class1" title="编辑" :modal-append-to-body="false" :visible.sync="dialogFormVisible1" style="width: 100%" size="small">-->
                     <el-dialog class="class1" title="编辑" :visible.sync="dialogFormVisible1" style="width: 100%" size="small">
                         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" size="small" class="class2">
                             <el-row>
@@ -163,8 +164,6 @@
                                 </el-col>
                             </el-row>
                         </el-form>
-
-
                     </el-dialog>
                 </template>
             </el-table-column>
@@ -219,7 +218,7 @@
                     </el-table-column>
                     <el-table-column
                             label="操作"
-                            width="180">
+                            width="300">
                         <template scope="scope">
                             <el-button class="list-btn-ground" type="primary" size="small" @click="getData3(scope.row)">查看</el-button>
                             <el-button class="list-btn-ground" type="primary" size="small" @click="dialogFormVisible2 = true">编辑</el-button>
@@ -287,7 +286,7 @@
                     </el-table-column>
                     <el-table-column
                             label="操作"
-                            width="150">
+                            width="300">
                         <template scope="scope">
                             <el-button class="list-btn-ground" type="primary" size="small" @click="dialogFormVisible3 = true">编辑</el-button>
                             <el-button class="list-btn-ground" type="success" size="small" @click="edit3(scope.row)" >完成并刷新</el-button>
