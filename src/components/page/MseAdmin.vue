@@ -3,7 +3,7 @@
         <div class="crumbs">
             <el-breadcrumb separator="/" style="height: 22px;">
                 <el-breadcrumb-item><i class="el-icon-edit"></i> 管理员</el-breadcrumb-item>
-                <el-breadcrumb-item>媒体自评测模块管理</el-breadcrumb-item>
+                <el-breadcrumb-item>评测自媒体管理</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <el-row style="margin-top: 20px">

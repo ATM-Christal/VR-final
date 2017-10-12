@@ -125,15 +125,15 @@
                     {
                         icon: 'el-icon-menu',
                         index: '5',
-                        title: '媒体自评测',
+                        title: '评测自媒体',
                         subs: [
                             {
                                 index: '/user/mse-list',
-                                title: '媒体自评测'
+                                title: '评测自媒体'
                             },
                             {
                                 index: '/user/mse-self',
-                                title: '我的媒体自评测'
+                                title: '我的评测自媒体'
                             },
                         ]
                     },

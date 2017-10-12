@@ -2,9 +2,9 @@
     <div>
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-date"></i>媒体自评测</el-breadcrumb-item>
-                <el-breadcrumb-item to="/user/mse-list">媒体自评测</el-breadcrumb-item>
-                <el-breadcrumb-item>媒体自评测编辑</el-breadcrumb-item>
+                <el-breadcrumb-item><i class="el-icon-date"></i>评测自媒体</el-breadcrumb-item>
+                <el-breadcrumb-item to="/user/mse-list">评测自媒体</el-breadcrumb-item>
+                <el-breadcrumb-item>评测自媒体编辑</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div v-if="edit">

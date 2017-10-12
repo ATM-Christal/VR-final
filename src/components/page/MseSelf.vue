@@ -2,8 +2,8 @@
     <div >
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-date"></i>媒体自评测</el-breadcrumb-item>
-                <el-breadcrumb-item>我的媒体自评测</el-breadcrumb-item>
+                <el-breadcrumb-item><i class="el-icon-date"></i>评测自媒体</el-breadcrumb-item>
+                <el-breadcrumb-item>我的评测自媒体</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
 

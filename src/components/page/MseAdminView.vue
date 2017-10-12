@@ -3,8 +3,8 @@
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item><i class="el-icon-date"></i>管理员</el-breadcrumb-item>
-                <el-breadcrumb-item to="/admin/mseAdmin">媒体自评测管理模块</el-breadcrumb-item>
-                <el-breadcrumb-item>媒体自评测文章查看</el-breadcrumb-item>
+                <el-breadcrumb-item to="/admin/mseAdmin">评测自媒体管理</el-breadcrumb-item>
+                <el-breadcrumb-item>评测自媒体文章查看</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
 

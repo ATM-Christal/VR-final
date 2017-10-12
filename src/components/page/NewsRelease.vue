@@ -2,7 +2,7 @@
     <div>
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-date"></i> 新闻编辑模块</el-breadcrumb-item>
+                <el-breadcrumb-item><i class="el-icon-date"></i> 新闻编辑</el-breadcrumb-item>
                 <el-breadcrumb-item>新闻发布</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
