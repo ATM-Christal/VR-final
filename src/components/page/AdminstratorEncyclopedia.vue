@@ -3,7 +3,7 @@
 	<div>
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-edit"></i> 百科模块管理</el-breadcrumb-item>
+                <el-breadcrumb-item><i class="el-icon-edit"></i> 百科管理</el-breadcrumb-item>
                 <el-breadcrumb-item>词条审核</el-breadcrumb-item>
             </el-breadcrumb>
         </div>

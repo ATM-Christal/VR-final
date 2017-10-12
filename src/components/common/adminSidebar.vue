@@ -36,7 +36,7 @@
                     {
                         icon: 'el-icon-menu',
                         index: '1',
-                        title: '新闻模块管理',
+                        title: '新闻管理',
                         subs: [
                             {
                                 index: '/admin/news-editor',
@@ -51,17 +51,17 @@
                     {
                         icon: 'el-icon-menu',
                         index: '/admin/UploadFile',
-                        title: '产品模块管理'
+                        title: '产品管理'
                     },
                     {
                         icon: 'el-icon-menu',
                         index: '/admin/bbs',
-                        title: '论坛模块管理'
+                        title: '论坛管理'
                     },
                     {
                         icon: 'el-icon-menu',
                         index: '2',
-                        title: '百科模块管理',
+                        title: '百科管理',
                         subs: [
                             {
                                 index: '/admin/Encyclopedia',
@@ -77,12 +77,12 @@
                     {
                         icon: 'el-icon-menu',
                         index: '/admin/Questionaire',
-                        title: '问卷模块管理'
+                        title: '问卷管理'
                     },
                     {
                         icon: 'el-icon-menu',
                         index: '/admin/User',
-                        title: '用户模块管理'
+                        title: '用户管理'
                     },
                     // {
                     //     icon: 'el-icon-menu',
@@ -92,7 +92,7 @@
                     {
                         icon: 'el-icon-menu',
                         index: '/admin/mseAdmin',
-                        title: '媒体自评测模块管理'
+                        title: '评测自媒体管理'
                     },
                 ]
             }
