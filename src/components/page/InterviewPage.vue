@@ -330,7 +330,7 @@
                     baseURL: self.hostURL,
                     data:{
                         content:self.textarea, //时间在后台取得
-                        belong:self.newsData.id
+                        belong:"interview"+self.newsData.id
                     }
                 }).catch((error)=>{
                     console.log(error);
@@ -474,7 +474,7 @@
                     }]
                 };
                 self.$axios({
-                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+id+'&condition=hot',
+                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+"interview"+id+'&condition=hot',
                     method:'get',
                     baseURL: self.hostURL,
                     // data:{
@@ -528,7 +528,7 @@
                     }]
                 };
                 self.$axios({
-                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+id+'&condition=time',
+                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+"interview"+id+'&condition=time',
                     method:'get',
                     baseURL: self.hostURL,
                     // data:{
@@ -562,7 +562,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        belong:localStorage.getItem("salesModel")
+                        belong:"interview"+localStorage.getItem("salesModel")
                     }
                 }).then((response)=>{
                     // self.pro_thumbs={};

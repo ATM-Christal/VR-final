@@ -17,8 +17,9 @@
                                             <div class="product-img">
                                                 <img :src="item.picLocation"/>
                                             </div>
+                                            <h3>{{item.brand}}</h3>
                                             <h3>{{item.salesmodel}}</h3>
-                                            <h3>{{item.productmodel}}</h3>    
+                                                
                                                 <!--<el-button type="success" @click="compare(item)" :type="comparedState[item.id]?cancelType:shareType" > 
                                                  {{comparedState[item.id]?cancelMsg:shareMsg}}   
                                                 </el-button> 
@@ -48,8 +49,9 @@
                                             <div class="product-img">
                                                 <img :src="item.picLocation"/>
                                             </div>
+                                            <h3>{{item.brand}}</h3>
                                             <h3>{{item.salesmodel}}</h3>
-                                            <h3>{{item.productmodel}}</h3>    
+                                                
                                             <!--<el-button type="success" @click="compare(item)" :type="comparedState[item.id]?cancelType:shareType" > 
                                                  {{comparedState[item.id]?cancelMsg:shareMsg}}   
                                                 </el-button> 
@@ -78,8 +80,9 @@
                                             <div class="product-img">
                                                 <img :src="item.picLocation"/>
                                             </div>
+                                            <h3>{{item.brand}}</h3>
                                             <h3>{{item.salesmodel}}</h3>
-                                            <h3>{{item.productmodel}}</h3>   
+                                               
                                             <!--<el-button type="success" @click="compare(item)" :type="comparedState[item.id]?cancelType:shareType" > 
                                                  {{comparedState[item.id]?cancelMsg:shareMsg}}   
                                                 </el-button> 
@@ -130,30 +133,9 @@
                         }
                     ]
                 },
-                ivrList:[
-                    {
-                        id:1,
-                        salesmodel:'name1',
-                        productmodel:'name1.1',
-                        picLocation:'111dd',
-                    }
-                ],
-                svrList:[
-                    {
-                        id:1,
-                        salesmodel:'name1',
-                        productmodel:'name1.1',
-                        picLocation:'111dd',
-                    }
-                ],//ji cheng
-                evrList:[
-                    {
-                        id:1,
-                        salesmodel:'name1',
-                        productmodel:'name1.1',
-                        picLocation:'111dd',
-                    }
-                ],//wai jie
+                ivrList:[],
+                svrList:[],//ji cheng
+                evrList:[],//wai jie
                 ipageNum:1,
                 ipageTotal:9,
                 ipageSize:1,

@@ -57,7 +57,8 @@
                 select_cate: '',
                 select_word: '',
                 del_list: [],
-                is_search: false
+                is_search: false,
+                del_succ:true,
                 
             }
         },
@@ -150,8 +151,17 @@
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
-                    self.datalist = [];
-                    self.datalist = response.data;
+                    if(reponse.data.length==0){
+                        self.cur_page=self.cur_page-1;
+                        self.$message({
+                            type:'info',
+                            message:'暂无下一页数据'
+                        });
+                    }else{
+                        self.datalist = [];
+                        self.datalist = response.data;
+                    }
+                    
                 }).catch((error)=>{
                     self.$message({
                         type:'info',
@@ -211,6 +221,16 @@
                 for (let i = 0; i < length; i++) {
                     self.delOne(self.multipleSelection[i]);
                 }
+                if(del_succ==true){
+                    self.$message({
+                        type: 'success',
+                        message:'删除成功！'
+                    });
+                    self.datalist=self.datalist.filter(t => !self.multipleSelection.some(s => s.id === t.id))
+                }
+                if(self.datalist.length==0){
+                    self.getNews(self.cur_page);
+                }
             },
             delOne(selection){
                 var self=this;
@@ -219,12 +239,9 @@
                         method:'get',
                         baseURL:self.hostURL
                     }).then((response)=>{
-                        self.$message({
-                            type: 'success',
-                            message:'delete success'
-                        });
-                        self.datalist.splice($.inArray(selection),1);
+                        
                     }).catch((error)=>{
+                        self.del_succ=false;
                         self.$message({
                             type:'info',
                             message:'connect fail'

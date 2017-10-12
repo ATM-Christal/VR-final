@@ -135,27 +135,22 @@
             },
             getNews(str){
                 var self = this;
-                newsList:[
-                    {
-                        id:1,
-                        title:'fuuuuuuu',
-                        newsAbstract:'11111111111111111111111111111111111111',
-                        picLocation:'./static/img/img.jpg',
-                    },
-                    {
-                        id:2,
-                        title:'fxxxxxxuu',
-                        newsAbstract:'22222222222222222222222222222222222222222',
-                        picLocation:'./static/img/img.jpg',
-                    }
-                ],
+                newsList=[];
                 self.$axios({
                     url:'/news_list/'+str+'/1',
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
-                    self.newsList = [];
-                    self.newsList = response.data;
+                    if(reponse.data.length==0){
+                        self.pageNum=self.pageNum-1;
+                        self.$message({
+                            type:'info',
+                            message:'暂无下一页数据'
+                        });
+                    }else{
+                        self.newslist = [];
+                        self.newslist = response.data;
+                    }
                 }).catch((error)=>{
                     self.$message({
                         type:'info',

@@ -193,7 +193,8 @@ import{MessageBox} from 'element-ui';
                 iupPageTotal:20,
                 iupPageSize:20,
                 iupPages:1,
-                allData1:[{
+                allData1:[
+                    /*{
                     "id":1,"activated":1,"age":null,"banned":0,"email":"1272623349@qq.com","nickname":"dwerw",
                     "password":"afb474cfdcabd182880cbe153d260ea8","sex":null,"type":0,"username":null,"votedflag":null,"checkcode":null
                 },{
@@ -274,7 +275,7 @@ import{MessageBox} from 'element-ui';
                 },{
                     "id":25,"activated":1,"age":null,"banned":0,"email":"1272623349@qq.com","nickname":"dwerw",
                     "password":"afb474cfdcabd182880cbe153d260ea8","sex":null,"type":0,"username":null,"votedflag":null,"checkcode":null
-                }],
+                }*/],
                 // multiSelection1:[],
                 tableData1:[],
             }

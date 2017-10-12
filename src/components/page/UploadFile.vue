@@ -29,8 +29,8 @@
                                     </el-table-column>
                                     <el-table-column
                                         fixed
-                                        prop="productmodel"
-                                        label="产品型号"
+                                        prop="salesmodel"
+                                        label="销售型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column
@@ -39,8 +39,8 @@
                                         width="120">
                                     </el-table-column>
                                     <el-table-column
-                                        prop="salesmodel"
-                                        label="销售型号"
+                                        prop="productmodel"
+                                        label="产品型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column label="产品配置">
@@ -198,8 +198,8 @@
                                     </el-table-column>
                                     <el-table-column
                                         fixed
-                                        prop="productmodel"
-                                        label="产品型号"
+                                        prop="salesmodel"
+                                        label="销售型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column
@@ -208,8 +208,8 @@
                                         width="120">
                                     </el-table-column>
                                     <el-table-column
-                                        prop="salesmodel"
-                                        label="销售型号"
+                                        prop="productmodel"
+                                        label="产品型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column label="产品配置">
@@ -352,8 +352,8 @@
                                     </el-table-column>
                                     <el-table-column
                                         fixed
-                                        prop="productmodel"
-                                        label="产品型号"
+                                        prop="salesmodel"
+                                        label="销售型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column
@@ -362,8 +362,8 @@
                                         width="120">
                                     </el-table-column>
                                     <el-table-column
-                                        prop="salesmodel"
-                                        label="销售型号"
+                                        prop="productmodel"
+                                        label="产品型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column label="产品配置">
@@ -484,8 +484,8 @@
                                     </el-table-column>
                                     <el-table-column
                                         fixed
-                                        prop="productmodel"
-                                        label="产品型号"
+                                        prop="salesmodel"
+                                        label="销售型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column
@@ -494,8 +494,8 @@
                                         width="120">
                                     </el-table-column>
                                     <el-table-column
-                                        prop="salesmodel"
-                                        label="销售型号"
+                                        prop="productmodel"
+                                        label="产品型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column label="产品配置">
@@ -653,8 +653,8 @@
                                     </el-table-column>
                                     <el-table-column
                                         fixed
-                                        prop="productmodel"
-                                        label="产品型号"
+                                        prop="salesmodel"
+                                        label="销售型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column
@@ -663,8 +663,8 @@
                                         width="120">
                                     </el-table-column>
                                     <el-table-column
-                                        prop="salesmodel"
-                                        label="销售型号"
+                                        prop="productmodel"
+                                        label="产品型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column label="产品配置">
@@ -807,8 +807,8 @@
                                     </el-table-column>
                                     <el-table-column
                                         fixed
-                                        prop="productmodel"
-                                        label="产品型号"
+                                        prop="salesmodel"
+                                        label="销售型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column
@@ -817,8 +817,8 @@
                                         width="120">
                                     </el-table-column>
                                     <el-table-column
-                                        prop="salesmodel"
-                                        label="销售型号"
+                                        prop="productmodel"
+                                        label="产品型号"
                                         width="160">
                                     </el-table-column>
                                     <el-table-column label="产品配置">

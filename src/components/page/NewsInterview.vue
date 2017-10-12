@@ -144,8 +144,16 @@
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
-                    self.newsList = [];
-                    self.newsList = response.data;
+                    if(reponse.data.length==0){
+                        self.pageNum=self.pageNum-1;
+                        self.$message({
+                            type:'info',
+                            message:'暂无下一页数据'
+                        });
+                    }else{
+                        self.newslist = [];
+                        self.newslist = response.data;
+                    }
                 }).catch((error)=>{
                     self.$message({
                         type:'info',

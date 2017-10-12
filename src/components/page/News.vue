@@ -335,7 +335,7 @@
                     baseURL: self.hostURL,
                     data:{
                         content:self.textarea, //时间在后台取得
-                        belong:self.newsData.id
+                        belong:"new"+self.newsData.id
                     }
                 }).catch((error)=>{
                     console.log(error);
@@ -470,7 +470,7 @@
                 var self=this;
                 self.hot_data={hot_comments:[]}
                 self.$axios({
-                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+id+'&condition=hot',
+                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+"new"+id+'&condition=hot',
                     method:'get',
                     baseURL: self.hostURL,
                     // data:{
@@ -515,7 +515,7 @@
                 var self=this;
                 self.new_data={new_comments:[]};
                 self.$axios({
-                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+id+'&condition=time',
+                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+"new"+id+'&condition=time',
                     method:'get',
                     baseURL: self.hostURL,
                     // data:{
@@ -549,7 +549,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        belong:localStorage.getItem("salesModel")
+                        belong:"new"+localStorage.getItem("salesModel")
                     }
                 }).then((response)=>{
                     // self.pro_thumbs={};
