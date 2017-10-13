@@ -2,7 +2,7 @@
     <div class="table">
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-menu"></i> 新闻模块管理</el-breadcrumb-item>
+                <el-breadcrumb-item><i class="el-icon-menu"></i> 新闻管理</el-breadcrumb-item>
                 <el-breadcrumb-item>新闻编辑</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
@@ -57,7 +57,8 @@
                 select_cate: '',
                 select_word: '',
                 del_list: [],
-                is_search: false
+                is_search: false,
+                del_succ:true,
                 
             }
         },
@@ -88,14 +89,15 @@
                 this.getNewsBySelector(this.cur_page, this.select_cate);
             },
             codeParsing(code) {
-                var msg = (Title, Message) => {
-                    this.$message({
-                        title: Title,
-                        message: Message,
+                let self = this;
+                var msg = (err_title, err_message)=> {
+                    self.$notify({
+                        title: err_title,
+                        message: err_message,
                         type: 'error'
                     });
                 };
-                switch(code) {
+                switch (code) {
                     case -1:
                         msg('系统错误', '未知错误，请上报管理员');
                         break;
@@ -117,14 +119,14 @@
                     case 304:
                         msg('注册问题', '昵称已占用，请更改昵称');
                         break;
-                    case 400:
-                        msg('权限问题', '用户未登录，请重新登录');
-                        break;
                     case 401:
                         msg('权限问题', '用户无权访问，请联系管理员');
                         break;
                     case 402:
                         msg('操作错误', '删除错误,请刷新重试');
+                        break;
+                    case 415:
+                        msg('操作错误', '文件类型错误，请上传正确文件类型');
                         break;
                     case 500:
                         msg('系统错误', '未知错误，请上报管理员');
@@ -138,6 +140,15 @@
                     case 800:
                         msg('激活错误', '用户已被激活，请直接登录');
                         break;
+                    case 1000:
+                        msg('系统错误', '参数错误，上报管理员');
+                        break;
+                    case 1001:
+                        msg('权限问题', '用户未登录，请重新登录');
+                        break;
+                    case 1002:
+                        msg('系统错误', '参数错误，上报管理员');
+                        break;
                     default:
                         break;
                 }
@@ -150,8 +161,17 @@
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
-                    self.datalist = [];
-                    self.datalist = response.data;
+                    if(reponse.data.length==0){
+                        self.cur_page=self.cur_page-1;
+                        self.$message({
+                            type:'info',
+                            message:'暂无下一页数据'
+                        });
+                    }else{
+                        self.datalist = [];
+                        self.datalist = response.data;
+                    }
+                    
                 }).catch((error)=>{
                     self.$message({
                         type:'info',
@@ -211,6 +231,16 @@
                 for (let i = 0; i < length; i++) {
                     self.delOne(self.multipleSelection[i]);
                 }
+                if(del_succ==true){
+                    self.$message({
+                        type: 'success',
+                        message:'删除成功！'
+                    });
+                    self.datalist=self.datalist.filter(t => !self.multipleSelection.some(s => s.id === t.id))
+                }
+                if(self.datalist.length==0){
+                    self.getNews(self.cur_page);
+                }
             },
             delOne(selection){
                 var self=this;
@@ -219,12 +249,9 @@
                         method:'get',
                         baseURL:self.hostURL
                     }).then((response)=>{
-                        self.$message({
-                            type: 'success',
-                            message:'delete success'
-                        });
-                        self.datalist.splice($.inArray(selection),1);
+                        
                     }).catch((error)=>{
+                        self.del_succ=false;
                         self.$message({
                             type:'info',
                             message:'connect fail'

@@ -222,61 +222,71 @@
             }
         },
         methods:{
-            codeParsing(code) {
-                var msg = (Title, Message) => {
-                    this.$message({
-                        title: Title,
-                        message: Message,
-                        type: 'error'
-                    });
-                };
-                switch(code) {
-                    case -1:
-                        msg('系统错误', '未知错误，请上报管理员');
-                        break;
-                    case 201:
-                        msg('输入域错误', '验证码错误');
-                        break;
-                    case 300:
-                        msg('1输入域错误', '邮箱或密码错误');
-                        break;
-                    case 301:
-                        msg('权限问题', '用户已禁用，请联系管理员');
-                        break;
-                    case 302:
-                        msg('权限问题', '用户未激活，请去邮箱激活用户');
-                        break;
-                    case 303:
-                        msg('注册问题', '邮箱已占用，请更改邮箱');
-                        break;
-                    case 304:
-                        msg('注册问题', '昵称已占用，请更改昵称');
-                        break;
-                    case 400:
-                        msg('权限问题', '用户未登录，请重新登录');
-                        break;
-                    case 401:
-                        msg('权限问题', '用户无权访问，请联系管理员');
-                        break;
-                    case 402:
-                        msg('操作错误', '删除错误,请刷新重试');
-                        break;
-                    case 500:
-                        msg('系统错误', '未知错误，请上报管理员');
-                        break;
-                    case 600:
-                        msg('TIME_OUT', '访问超时，请检查网络连接');
-                        break;
-                    case 700:
-                        msg('激活错误', '非法激活链接，请联系管理员');
-                        break;
-                    case 800:
-                        msg('激活错误', '用户已被激活，请直接登录');
-                        break;
-                    default:
-                        break;
-                }
-            },
+                            codeParsing(code) {
+                                let self = this;
+                            var msg = (err_title, err_message)=> {
+                            self.$notify({
+                                title: err_title,
+                                message: err_message,
+                                type: 'error'
+                            });
+                            };
+                            switch (code) {
+                                case -1:
+                                msg('系统错误', '未知错误，请上报管理员');
+                                break;
+                                case 201:
+                                msg('输入域错误', '验证码错误');
+                                break;
+                                case 300:
+                                msg('输入域错误', '邮箱或密码错误');
+                                break;
+                                case 301:
+                                msg('权限问题', '用户已禁用，请联系管理员');
+                                break;
+                                case 302:
+                                msg('权限问题', '用户未激活，请去邮箱激活用户');
+                                break;
+                                case 303:
+                                msg('注册问题', '邮箱已占用，请更改邮箱');
+                                break;
+                                case 304:
+                                msg('注册问题', '昵称已占用，请更改昵称');
+                                break;
+                                case 401:
+                                msg('权限问题', '用户无权访问，请联系管理员');
+                                break;
+                                case 402:
+                                msg('操作错误', '删除错误,请刷新重试');
+                                break;
+                                case 415:
+                                msg('操作错误', '文件类型错误，请上传正确文件类型');
+                                break;
+                                case 500:
+                                msg('系统错误', '未知错误，请上报管理员');
+                                break;
+                                case 600:
+                                msg('TIME_OUT', '访问超时，请检查网络连接');
+                                break;
+                                case 700:
+                                msg('激活错误', '非法激活链接，请联系管理员');
+                                break;
+                                case 800:
+                                msg('激活错误', '用户已被激活，请直接登录');
+                                break;
+                                case 1000:
+                                msg('系统错误', '参数错误，上报管理员');
+                                break;
+                                case 1001:
+                                msg('权限问题', '用户未登录，请重新登录');
+                                break;
+                                case 1002:
+                                msg('系统错误', '参数错误，上报管理员');
+                                break;
+                                default:
+                                        break;
+                            }
+                            },
             postProLike(val){
                 var self=this;
                 self.$axios({
@@ -330,7 +340,7 @@
                     baseURL: self.hostURL,
                     data:{
                         content:self.textarea, //时间在后台取得
-                        belong:self.newsData.id
+                        belong:"firm"+self.newsData.id
                     }
                 }).catch((error)=>{
                     console.log(error);
@@ -474,7 +484,7 @@
                     }]
                 };
                 self.$axios({
-                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+id+'&condition=hot',
+                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+"firm"+id+'&condition=hot',
                     method:'get',
                     baseURL: self.hostURL,
                     // data:{
@@ -528,7 +538,7 @@
                     }]
                 };
                 self.$axios({
-                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+id+'&condition=time',
+                    url:'/MessageLeaving/show/'+localStorage.getItem('ms_userid')+'?belong='+"firm"+id+'&condition=time',
                     method:'get',
                     baseURL: self.hostURL,
                     // data:{
@@ -562,7 +572,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        belong:localStorage.getItem("salesModel")
+                        belong:"firm"+localStorage.getItem("salesModel")
                     }
                 }).then((response)=>{
                     // self.pro_thumbs={};

@@ -3,8 +3,8 @@
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item><i class="el-icon-date"></i>管理员</el-breadcrumb-item>
-                <el-breadcrumb-item to="/admin/mseAdmin">媒体自评测管理模块</el-breadcrumb-item>
-                <el-breadcrumb-item>媒体自评测文章编辑</el-breadcrumb-item>
+                <el-breadcrumb-item to="/admin/mseAdmin">评测自媒体管理</el-breadcrumb-item>
+                <el-breadcrumb-item>评测自媒体文章编辑</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div v-if="edit">
@@ -78,7 +78,7 @@
         methods:{
             codeParsing(code) {
                 let self = this;
-                var msg = (err_title, err_message) => {
+                var msg = (err_title, err_message)=> {
                     self.$notify({
                         title: err_title,
                         message: err_message,
@@ -107,14 +107,14 @@
                     case 304:
                         msg('注册问题', '昵称已占用，请更改昵称');
                         break;
-                    case 400:
-                        msg('权限问题', '用户未登录，请重新登录');
-                        break;
                     case 401:
                         msg('权限问题', '用户无权访问，请联系管理员');
                         break;
                     case 402:
                         msg('操作错误', '删除错误,请刷新重试');
+                        break;
+                    case 415:
+                        msg('操作错误', '文件类型错误，请上传正确文件类型');
                         break;
                     case 500:
                         msg('系统错误', '未知错误，请上报管理员');
@@ -127,6 +127,15 @@
                         break;
                     case 800:
                         msg('激活错误', '用户已被激活，请直接登录');
+                        break;
+                    case 1000:
+                        msg('系统错误', '参数错误，上报管理员');
+                        break;
+                    case 1001:
+                        msg('权限问题', '用户未登录，请重新登录');
+                        break;
+                    case 1002:
+                        msg('系统错误', '参数错误，上报管理员');
                         break;
                     default:
                         break;
