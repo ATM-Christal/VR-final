@@ -161,6 +161,7 @@
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
+                    console.log("len="+response.data.length);
                     if(response.data.length==0){
                         self.cur_page=self.cur_page-1;
                         self.$message({
@@ -173,6 +174,7 @@
                     }
                     
                 }).catch((error)=>{
+                    console.log(error);
                     self.$message({
                         type:'info',
                         message:'connect fail'
@@ -226,7 +228,7 @@
                 
             },
             delAll(){
-                const self = this,
+                const self = this;
                 length = self.multipleSelection.length;
                 for (let i = 0; i < length; i++) {
                     self.delOne(self.multipleSelection[i]);

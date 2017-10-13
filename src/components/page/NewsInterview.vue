@@ -154,7 +154,7 @@
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
-                    if(reponse.data.length==0){
+                    if(response.data.length==0){
                         self.pageNum=self.pageNum-1;
                         self.$message({
                             type:'info',

@@ -150,9 +150,20 @@
                     baseURL:self.hostURL,
                     data:searchData
                 }).then((response)=>{
-                    self.encyclopediaList = [];
-                    self.encyclopediaList = response.data;
                     self.pagination_show=true;
+                    console.log("len="+response.data.length);
+                    if(response.data.length==0){
+                        self.pageNum=self.pageNum-1;
+                        self.$message({
+                            type:'info',
+                            message:'已经是最后一页了！'
+                        });
+                    }else{
+                        self.encyclopediaList = [];
+                        self.encyclopediaList = response.data;
+                    }
+                    
+                    
                 }).catch((error)=>{
                     self.$message({
                         type:'info',

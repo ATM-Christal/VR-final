@@ -235,11 +235,11 @@
                             辐射骚扰
                         </strong></th>
                         <td v-for="(data,index) in datas">
-                            <el-button type="text" @click="checkVisible[index] = true">点击查看</el-button>
-                            <el-dialog title="辐射骚扰" :visible.sync="checkVisible[index]" >
+                            <el-button type="text" @click="data.checkVisible = true">点击查看</el-button>
+                            <el-dialog title="辐射骚扰" :visible.sync="data.checkVisible" >
                                 <img :src="data.radiationdisturbance">
                                 <div slot="footer" class="dialog-footer">
-                                    <el-button type="primary" @click="checkVisible[index] = false">确 定</el-button>
+                                    <el-button type="primary" @click="data.checkVisible = false">确 定</el-button>
                                 </div>
                             </el-dialog>
                         </td>
@@ -573,6 +573,43 @@ import hint from '../../assets/hint.png';
                         break;
                 }
             },
+            addCheckVisible(data){
+                var self=this;
+                self.datas=data;
+                for(var i=0;i<self.datas.length;i++){
+                self.datas[i]={
+                    "id":self.datas[i].id,
+                    "brand":self.datas[i].brand,
+                    "salesmodel":self.datas[i].salesmodel,
+                    "productmodel":self.datas[i].productmodel,
+                    "picLocation":self.datas[i].picLocation,
+                    "screentype":self.datas[i].screentype,
+                    "monocularresolution":self.datas[i].monocularresolution,
+                    "weight":self.datas[i].weight,
+                    "cpu":self.datas[i].cpu,
+                    "memory":self.datas[i].memory,
+                    "batteryCapacity":self.datas[i].batteryCapacity,
+                    "workingtemperature":self.datas[i].workingtemperature,
+                    "bluerayirradiance":self.datas[i].bluerayirradiance,
+                    "soundpressurelevel":self.datas[i].soundpressurelevel,
+                    "maximumoutputvoltage":self.datas[i].maximumoutputvoltage,
+                    "broadbandcharacteristicvoltageofearphone":self.datas[i].broadbandcharacteristicvoltageofearphone,
+                    "boundarywarning":self.datas[i].boundarywarning,
+                    "radiationdisturbance":self.datas[i].radiationdisturbance,
+                    "electrostaticdischarge":self.datas[i].electrostaticdischarge,
+
+                    "fieldangle":self.datas[i].fieldangle,
+                    "refreshrate":self.datas[i].refreshrate,
+                    "systemdelay":self.datas[i].systemdelay,
+                    "trackingmode":self.datas[i].trackingmode,
+                    "trackingrange":self.datas[i].trackingrange,
+
+                    "meanchangeofvisualacuity":self.datas[i].meanchangeofvisualacuity,
+                    "ssqmean":self.datas[i].ssqmean,
+                    "cvsmean":self.datas[i].cvsmean,
+                    "checkVisible":false}
+                }
+            },
 
             getData(){
                 var self = this;
@@ -606,13 +643,8 @@ import hint from '../../assets/hint.png';
                     data:postId,
                     baseURL: self.hostURL
                 }).then((response)=>{
-                    self.datas= response.data.data.payload;
-                    if(self.datas.length!=0){
-                        self.checkVisible=[];
-                        for(var i=0;i<self.datas.length;i++){
-                            self.checkVisible.push(false);
-                        }
-                    }
+                    //self.datas= response.data.data.payload;
+                    self.addCheckVisible(response.data.data.payload);
                 }).catch((error)=>{
                     console.log(error);
                 });

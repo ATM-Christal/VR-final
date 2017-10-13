@@ -180,9 +180,19 @@
                     baseURL:self.hostURL,
                     data:dirtype
                 }).then((response)=>{
-                    self.items=[];
-                    self.items = response.data;
+                    console.log("len="+response.data.length);
+                    if(response.data.length==0){
+                        self.pageNum=self.pageNum-1;
+                        self.$message({
+                            type:'info',
+                            message:'已经是最后一页了！'
+                        });
+                    }else{
+                        self.items=[];
+                        self.items = response.data;
+                    }
                 }).catch((error)=>{
+                    console.log(error);
                     self.$message({
                         type:'info',
                         message:'connect fail'

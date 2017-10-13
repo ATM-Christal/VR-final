@@ -142,11 +142,11 @@ export default {
     deleteRow(index,encyclopediaList){
     var self=this;
     var deleteData = {
-            keyword:"",
+            prop_keyword:"",
             pageNum:1
         };
-        deleteData.keyword=self.tableData[index].keyword;
-        deleteData.pageNum=self.tableData[index].id;
+        deleteData.prop_keyword=self.tableData[index].prop_keyword;
+        deleteData.pageNum=self.pageNum;
         self.$axios({
             url:'/encyclopediaDelete',
             method:'post',
@@ -157,7 +157,7 @@ export default {
             if(state==0){
                 self.$message({
                 type:'info',
-                message:'删除失败，该词条还有修改请 求未处理'
+                message:'删除失败，该词条还有修改请求未处理'
                 });
             }
             else{
