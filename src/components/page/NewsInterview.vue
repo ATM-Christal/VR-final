@@ -161,8 +161,8 @@
                             message:'暂无下一页数据'
                         });
                     }else{
-                        self.newslist = [];
-                        self.newslist = response.data;
+                        self.newsList = [];
+                        self.newsList= response.data;
                     }
                 }).catch((error)=>{
                     self.$message({
