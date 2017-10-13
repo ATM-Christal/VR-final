@@ -179,7 +179,6 @@ export default new Router({
                     path: '/admin/administrator',
                     component: resolve => require(['../components/page/Administrator.vue'], resolve)
                 },
-                
                 {
                     path: '/admin/UploadFile',
                     component: resolve => require(['../components/page/UploadFile.vue'],resolve)

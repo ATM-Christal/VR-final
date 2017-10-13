@@ -145,7 +145,7 @@
             },
             getNews(str){
                 var self = this;
-                newsList=[];
+                self.newsList=[];
                 self.$axios({
                     url:'/news_list/'+str+'/1',
                     method:'get',
