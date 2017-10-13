@@ -6,7 +6,6 @@
                 <el-breadcrumb-item>最新</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
-
         <el-row>
             <el-col :span='20'>
                 <div class="list-wrap">
@@ -53,6 +52,7 @@
     export default {
         data: function(){
             return {
+//                hostURL:'http://116.56.140.85:8080/VR',
                 hostURL:'/VR',
                 activePane: 'first',
                 newsList:[
@@ -158,8 +158,8 @@
                             message:'暂无下一页数据'
                         });
                     }else{
-                        self.newslist = [];
-                        self.newslist = response.data;
+                        self.newsList = [];
+                        self.newsList= response.data;
                     }
                 }).catch((error)=>{
                     self.$message({
