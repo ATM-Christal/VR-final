@@ -161,11 +161,11 @@
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
-                    if(reponse.data.length==0){
+                    if(response.data.length==0){
                         self.cur_page=self.cur_page-1;
                         self.$message({
                             type:'info',
-                            message:'暂无下一页数据'
+                            message:'已经是最后一页了！'
                         });
                     }else{
                         self.datalist = [];
