@@ -29,8 +29,8 @@
                     <div id="show-items">
                         <div v-for="item in items" class="sing-item" @click="encyclopediaClick(item)">
                             <a href="javascript:void(0);" class="link-tit" title=""></a>
-                            <h1>{{item.keyword}}</h1>
-                            <article>{{item.firstprop}}</article>
+                            <h2>{{item.keyword}}</h2>
+                            <article>{{item.prop_keyword}}</article>
                         </div>
                     </div>
                     </el-col>
@@ -67,14 +67,14 @@
                         keyword:'fuuuuuuu',
                         type:"",
                         changenote:'11111111111111111111111111111111111111',
-                        firstprop:'2222222222222222',
+                        prop_keyword:'2222222222222222',
                     },
                     {
                         id:2,
                         keyword:'ffffffff',
                         type:"",
                         changenote:'1111111111111111111111111111111111',
-                        firstprop:'222222222222',
+                        prop_keyword:'222222222222',
                     }
                 ],
                 type:'VR简介',
@@ -180,6 +180,7 @@
                     baseURL:self.hostURL,
                     data:dirtype
                 }).then((response)=>{
+                    self.items=[];
                     self.items = response.data;
                 }).catch((error)=>{
                     self.$message({
@@ -228,7 +229,7 @@
 }
 
 .banner{
-	background:url('../../assets/banner3.jpg') no-repeat 0px 0px;
+	background:url('../../assets/ab1.jpg') no-repeat 0px 0px;
 	background-size:cover;
 	min-height:600px;
   min-width:850px;

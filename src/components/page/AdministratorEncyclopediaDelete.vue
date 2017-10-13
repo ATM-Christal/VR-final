@@ -145,8 +145,8 @@ export default {
             keyword:"",
             pageNum:1
         };
-        deleteData.keyword=tableData[index].keyword;
-        deleteData.pageNum=tableData[index].id;
+        deleteData.keyword=self.tableData[index].keyword;
+        deleteData.pageNum=self.tableData[index].id;
         self.$axios({
             url:'/encyclopediaDelete',
             method:'post',
@@ -180,10 +180,10 @@ export default {
         var self = this;
         self.encyclopediaList=[];
         var searchData = {
-            prop_keyword:"",
+            keyword:"",
             pageNum:1
         };
-        searchData.prop_keyword=self.search;
+        searchData.keyword=self.search;
         searchData.pageNum=self.pageNum;
         self.$axios({
             url:'/encyclopediaSearch',

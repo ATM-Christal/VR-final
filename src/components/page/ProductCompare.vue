@@ -234,12 +234,12 @@
                         <th class="cate-title"><strong>
                             辐射骚扰
                         </strong></th>
-                        <td v-for="data in datas">
-                            <el-button type="text" @click="checkVisible = true">点击查看</el-button>
-                            <el-dialog title="辐射骚扰" :visible.sync="checkVisible" >
+                        <td v-for="(data,index) in datas">
+                            <el-button type="text" @click="checkVisible[index] = true">点击查看</el-button>
+                            <el-dialog title="辐射骚扰" :visible.sync="checkVisible[index]" >
                                 <img :src="data.radiationdisturbance">
                                 <div slot="footer" class="dialog-footer">
-                                    <el-button type="primary" @click="checkVisible = false">确 定</el-button>
+                                    <el-button type="primary" @click="checkVisible[index] = false">确 定</el-button>
                                 </div>
                             </el-dialog>
                         </td>
@@ -250,7 +250,7 @@
                          </strong></th>
                         <td v-for="data in datas">
                             <div class="param-content">
-                                <img :src="data.electrostaticdischarge">
+                                <span>{{data.electrostaticdischarge}}</span>
                             </div>
                         </td>
                     </tr>
@@ -401,6 +401,7 @@ import hint from '../../assets/hint.png';
                 activeName2: 'first',
                 allowSubmit:true,
                 hostURL:"/VR",
+                checkVisible:[false,false,false],
                 datas:[{
                     id:1,
                     brand:1,
@@ -433,8 +434,7 @@ import hint from '../../assets/hint.png';
                     //20min视疲劳
                     meanchangeofvisualacuity:1,//视力变化均值
                     ssqmean:1,//SSQ均值
-                    cvsmean:1 //CVS均值
-                    
+                    cvsmean:1,
                 },
                 {
                     id:1,
@@ -606,8 +606,13 @@ import hint from '../../assets/hint.png';
                     data:postId,
                     baseURL: self.hostURL
                 }).then((response)=>{
-                    console.log(response.data);
                     self.datas= response.data.data.payload;
+                    if(self.datas.length!=0){
+                        self.checkVisible=[];
+                        for(var i=0;i<self.datas.length;i++){
+                            self.checkVisible.push(false);
+                        }
+                    }
                 }).catch((error)=>{
                     console.log(error);
                 });

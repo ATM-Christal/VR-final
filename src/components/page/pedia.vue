@@ -23,7 +23,7 @@
                     <div v-for="item in encyclopediaList" class="single-item" @click="encyclopediaClick(item)">
                          <a href="javascript:void(0);" class="link-tit" title=""></a>
                          <h1>{{item.keyword}}</h1>
-                         <article>{{item.firstprop}}</article>
+                         <article>{{item.prop_keyword}}</article>
                     </div>
                 </div>
             </div>
@@ -53,14 +53,14 @@
                         keyword:'fuuuuuuu',
                         type:"",
                         changenote:'11111111111111111111111111111111111111',
-                        firstprop:'2222222222222222',
+                        prop_keyword:'2222222222222222',
                     },
                     {
                         id:2,
                         keyword:'ffffffff',
                         type:"",
                         changenote:'1111111111111111111111111111111111',
-                        firstprop:'222222222222',
+                        prop_keyword:'222222222222',
                     }
                 ],
                 pagination_show:false,
@@ -202,7 +202,7 @@
 }
 
 .banner{
-	background:url('../../assets/ab.jpg') no-repeat 0px 0px;
+	background:url('../../assets/ab1.jpg') no-repeat 0px 0px;
 	background-size:cover;
 	min-height:500px;
   min-width:640px;
