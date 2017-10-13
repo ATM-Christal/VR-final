@@ -650,6 +650,7 @@ ul{
     word-wrap: break-word;
     font: 14px/26px 'Microsoft YaHei',arial;
     color: #666;
+    height: 26px;
 }
 .para-name{
     position: absolute;
