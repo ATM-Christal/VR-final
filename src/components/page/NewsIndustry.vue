@@ -152,11 +152,13 @@
                     baseURL:self.hostURL
                 }).then((response)=>{
                     if(response.data.length==0){
-                        self.pageNum=self.pageNum-1;
-                        self.$message({
-                            type:'info',
-                            message:'暂无下一页数据'
-                        });
+                        if(self.pageNum!=1){
+                            self.pageNum=self.pageNum-1;
+                            self.$message({
+                                type:'info',
+                                message:'已经是最后一页了！'
+                            });
+                        }
                     }else{
                     self.newsList = [];
                     self.newsList= response.data;

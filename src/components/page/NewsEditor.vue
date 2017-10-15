@@ -163,11 +163,13 @@
                 }).then((response)=>{
                     console.log("len="+response.data.length);
                     if(response.data.length==0){
-                        self.cur_page=self.cur_page-1;
-                        self.$message({
-                            type:'info',
-                            message:'已经是最后一页了！'
-                        });
+                        if(self.cur_page!=1){
+                            self.cur_page=self.cur_page-1;
+                            self.$message({
+                                type:'info',
+                                message:'已经是最后一页了！'
+                            });
+                        }
                     }else{
                         self.datalist = [];
                         self.datalist = response.data;

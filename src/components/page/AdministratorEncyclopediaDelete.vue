@@ -142,11 +142,11 @@ export default {
     deleteRow(index,encyclopediaList){
     var self=this;
     var deleteData = {
-            prop_keyword:"",
-            pageNum:1
+            id:"",
+            prop_id:"",
         };
-        deleteData.prop_keyword=self.tableData[index].prop_keyword;
-        deleteData.pageNum=self.pageNum;
+        deleteData.id=self.tableData[index].id;
+        deleteData.prop_id=self.tableData[index].prop_id;
         self.$axios({
             url:'/encyclopediaDelete',
             method:'post',
@@ -213,6 +213,7 @@ export default {
                 var sub=data[i].encyclopedia_prop;
                 for(var j=0;j<sub.length;j++){
                     self.tableData.push({id:data[i].encyclopedia.id,
+                                prop_id:sub[j].id,
                                 keyword:data[i].encyclopedia.keyword,
                                 prop_keyword:sub[j].prop_keyword});
                 }

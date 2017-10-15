@@ -234,7 +234,7 @@
                         <th class="cate-title"><strong>
                             辐射骚扰
                         </strong></th>
-                        <td v-for="(data,index) in datas">
+                        <td v-for="data in datas">
                             <el-button type="text" @click="data.checkVisible = true">点击查看</el-button>
                             <el-dialog title="辐射骚扰" :visible.sync="data.checkVisible" >
                                 <img :src="data.radiationdisturbance">
@@ -401,7 +401,6 @@ import hint from '../../assets/hint.png';
                 activeName2: 'first',
                 allowSubmit:true,
                 hostURL:"/VR",
-                checkVisible:[false,false,false],
                 datas:[{
                     id:1,
                     brand:1,
@@ -576,38 +575,38 @@ import hint from '../../assets/hint.png';
             addCheckVisible(data){
                 var self=this;
                 self.datas=data;
-                for(var i=0;i<self.datas.length;i++){
+                for(var i=0;i<data.length;i++){
                 self.datas[i]={
-                    "id":self.datas[i].id,
-                    "brand":self.datas[i].brand,
-                    "salesmodel":self.datas[i].salesmodel,
-                    "productmodel":self.datas[i].productmodel,
-                    "picLocation":self.datas[i].picLocation,
-                    "screentype":self.datas[i].screentype,
-                    "monocularresolution":self.datas[i].monocularresolution,
-                    "weight":self.datas[i].weight,
-                    "cpu":self.datas[i].cpu,
-                    "memory":self.datas[i].memory,
-                    "batteryCapacity":self.datas[i].batteryCapacity,
-                    "workingtemperature":self.datas[i].workingtemperature,
-                    "bluerayirradiance":self.datas[i].bluerayirradiance,
-                    "soundpressurelevel":self.datas[i].soundpressurelevel,
-                    "maximumoutputvoltage":self.datas[i].maximumoutputvoltage,
-                    "broadbandcharacteristicvoltageofearphone":self.datas[i].broadbandcharacteristicvoltageofearphone,
-                    "boundarywarning":self.datas[i].boundarywarning,
-                    "radiationdisturbance":self.datas[i].radiationdisturbance,
-                    "electrostaticdischarge":self.datas[i].electrostaticdischarge,
+                    id:data[i].id,
+                    brand:data[i].brand,
+                    salesmodel:data[i].salesmodel,
+                    productmodel:data[i].productmodel,
+                    picLocation:data[i].picLocation,
+                    screentype:data[i].screentype,
+                    monocularresolution:data[i].monocularresolution,
+                    weight:data[i].weight,
+                    cpu:data[i].cpu,
+                    memory:data[i].memory,
+                    batteryCapacity:data[i].batteryCapacity,
+                    workingtemperature:data[i].workingtemperature,
+                    bluerayirradiance:data[i].bluerayirradiance,
+                    soundpressurelevel:data[i].soundpressurelevel,
+                    maximumoutputvoltage:data[i].maximumoutputvoltage,
+                    broadbandcharacteristicvoltageofearphone:data[i].broadbandcharacteristicvoltageofearphone,
+                    boundarywarning:data[i].boundarywarning,
+                    radiationdisturbance:data[i].radiationdisturbance,
+                    electrostaticdischarge:data[i].electrostaticdischarge,
 
-                    "fieldangle":self.datas[i].fieldangle,
-                    "refreshrate":self.datas[i].refreshrate,
-                    "systemdelay":self.datas[i].systemdelay,
-                    "trackingmode":self.datas[i].trackingmode,
-                    "trackingrange":self.datas[i].trackingrange,
+                    fieldangle:data[i].fieldangle,
+                    refreshrate:data[i].refreshrate,
+                    systemdelay:data[i].systemdelay,
+                    trackingmode:data[i].trackingmode,
+                    trackingrange:data[i].trackingrange,
 
-                    "meanchangeofvisualacuity":self.datas[i].meanchangeofvisualacuity,
-                    "ssqmean":self.datas[i].ssqmean,
-                    "cvsmean":self.datas[i].cvsmean,
-                    "checkVisible":false}
+                    meanchangeofvisualacuity:data[i].meanchangeofvisualacuity,
+                    ssqmean:data[i].ssqmean,
+                    cvsmean:data[i].cvsmean,
+                    checkVisible:false}
                 }
             },
 
@@ -635,7 +634,10 @@ import hint from '../../assets/hint.png';
                 else if(kind=="evr"){
                     _url = '/evrCompare';
                 }
-                self.datas = {};
+                self.datas = [];
+                //test!!!!!!!!!!!!!!!!!!!!!
+                //self.addCheckVisible(self.datas);
+                console.log(self.datas);
                 self.$axios({
                     url:_url,
                     // url:'./static/ivr.json',

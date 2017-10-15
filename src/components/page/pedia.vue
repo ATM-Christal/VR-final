@@ -153,11 +153,13 @@
                     self.pagination_show=true;
                     console.log("len="+response.data.length);
                     if(response.data.length==0){
+                        if(self.pageNum!=1){
                         self.pageNum=self.pageNum-1;
-                        self.$message({
-                            type:'info',
-                            message:'已经是最后一页了！'
-                        });
+                            self.$message({
+                                type:'info',
+                                message:'已经是最后一页了！'
+                            });
+                        }
                     }else{
                         self.encyclopediaList = [];
                         self.encyclopediaList = response.data;
