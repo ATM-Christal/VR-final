@@ -235,7 +235,7 @@
                 for (let i = 0; i < length; i++) {
                     self.delOne(self.multipleSelection[i]);
                 }
-                if(del_succ==true){
+                if(self.del_succ==true){
                     self.$message({
                         type: 'success',
                         message:'删除成功！'

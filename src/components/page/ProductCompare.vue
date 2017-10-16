@@ -574,9 +574,9 @@ import hint from '../../assets/hint.png';
             },
             addCheckVisible(data){
                 var self=this;
-                self.datas=data;
+                self.datas=[];
                 for(var i=0;i<data.length;i++){
-                self.datas[i]={
+                self.datas.push({
                     id:data[i].id,
                     brand:data[i].brand,
                     salesmodel:data[i].salesmodel,
@@ -606,7 +606,7 @@ import hint from '../../assets/hint.png';
                     meanchangeofvisualacuity:data[i].meanchangeofvisualacuity,
                     ssqmean:data[i].ssqmean,
                     cvsmean:data[i].cvsmean,
-                    checkVisible:false}
+                    checkVisible:false})
                 }
             },
 
@@ -634,10 +634,12 @@ import hint from '../../assets/hint.png';
                 else if(kind=="evr"){
                     _url = '/evrCompare';
                 }
+                //var tmp=self.datas;
                 self.datas = [];
                 //test!!!!!!!!!!!!!!!!!!!!!
-                //self.addCheckVisible(self.datas);
-                console.log(self.datas);
+                //console.log(tmp);
+                //self.addCheckVisible(tmp);
+                //console.log(self.datas);
                 self.$axios({
                     url:_url,
                     // url:'./static/ivr.json',
