@@ -329,8 +329,8 @@
                             nickname:localStorage.getItem("ms_username")
                         },
                         message:text,
-                        upvote:"0",
-                        belong:"0",
+                        upvote:0,
+                        belong:0,
                         releasetime:"刚刚",
                         /*
                         messageResponses:[{
@@ -363,8 +363,8 @@
                             nickname:localStorage.getItem("ms_username")
                         },
                         message:text,
-                        upvote:"0",
-                        belong:"0",
+                        upvote:0,
+                        belong:0,
                         releasetime:"刚刚",
                         /*
                         messageResponses:[{

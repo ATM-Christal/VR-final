@@ -293,7 +293,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:localStorage.getItem("salesModel"),
+                        name:"finance"+localStorage.getItem("salesModel"),
                         value:val
                     }
                 }).catch((error)=>{
@@ -315,7 +315,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:localStorage.getItem("salesModel"),
+                        name:"finance"+localStorage.getItem("salesModel"),
                         value:val
                     }
                 }).catch((error)=>{
@@ -360,7 +360,7 @@
                             nickname:localStorage.getItem("ms_username")
                         },
                         message:text,
-                        upvote:"0",
+                        upvote:0,
                         belong:"0",
                         releasetime:"刚刚",
                         messageResponses:[],
@@ -374,7 +374,7 @@
                             nickname:localStorage.getItem("ms_username")
                         },
                         message:text,
-                        upvote:"0",
+                        upvote:0,
                         belong:"0",
                         releasetime:"刚刚",
                         messageResponses:[],
@@ -591,7 +591,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        id:item.id,
+                        id:"finance"+item.id,
                         value:val,
                     }
                 }).catch((error)=>{

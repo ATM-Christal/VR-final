@@ -601,7 +601,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:localStorage.getItem("salesModel"),
+                        name:"svr"+localStorage.getItem("salesModel"),
                         value:val
                     }
                 }).catch((error)=>{
@@ -624,7 +624,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:localStorage.getItem("salesModel"),
+                        name:"svr"+localStorage.getItem("salesModel"),
                         value:val
                     }
                 }).catch((error)=>{
