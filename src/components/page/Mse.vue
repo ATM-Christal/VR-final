@@ -346,7 +346,8 @@
                     method: 'post',
                     baseURL: self.hostURL,
                 }).then((response)=>{
-                    console.log(response.data);
+//                    console.log(response.data);
+                    self.$message('评论成功！');
                     self.userCurrent = response.data.object.userName;
 //                    console.log(self.userCurrent);
                     self.new_data.new_comments.reverse();
@@ -375,16 +376,15 @@
                     }*/
                     self.refreshComment();
                 }).catch((error)=> {
-                    self.codeParsing(error.response.status);
+                    self.codeParsing(error.code);
                     console.log(error);
                 });
             },
             refreshNewData(){
                 var self = this;
                 var text = self.textarea;
-                console.log(text);
+//                console.log(text);
                 if (text != "") {
-                    self.$message('评论成功！');
                     self.postTextArea(text);
                 }
             },
@@ -412,20 +412,20 @@
                                     userId: response.data.object.userId,
                                     userName: self.userCurrent,
                                     comment: reply.comment,
-                                    postTime: "刚刚"
+                                    postTime: response.data.object.postTime
                                 }];
-                                console.log(1);
+//                                console.log(1);
                             } else {
                                 self.hot_data.hot_comments[index].childComments.push({
                                     userId: response.data.object.userId,
                                     userName: self.userCurrent,
                                     comment: reply.comment,
-                                    postTime: "刚刚"
+                                    postTime: response.data.object.postTime
                                 });
                             }
                         }).catch((error)=> {
-                            self.codeParsing(error.response.status);
-                            console.log(error);
+                            self.codeParsing(error.code);
+//                            console.log(error);
                         });
 
                         /*self.hot_data.hot_comments[index].messageResponses.push({
@@ -457,7 +457,6 @@
                             console.log(response.data);
                             let reply = response.data.object;
                             self.userCurrent = reply.userName;
-
                             self.$message('回复成功！');
                             let i = self.new_data.new_comments.indexOf(item)
                             console.log(i)
@@ -473,23 +472,23 @@
                                     userId: response.data.object.userId,
                                     userName: self.userCurrent,
                                     comment: reply.comment,
-                                    postTime: "刚刚"
+                                    postTime: response.data.object.postTime
                                 }];
-                                console.log(11111);
-                                console.log(item);
+//                                console.log(11111);
+//                                console.log(item);
                             } else {
                                 self.new_data.new_comments[index].childComments.push({
                                     userId: response.data.object.userId,
                                     userName: self.userCurrent,
                                     comment: reply.comment,
-                                    postTime: "刚刚"
+                                    postTime: response.data.object.postTime
                                 });
                             }
 
-                            console.log(self.new_data.new_comments[i].childComments)
+//                            console.log(self.new_data.new_comments[i].childComments)
                         }).catch((error)=> {
-//                            self.codeParsing(error.response.status);
-                            console.log(error);
+                            self.codeParsing(error.code);
+//                            console.log(error);
                         });
 
                         self.new_reply.replys[index].textarea = '';
