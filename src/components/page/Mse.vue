@@ -346,7 +346,8 @@
                     method: 'post',
                     baseURL: self.hostURL,
                 }).then((response)=>{
-                    console.log(response.data);
+//                    console.log(response.data);
+                    self.$message('评论成功！');
                     self.userCurrent = response.data.object.userName;
 //                    console.log(self.userCurrent);
                     self.new_data.new_comments.reverse();
@@ -375,16 +376,15 @@
                     }*/
                     self.refreshComment();
                 }).catch((error)=> {
-                    self.codeParsing(error.response.status);
+                    self.codeParsing(error.code);
                     console.log(error);
                 });
             },
             refreshNewData(){
                 var self = this;
                 var text = self.textarea;
-                console.log(text);
+//                console.log(text);
                 if (text != "") {
-                    self.$message('评论成功！');
                     self.postTextArea(text);
                 }
             },
@@ -424,7 +424,7 @@
                                 });
                             }
                         }).catch((error)=> {
-                            self.codeParsing(error.response.status);
+                            self.codeParsing(error.code);
 //                            console.log(error);
                         });
 
@@ -457,7 +457,6 @@
                             console.log(response.data);
                             let reply = response.data.object;
                             self.userCurrent = reply.userName;
-
                             self.$message('回复成功！');
                             let i = self.new_data.new_comments.indexOf(item)
                             console.log(i)
@@ -488,7 +487,7 @@
 
 //                            console.log(self.new_data.new_comments[i].childComments)
                         }).catch((error)=> {
-                            self.codeParsing(error.response.status);
+                            self.codeParsing(error.code);
 //                            console.log(error);
                         });
 
