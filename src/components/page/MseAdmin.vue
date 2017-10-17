@@ -21,7 +21,7 @@
                     <el-table-column
                             prop="authorName"
                             label="作者"
-                            width="120">
+                            width="200">
                     </el-table-column>
                     <el-table-column
                             prop="updateTime"
