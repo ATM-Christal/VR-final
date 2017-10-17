@@ -306,6 +306,7 @@ import hint from '../../assets/hint.png';
     export default {
         data: function(){
             return {
+                checkVisible:false,
                 activeName2: 'first',
                 allowSubmit:true,
                 hostURL:"/VR",
