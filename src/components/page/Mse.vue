@@ -412,20 +412,20 @@
                                     userId: response.data.object.userId,
                                     userName: self.userCurrent,
                                     comment: reply.comment,
-                                    postTime: "刚刚"
+                                    postTime: response.data.object.postTime
                                 }];
-                                console.log(1);
+//                                console.log(1);
                             } else {
                                 self.hot_data.hot_comments[index].childComments.push({
                                     userId: response.data.object.userId,
                                     userName: self.userCurrent,
                                     comment: reply.comment,
-                                    postTime: "刚刚"
+                                    postTime: response.data.object.postTime
                                 });
                             }
                         }).catch((error)=> {
                             self.codeParsing(error.response.status);
-                            console.log(error);
+//                            console.log(error);
                         });
 
                         /*self.hot_data.hot_comments[index].messageResponses.push({
@@ -473,23 +473,23 @@
                                     userId: response.data.object.userId,
                                     userName: self.userCurrent,
                                     comment: reply.comment,
-                                    postTime: "刚刚"
+                                    postTime: response.data.object.postTime
                                 }];
-                                console.log(11111);
-                                console.log(item);
+//                                console.log(11111);
+//                                console.log(item);
                             } else {
                                 self.new_data.new_comments[index].childComments.push({
                                     userId: response.data.object.userId,
                                     userName: self.userCurrent,
                                     comment: reply.comment,
-                                    postTime: "刚刚"
+                                    postTime: response.data.object.postTime
                                 });
                             }
 
-                            console.log(self.new_data.new_comments[i].childComments)
+//                            console.log(self.new_data.new_comments[i].childComments)
                         }).catch((error)=> {
-//                            self.codeParsing(error.response.status);
-                            console.log(error);
+                            self.codeParsing(error.response.status);
+//                            console.log(error);
                         });
 
                         self.new_reply.replys[index].textarea = '';
