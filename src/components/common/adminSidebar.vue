@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar">
         <div class="subsidebar">
-         <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
+         <el-menu :default-active="activeIndex" class="el-menu-vertical-demo" theme="dark" unique-opened router>
             <template v-for="item in items">
                 <template v-if="item.subs">
                     <el-submenu :index="item.index">
@@ -25,6 +25,7 @@
     export default {
         data() {
             return {
+                activeIndex:'/admin/news-editor',
                 hello:"hahahaha",
                 items: [
                     // {
