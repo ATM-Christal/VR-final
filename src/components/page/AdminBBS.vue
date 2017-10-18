@@ -35,8 +35,8 @@
                             </el-row>
                         </el-form>
                         <div slot="footer" class="dialog-footer">
-                            <el-button type="success" @click="handlePost('ruleForm')">确定发帖</el-button>
-                            <el-button type="warning" @click="dialogFormVisible4 = false">关闭窗口</el-button>
+                            <el-button type="success" @click="handlePost('ruleForm',ruleForm)">确定发帖</el-button>
+                            <el-button type="warning" @click="handleclose()">关闭窗口</el-button>
                         </div>
                     </el-dialog>
                 </el-col>
@@ -130,26 +130,26 @@
                     width="430">
                 <template scope="scope">
                     <el-button class="list-btn-ground" type="primary" size="small" @click="getData2(scope.row)" >查看</el-button>
-                    <el-button class="list-btn-ground" type="" size="small" @click="dialogFormVisible1 = true">编辑</el-button>
+                    <el-button class="list-btn-ground" type="" size="small" @click="handleEdit(scope.row)">编辑</el-button>
                     <el-button class="list-btn-ground" v-show="scope.row.good=='否'" type="success" @click="up(scope.row)" size="small" icon="edit">加精</el-button>
                     <el-button class="list-btn-ground" v-show="scope.row.good=='是'" type="warning" @click="down(scope.row)" size="small" icon="check">取精</el-button>
                     <!-- <el-button class="list-btn-ground" :plain="true" type="warning" size="small" @click="up(scope.row)">加精</el-button>-->
-                    <el-button class="list-btn-ground" type="success" size="small" @click="edit1(scope.row)" >完成并刷新</el-button>
+                    <!--<el-button class="list-btn-ground" type="success" size="small" @click="edit1(scope.row)" >完成并刷新</el-button>-->
 
                     <!--<el-dialog class="class1" title="编辑" :modal-append-to-body="false" :visible.sync="dialogFormVisible1" style="width: 100%" size="small">-->
                     <el-dialog class="class1" title="编辑" :visible.sync="dialogFormVisible1" style="width: 100%" size="small">
-                        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" size="small" class="class2">
+                        <el-form :model="ruleForm2" :rules="rules" ref="ruleForm2" size="small" class="class2">
                             <el-row>
                                 <el-col :span="22">
                                     <el-form-item label="标题" :label-width="formLabelWidth" prop="title" >
-                                        <el-input class="class1" v-model="ruleForm.title" auto-complete="off"></el-input>
+                                        <el-input class="class1" v-model="ruleForm2.title" auto-complete="off"></el-input>
                                     </el-form-item>
                                     <el-form-item label="内容" :label-width="formLabelWidth" prop="contents">
-                                        <quill-editor ref="myTextEditor" v-model="ruleForm.contents" :options="editorOption" style="line-height: 1;"></quill-editor>
+                                        <quill-editor ref="myTextEditor" v-model="ruleForm2.contents" :options="editorOption" style="line-height: 1;"></quill-editor>
                                         <!--<el-input type="textarea" :rows="15" class="class1" v-model="ruleForm.contents" auto-complete="off"></el-input>-->
                                     </el-form-item>
                                     <el-form-item  class="class1" prop="theme">
-                                        <el-select v-model="ruleForm.theme" placeholder="请选择主题">
+                                        <el-select v-model="ruleForm2.theme" placeholder="请选择主题">
                                             <el-option
                                                     v-for="item in options"
                                                     :key="item.value"
@@ -159,7 +159,7 @@
                                         </el-select>
                                     </el-form-item>
                                     <el-form-item class="class1">
-                                        <el-button type="primary" @click="handleSave('ruleForm')" >保存并关闭窗口</el-button>
+                                        <el-button type="primary" @click="handleSave('ruleForm2')" >保存并关闭窗口</el-button>
                                     </el-form-item>
                                 </el-col>
                             </el-row>
@@ -349,6 +349,12 @@
                     contents: '',
                     theme: ''
                 },
+                ruleForm2: {
+                    id:null,
+                    title: '',
+                    contents: '',
+                    theme: ''
+                },
                 rules: {
                     title: [
                         { required: true, message: '请输入帖子标题', trigger: 'blur' }
@@ -388,6 +394,19 @@
             },
             handleSelectionChange3(val) {
                 this.multipleSelection3 = val;
+            },
+            handleEdit(item){
+//                this.teizi = item;
+//                console.log(this.ruleForm2.id)
+                this.dialogFormVisible1 = true
+                this.ruleForm2 = item;
+            },
+            handleclose(){
+                let self = this;
+                self.ruleForm.title='';
+                self.ruleForm.contents='';
+                self.ruleForm.theme='';
+                self.dialogFormVisible4 = false;
             },
             //获取帖子列表
             getData1(){
@@ -572,21 +591,26 @@
                     message:'删除成功'
                 });
             },
-            postTiezi(){
-                console.log(this.ruleForm.title);
+            postTiezi(item){
+                /*console.log(this.ruleForm.title);
                 console.log(this.ruleForm.contents);
-                console.log(this.ruleForm.theme);
+                console.log(this.ruleForm.theme);*/
                 var self=this;
                 self.$axios({
                     url:'/adminPostAdd',
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        title: this.ruleForm.title,
-                        contents: this.ruleForm.contents,
-                        theme: this.ruleForm.theme,
+                        title: item.title,
+                        contents: item.contents,
+                        theme: item.theme,
                         AdminId: '1'
                     }
+                }).then((response)=>{
+                    self.$message({
+                        type: 'success',
+                        message:'发帖成功'
+                    });
                 }).catch((error)=>{
                     console.log(error);
                     self.$message({
@@ -594,9 +618,10 @@
                         message:'connect fail'
                     });
                 });
-                this.ruleForm.title='';
-                this.ruleForm.contents='';
-                this.ruleForm.theme='';
+                self.ruleForm.title='';
+                self.ruleForm.contents='';
+                self.ruleForm.theme='';
+                self.getData1();
             },
             refresh(){
                 location.reload();
@@ -673,57 +698,48 @@
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
                         this.dialogFormVisible1 = false;
-                        this.$message({
-                            type: 'success',
-                            message:'保存成功，请点完成并刷新按钮'
-                        });
-
+                        this.edit1();
                     } else {
                         console.log('error submit!!');
                         return false;
                     }
                 });
             },
-            handlePost(formName){
+            handlePost(formName,item){
                 const self = this;
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
-                        this.dialogFormVisible1 = false;
-                        this.postTiezi();
-                        this.$message({
-                            type: 'success',
-                            message:'发帖成功'
-                        });
-
+                        this.dialogFormVisible4 = false;
+                        this.postTiezi(item);
                     } else {
                         console.log('error submit!!');
                         return false;
                     }
                 });
             },
-            edit1(tiezi){
+            edit1(){
                 /* form: {
                  title: '',
                  contents: '',
                  theme: ''
                  },*/
 
-                console.log(tiezi.id);
-                console.log(this.ruleForm.title);
-                console.log(this.ruleForm.contents);
-                console.log(this.ruleForm.theme);
-                if( this.ruleForm.title==''||this.ruleForm.contents==''||this.ruleForm.theme==''){
+//                console.log(tiezi.id);
+                /*console.log(this.ruleForm2.title);
+                console.log(this.ruleForm2.contents);
+                console.log(this.ruleForm2.theme);*/
+                if( this.ruleForm2.title==''||this.ruleForm2.contents==''||this.ruleForm2.theme==''){
                     this.$message({
                         type: 'warning',
                         message:'未完成编辑'
                     });
                 }
                 else{
-                    const index = this.tableData1.indexOf(tiezi);
+                    const index = this.tableData1.indexOf(this.ruleForm2);
                     var updatedData=this.tableData1[index];
-                    updatedData.title=this.ruleForm.title;
-                    updatedData.contents=this.ruleForm.contents;
-                    updatedData.theme=this.ruleForm.theme;
+                    updatedData.title=this.ruleForm2.title;
+                    updatedData.contents=this.ruleForm2.contents;
+                    updatedData.theme=this.ruleForm2.theme;
                     if(updatedData.theme=='discussion'){
                         updatedData.theme='讨论';
                     }
@@ -750,20 +766,27 @@
                     console.log(updatedData);
                     var self=this;
                     self.$axios({
-                        url:'/adminPostUpdate/'+tiezi.id,
+                        url:'/adminPostUpdate/'+this.ruleForm2.id,
                         method:'post',
                         baseURL: self.hostURL,
                         data:{
-                            title: this.ruleForm.title,
-                            contents: this.ruleForm.contents,
-                            theme: this.ruleForm.theme
+                            title: this.ruleForm2.title,
+                            contents: this.ruleForm2.contents,
+                            theme: this.ruleForm2.theme
                         }
+                    }).then((response)=>{
+                        this.$message({
+                            type: 'success',
+                            message:'保存成功'
+                        });
                     }).catch((error)=>{
                         console.log(error);
                     });
-                    this.ruleForm.title='';
-                    this.ruleForm.contents='';
-                    this.ruleForm.theme='';
+                    this.ruleForm2.title='';
+                    this.ruleForm2.id=null;
+                    this.ruleForm2.contents='';
+                    this.ruleForm2.theme='';
+                    this.getData1();
                 }
 
             },
