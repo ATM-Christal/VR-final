@@ -10,8 +10,7 @@
         </div>
 <el-input v-model="search" placeholder="请输入词条属性"style="width: 500px;margin-bottom:20px"></el-input>
 <el-button type="primary" icon="search"@click="getEncyclopedia()">搜索</el-button>
-
-
+<el-button class="refresh-btn" type="success" @click="getData(1)">刷新数据 </el-button>
 
   <el-table
      :data="tableData"
@@ -94,26 +93,32 @@ export default {
                 //               "content":"多类型车辆行驶路线与其他布置、净空高度，如道路桥梁仿真。",
                 //               "changenote":"changenote2.2"}]
                 //         }],
-            tableData:[],
-            // tableData:[
-            //     {"id":2,
-            //      "keyword":"VR应用",
-            //      "prop_keyword":"1.地产漫游"},
-            //     {"id":2,
-            //      "keyword":"VR应用",
-            //      "prop_keyword":"2.虚拟样板间"},
-            //     {"id":2,
-            //      "keyword":"VR应用",
-            //      "prop_keyword":"1.地产漫游"},
-            //     {"id":2,
-            //      "keyword":"VR应用",
-            //      "prop_keyword":"2.虚拟样板间"},
-            //      {"id":2,
-            //      "keyword":"VR应用",
-            //      "prop_keyword":"1.地产漫游"},
-            //     {"id":2,
-            //      "keyword":"VR应用",
-            //      "prop_keyword":"2.虚拟样板间"},],
+            //tableData:[],
+             tableData:[
+                {"id":2,
+                 "prop_id":111,
+                 "keyword":"VR应用",
+                 "prop_keyword":"1.地产漫游"},
+                {"id":2,
+                 "prop_id":222,
+                 "keyword":"VR应用",
+                 "prop_keyword":"2.虚拟样板间"},
+                {"id":2,
+                "prop_id":333,
+                 "keyword":"VR应用",
+                 "prop_keyword":"1.地产漫游"},
+                {"id":2,
+                "prop_id":444,
+                 "keyword":"VR应用",
+                 "prop_keyword":"2.虚拟样板间"},
+                 {"id":2,
+                 "prop_id":5555,
+                 "keyword":"VR应用",
+                 "prop_keyword":"1.地产漫游"},
+                {"id":2,
+                "prop_id":666,
+                 "keyword":"VR应用",
+                 "prop_keyword":"2.虚拟样板间"},],
         // encyclopediaList:[
         //     {
         //         id:1,
@@ -147,6 +152,9 @@ export default {
         };
         deleteData.id=self.tableData[index].id;
         deleteData.prop_id=self.tableData[index].prop_id;
+        //test
+        //console.log(deleteData);
+        //self.tableData.splice(index,1);
         self.$axios({
             url:'/encyclopediaDelete',
             method:'post',
@@ -180,10 +188,12 @@ export default {
         var self = this;
         self.encyclopediaList=[];
         var searchData = {
-            keyword:"",
+            //keyword:"",
+            prop_keyword:"",
             pageNum:1
         };
-        searchData.keyword=self.search;
+        //searchData.keyword=self.search;
+        searchData.prop_keyword=self.search;
         searchData.pageNum=self.pageNum;
         self.$axios({
             url:'/encyclopediaSearch',
@@ -191,8 +201,19 @@ export default {
             baseURL:self.hostURL,
             data:searchData
         }).then((response)=>{
-            self.tableData = [];
-            self.tableData = response.data;
+            if(response.data.length==0){
+                    if(self.pageNum!=1){
+                        self.pageNum=self.pageNum-1;
+                        self.$message({
+                            type:'info',
+                            message:'已经是最后一页了！'
+                        });
+                    }
+                }else{
+                        self.tableData = [];
+                        self.tableData = response.data;
+                    }
+            
         }).catch((error)=>{
             self.$message({
                 type:'info',
@@ -202,23 +223,35 @@ export default {
     },
     getData(pn){
         var self = this;
+        self.search="";
         self.$axios({
             url: '/encyclopedia/getall/'+pn,
             method: 'get',
             baseURL: self.hostURL,
         }).then((response)=> {
-            self.tableData=[];
-            var data=response.data;
-            for(var i=0;i<data.length;i++){
-                var sub=data[i].encyclopedia_prop;
-                for(var j=0;j<sub.length;j++){
-                    self.tableData.push({id:data[i].encyclopedia.id,
-                                prop_id:sub[j].id,
-                                keyword:data[i].encyclopedia.keyword,
-                                prop_keyword:sub[j].prop_keyword});
-                }
-                
-            }
+            if(response.data.length==0){
+                    if(self.pageNum!=1){
+                        self.pageNum=self.pageNum-1;
+                        self.$message({
+                            type:'info',
+                            message:'已经是最后一页了！'
+                        });
+                    }
+                }else{
+                        self.tableData=[];
+                        var data=response.data;
+                        for(var i=0;i<data.length;i++){
+                            var sub=data[i].encyclopedia_prop;
+                            for(var j=0;j<sub.length;j++){
+                                self.tableData.push({id:data[i].encyclopedia.id,
+                                            prop_id:sub[j].prop_id,
+                                            keyword:data[i].encyclopedia.keyword,
+                                            prop_keyword:sub[j].prop_keyword});
+                            }
+                            
+                        }
+                    }
+            
         }).catch((error)=> {
             console.log(error);
         });
@@ -251,4 +284,7 @@ export default {
 .crumbs {
   text-decoration: none;
 }
+.refresh-btn{
+        float: right;
+    }
 </style>

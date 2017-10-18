@@ -299,7 +299,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:localStorage.getItem("salesModel"),
+                        name:"new"+localStorage.getItem("salesModel"),
                         value:val
                     }
                 }).catch((error)=>{
@@ -321,7 +321,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:localStorage.getItem("salesModel"),
+                        name:"new"+localStorage.getItem("salesModel"),
                         value:val
                     }
                 }).catch((error)=>{
@@ -579,7 +579,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        id:item.id,
+                        id:"new"+item.id,
                         value:val,
                     }
                 }).catch((error)=>{

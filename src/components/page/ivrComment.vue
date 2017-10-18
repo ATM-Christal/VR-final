@@ -574,7 +574,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:localStorage.getItem("salesModel"),
+                        name:"ivr"+localStorage.getItem("salesModel"),
                         value:val
                     }
                 }).catch((error)=>{
@@ -597,7 +597,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:localStorage.getItem("salesModel"),
+                        name:"ivr"+localStorage.getItem("salesModel"),
                         value:val
                     }
                 }).catch((error)=>{
