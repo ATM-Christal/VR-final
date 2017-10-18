@@ -10,7 +10,7 @@
                                     <el-button @click="handleAllOffsale1">一键下架</el-button>
                                     <el-button type="danger" @click="handleAllDelete1">一键删除</el-button>
                                     <el-input class="search-input"
-                                        placeholder="请输入产品型号"
+                                        placeholder="请输入销售型号"
                                         icon="search"
                                         v-model="iupsaleText"
                                         @change="handleIUpsaleSearch"
@@ -179,7 +179,7 @@
                                     <el-button @click="handleAllOffsale2">一键下架</el-button>
                                     <el-button type="danger" @click="handleAllDelete2">一键删除</el-button>
                                     <el-input class="search-input"
-                                        placeholder="请输入产品型号"
+                                        placeholder="请输入销售型号"
                                         icon="search"
                                         v-model="supsaleText"
                                         @change="handleSUpsaleSearch"
@@ -333,7 +333,7 @@
                                     <el-button @click="handleAllOffsale3">一键下架</el-button>
                                     <el-button type="danger" @click="handleAllDelete3">一键删除</el-button>
                                     <el-input class="search-input"
-                                        placeholder="请输入产品型号"
+                                        placeholder="请输入销售型号"
                                         icon="search"
                                         v-model="eupsaleText"
                                         @change="handleEUpsaleSearch"
@@ -465,7 +465,7 @@
                                     <el-button @click="handleAllUpsale1">一键上架</el-button>
                                     <el-button type="danger" @click="handleAllDelete4">一键删除</el-button>
                                     <el-input class="search-input"
-                                        placeholder="请输入产品型号"
+                                        placeholder="请输入销售型号"
                                         icon="search"
                                         v-model="ioffsaleText"
                                         @change="handleIOffsaleSearch"
@@ -634,7 +634,7 @@
                                     <el-button @click="handleAllUpsale2">一键上架</el-button>
                                     <el-button type="danger" @click="handleAllDelete5">一键删除</el-button>
                                     <el-input class="search-input"
-                                        placeholder="请输入产品型号"
+                                        placeholder="请输入销售型号"
                                         icon="search"
                                         v-model="soffsaleText"
                                         @change="handleSOffsaleSearch"
@@ -788,7 +788,7 @@
                                     <el-button @click="handleAllUpsale3">一键上架</el-button>
                                     <el-button type="danger" @click="handleAllDelete6">一键删除</el-button>
                                     <el-input class="search-input"
-                                        placeholder="请输入产品型号"
+                                        placeholder="请输入销售型号"
                                         icon="search"
                                         v-model="eoffsaleText"
                                         @change="handleEOffsaleSearch"
@@ -2453,7 +2453,7 @@
                 if(text!=""){
                     self.tableData1=[];
                     for(var i=0;i<self.allData1.length;i++){
-                        if(self.allData1[i].productmodel.toLowerCase().indexOf(text)!=-1){
+                        if(self.allData1[i].salesmodel.toLowerCase().indexOf(text)!=-1){
                             self.tableData1.push(self.allData1[i]);
                         }
                     }
@@ -2472,7 +2472,7 @@
                 if(text!=""){
                     self.tableData2=[];
                     for(var i=0;i<self.allData2.length;i++){
-                        if(self.allData2[i].productmodel.toLowerCase().indexOf(text)!=-1){
+                        if(self.allData2[i].salesmodel.toLowerCase().indexOf(text)!=-1){
                             self.tableData2.push(self.allData2[i]);
                         }
                     }
@@ -2491,7 +2491,7 @@
                 if(text!=""){
                     self.tableData3=[];
                     for(var i=0;i<self.allData3.length;i++){
-                        if(self.allData3[i].productmodel.toLowerCase().indexOf(text)!=-1){
+                        if(self.allData3[i].salesmodel.toLowerCase().indexOf(text)!=-1){
                             self.tableData3.push(self.allData3[i]);
                         }
                     }
@@ -2511,7 +2511,7 @@
                 if(text!=""){
                     self.tableData4=[];
                     for(var i=0;i<self.allData4.length;i++){
-                        if(self.allData4[i].productmodel.toLowerCase().indexOf(text)!=-1){
+                        if(self.allData4[i].salesmodel.toLowerCase().indexOf(text)!=-1){
                             self.tableData4.push(self.allData4[i]);
                         }
                     }
@@ -2530,7 +2530,7 @@
                 if(text!=""){
                     self.tableData5=[];
                     for(var i=0;i<self.allData5.length;i++){
-                        if(self.allData5[i].productmodel.toLowerCase().indexOf(text)!=-1){
+                        if(self.allData5[i].salesmodel.toLowerCase().indexOf(text)!=-1){
                             self.tableData5.push(self.allData5[i]);
                         }
                     }
@@ -2549,7 +2549,7 @@
                 if(text!=""){
                     self.tableData6=[];
                     for(var i=0;i<self.allData6.length;i++){
-                        if(self.allData6[i].productmodel.toLowerCase().indexOf(text)!=-1){
+                        if(self.allData6[i].salesmodel.toLowerCase().indexOf(text)!=-1){
                             self.tableData6.push(self.allData6[i]);
                         }
                     }

@@ -76,8 +76,20 @@
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
-                    self.datalist = [];
-                    self.datalist = response.data;
+                    if(response.data.length==0){
+                        if(self.cur_page!=1){
+                            self.cur_page=self.cur_page-1;
+                            self.$message({
+                                type:'info',
+                                message:'已经是最后一页了！'
+                            });
+                        }
+                    }else{
+                        self.datalist = [];
+                        self.datalist = response.data;
+                    }
+                    //self.datalist = [];
+                    //self.datalist = response.data;
                 }).catch((error)=>{
                     self.$message({
                         type:'info',
@@ -86,6 +98,7 @@
                 });
             },
             newschange() {
+                this.cur_page=1;
                 this.getNewsBySelector(this.cur_page, this.select_cate);
             },
             codeParsing(code) {
@@ -172,7 +185,39 @@
                         }
                     }else{
                         self.datalist = [];
-                        self.datalist = response.data;
+                        //self.datalist = response.data;
+                        var list1=[],list2=[],list3=[],list4=[],list5=[],list6=[];
+                        for(var i=0;i<response.data.length;i++){
+                            if(response.data[i].type==1){
+                                list1.push(response.data[i]);
+                            }else if(response.data[i].type==2){
+                                list2.push(response.data[i]);
+                            }else if(response.data[i].type==3){
+                                list3.push(response.data[i]);
+                            }else if(response.data[i].type==4){
+                                list4.push(response.data[i]);
+                            }else if(response.data[i].type==5){
+                                list5.push(response.data[i]);
+                            }else if(response.data[i].type==6){
+                                list6.push(response.data[i]);
+                            }
+                        }
+                        self.datalist=list1;
+                        for(var i=0;i<list2.length;i++){
+                            self.datalist.push(list2[i]);
+                        }
+                        for(var i=0;i<list3.length;i++){
+                            self.datalist.push(list3[i]);
+                        }
+                        for(var i=0;i<list4.length;i++){
+                            self.datalist.push(list4[i]);
+                        }
+                        for(var i=0;i<list5.length;i++){
+                            self.datalist.push(list5[i]);
+                        }
+                        for(var i=0;i<list6.length;i++){
+                            self.datalist.push(list6[i]);
+                        }
                     }
                     
                 }).catch((error)=>{
@@ -187,7 +232,12 @@
                 var self = this;
                 console.log("current-Page:");
                 console.log(self.cur_page);
-                self.getNews(self.cur_page);
+                if(self.select_cate==""){
+                    self.getNews(self.cur_page);
+                }else{
+                    self.getNewsBySelector(this.cur_page, this.select_cate);
+                }
+                
             },
             search(){
                 this.is_search = true;

@@ -255,7 +255,19 @@
                     method: 'get',
                     baseURL: self.hostURL,
                 }).then((response)=> {
-                    self.encyclopedia_propchangerequrire = response.data;
+                    if(response.data.length==0){
+                        if(self.pageNum!=1){
+                            self.pageNum=self.pageNum-1;
+                            self.$message({
+                                type:'info',
+                                message:'已经是最后一页了！'
+                            });
+                        }
+                    }else{
+                        self.encyclopedia_propchangerequrire = [];
+                        self.encyclopedia_propchangerequrire = response.data;
+                    }
+                    
                 }).catch((error)=> {
                     console.log(error);
                 });
