@@ -76,6 +76,11 @@
                     },
                     {
                         icon: 'el-icon-menu',
+                        index: '/admin/mseAdmin',
+                        title: '评测自媒体管理'
+                    },
+                    {
+                        icon: 'el-icon-menu',
                         index: '/admin/Questionaire',
                         title: '问卷管理'
                     },
@@ -89,11 +94,7 @@
                     //     index: '5',
                     //     title: '评价模块管理'
                     // },
-                    {
-                        icon: 'el-icon-menu',
-                        index: '/admin/mseAdmin',
-                        title: '评测自媒体管理'
-                    },
+                    
                 ]
             }
         },

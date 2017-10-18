@@ -155,24 +155,28 @@
             },
             getNews(str){
                 var self = this;
-                self.datalist=[];
+                //self.datalist=[];
                 self.$axios({
                     url:'/news_lists/'+str+'/0',
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
-                    if(reponse.data.length==0){
-                        self.cur_page=self.cur_page-1;
-                        self.$message({
-                            type:'info',
-                            message:'暂无下一页数据'
-                        });
+                    console.log("len="+response.data.length);
+                    if(response.data.length==0){
+                        if(self.cur_page!=1){
+                            self.cur_page=self.cur_page-1;
+                            self.$message({
+                                type:'info',
+                                message:'已经是最后一页了！'
+                            });
+                        }
                     }else{
                         self.datalist = [];
                         self.datalist = response.data;
                     }
                     
                 }).catch((error)=>{
+                    console.log(error);
                     self.$message({
                         type:'info',
                         message:'connect fail'
@@ -226,7 +230,7 @@
                 
             },
             delAll(){
-                const self = this,
+                const self = this;
                 length = self.multipleSelection.length;
                 for (let i = 0; i < length; i++) {
                     self.delOne(self.multipleSelection[i]);

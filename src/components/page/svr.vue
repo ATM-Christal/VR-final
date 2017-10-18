@@ -301,6 +301,7 @@ import hint from '../../assets/hint.png';
     export default {
         data: function(){
             return {
+                checkVisible:false,
                 activeName2: 'first',
                 allowSubmit:true,
                 hostURL:"/VR",
@@ -449,7 +450,7 @@ import hint from '../../assets/hint.png';
                     method:'get',
                     baseURL: self.hostURL
                 }).then((response)=>{
-                    console.log(response.data);
+                    self.data=[];
                     self.data= response.data.payload;
                 }).catch((error)=>{
                     console.log(error);

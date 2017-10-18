@@ -235,11 +235,11 @@
                             辐射骚扰
                         </strong></th>
                         <td v-for="data in datas">
-                            <el-button type="text" @click="checkVisible = true">点击查看</el-button>
-                            <el-dialog title="辐射骚扰" :visible.sync="checkVisible" >
+                            <el-button type="text" @click="data.checkVisible = true">点击查看</el-button>
+                            <el-dialog title="辐射骚扰" :visible.sync="data.checkVisible" >
                                 <img :src="data.radiationdisturbance">
                                 <div slot="footer" class="dialog-footer">
-                                    <el-button type="primary" @click="checkVisible = false">确 定</el-button>
+                                    <el-button type="primary" @click="data.checkVisible = false">确 定</el-button>
                                 </div>
                             </el-dialog>
                         </td>
@@ -250,7 +250,7 @@
                          </strong></th>
                         <td v-for="data in datas">
                             <div class="param-content">
-                                <img :src="data.electrostaticdischarge">
+                                <span>{{data.electrostaticdischarge}}</span>
                             </div>
                         </td>
                     </tr>
@@ -433,8 +433,7 @@ import hint from '../../assets/hint.png';
                     //20min视疲劳
                     meanchangeofvisualacuity:1,//视力变化均值
                     ssqmean:1,//SSQ均值
-                    cvsmean:1 //CVS均值
-                    
+                    cvsmean:1,
                 },
                 {
                     id:1,
@@ -573,6 +572,43 @@ import hint from '../../assets/hint.png';
                         break;
                 }
             },
+            addCheckVisible(data){
+                var self=this;
+                self.datas=data;
+                for(var i=0;i<data.length;i++){
+                self.datas[i]={
+                    id:data[i].id,
+                    brand:data[i].brand,
+                    salesmodel:data[i].salesmodel,
+                    productmodel:data[i].productmodel,
+                    picLocation:data[i].picLocation,
+                    screentype:data[i].screentype,
+                    monocularresolution:data[i].monocularresolution,
+                    weight:data[i].weight,
+                    cpu:data[i].cpu,
+                    memory:data[i].memory,
+                    batteryCapacity:data[i].batteryCapacity,
+                    workingtemperature:data[i].workingtemperature,
+                    bluerayirradiance:data[i].bluerayirradiance,
+                    soundpressurelevel:data[i].soundpressurelevel,
+                    maximumoutputvoltage:data[i].maximumoutputvoltage,
+                    broadbandcharacteristicvoltageofearphone:data[i].broadbandcharacteristicvoltageofearphone,
+                    boundarywarning:data[i].boundarywarning,
+                    radiationdisturbance:data[i].radiationdisturbance,
+                    electrostaticdischarge:data[i].electrostaticdischarge,
+
+                    fieldangle:data[i].fieldangle,
+                    refreshrate:data[i].refreshrate,
+                    systemdelay:data[i].systemdelay,
+                    trackingmode:data[i].trackingmode,
+                    trackingrange:data[i].trackingrange,
+
+                    meanchangeofvisualacuity:data[i].meanchangeofvisualacuity,
+                    ssqmean:data[i].ssqmean,
+                    cvsmean:data[i].cvsmean,
+                    checkVisible:false}
+                }
+            },
 
             getData(){
                 var self = this;
@@ -598,7 +634,10 @@ import hint from '../../assets/hint.png';
                 else if(kind=="evr"){
                     _url = '/evrCompare';
                 }
-                self.datas = {};
+                self.datas = [];
+                //test!!!!!!!!!!!!!!!!!!!!!
+                //self.addCheckVisible(self.datas);
+                console.log(self.datas);
                 self.$axios({
                     url:_url,
                     // url:'./static/ivr.json',
@@ -606,8 +645,8 @@ import hint from '../../assets/hint.png';
                     data:postId,
                     baseURL: self.hostURL
                 }).then((response)=>{
-                    console.log(response.data);
-                    self.datas= response.data.data.payload;
+                    //self.datas= response.data.data.payload;
+                    self.addCheckVisible(response.data.data.payload);
                 }).catch((error)=>{
                     console.log(error);
                 });

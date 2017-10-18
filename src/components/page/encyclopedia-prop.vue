@@ -2,7 +2,7 @@
     <div>
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-date"></i> <span class="bread">VR百科</span></el-breadcrumb-item>
+                <el-breadcrumb-item to="/user/pedia"><i class="el-icon-date"></i> <span class="bread">VR百科</span></el-breadcrumb-item>
                 <el-breadcrumb-item><span class="bread">百科知识</span></el-breadcrumb-item>
             </el-breadcrumb>
         </div>
