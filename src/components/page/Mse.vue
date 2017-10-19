@@ -140,7 +140,7 @@
             return {
                 allowSubmit: true,
                 hostURL: "/VR",
-//                hostURL:"http://116.56.140.85:8080/VR",
+//                hostURL:"http://119.23.175.192:8080/VR",
                 successType: "success",
                 cancelType: "primary",
                 mse: {
