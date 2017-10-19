@@ -81,9 +81,11 @@
                     width="150">
             </el-table-column>
             <el-table-column
-                    prop="contents"
                     label="内容"
                     width="250">
+                <template scope="scope">
+                    <div v-html="bbsInfo(scope.row.contents)"></div>
+                </template>
             </el-table-column>
             <el-table-column
                     prop="date"
@@ -338,6 +340,7 @@
                 tableData2:[{}],
                 tableData3:[{}],
                 hostURL:'/VR',
+//                hostURL:'http://119.23.175.192:8080/VR',
                 display_comm:false,
                 display_subcomm:false,
                 dialogFormVisible1: false,
@@ -386,6 +389,11 @@
 
         },
         methods: {
+            bbsInfo(str){
+                var res1 = str.replace(/<img[^>]+>/ig,"")
+                var res = res1.replace(/h[2,3]/ig,"p")
+                return res;
+            },
             handleSelectionChange1(val) {
                 this.multipleSelection1 = val;
             },
@@ -611,6 +619,7 @@
                         type: 'success',
                         message:'发帖成功'
                     });
+                    self.getData1();
                 }).catch((error)=>{
                     console.log(error);
                     self.$message({
@@ -621,7 +630,6 @@
                 self.ruleForm.title='';
                 self.ruleForm.contents='';
                 self.ruleForm.theme='';
-                self.getData1();
             },
             refresh(){
                 location.reload();
@@ -779,6 +787,7 @@
                             type: 'success',
                             message:'保存成功'
                         });
+                        this.getData1();
                     }).catch((error)=>{
                         console.log(error);
                     });
@@ -786,7 +795,6 @@
                     this.ruleForm2.id=null;
                     this.ruleForm2.contents='';
                     this.ruleForm2.theme='';
-                    this.getData1();
                 }
 
             },

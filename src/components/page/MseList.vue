@@ -79,7 +79,7 @@
 
         data: function(){
             return {
-//                hostURL:'http://116.56.140.85:8080/VR',
+//                hostURL:'http://119.23.175.192:8080/VR',
                 hostURL:'/VR',
                 searchData: '',
                 mseList:[
@@ -245,7 +245,10 @@
             mseInfo(str){
                 var start = str.indexOf('<p');
                 var end = str.indexOf('</p>');
-                return str.slice(start,end+4);
+                str = str.slice(start,end+4);
+                var res = str.replace(/<img[^>]+>/ig,"")
+                console.log(res)
+                return res;
             },
         },
         mounted(){
