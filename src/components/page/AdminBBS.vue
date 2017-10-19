@@ -619,6 +619,7 @@
                         type: 'success',
                         message:'发帖成功'
                     });
+                    self.getData1();
                 }).catch((error)=>{
                     console.log(error);
                     self.$message({
@@ -629,7 +630,6 @@
                 self.ruleForm.title='';
                 self.ruleForm.contents='';
                 self.ruleForm.theme='';
-                self.getData1();
             },
             refresh(){
                 location.reload();
@@ -787,6 +787,7 @@
                             type: 'success',
                             message:'保存成功'
                         });
+                        this.getData1();
                     }).catch((error)=>{
                         console.log(error);
                     });
@@ -794,7 +795,6 @@
                     this.ruleForm2.id=null;
                     this.ruleForm2.contents='';
                     this.ruleForm2.theme='';
-                    this.getData1();
                 }
 
             },
