@@ -196,7 +196,7 @@ export default {
         searchData.prop_keyword=self.search;
         searchData.pageNum=self.pageNum;
         self.$axios({
-            url:'/encyclopediaSearch',
+            url:'/encyclopediaDeleteSearch',
             method:'post',
             baseURL:self.hostURL,
             data:searchData
