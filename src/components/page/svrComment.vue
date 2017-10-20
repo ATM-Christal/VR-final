@@ -551,7 +551,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        id:item.id,
+                        id:"svr"+item.id,
                         value:val,
                     }
                 }).catch((error)=>{

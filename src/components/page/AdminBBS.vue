@@ -193,10 +193,15 @@
                             type="selection"
                             width="80">
                     </el-table-column>
-                    <el-table-column
+                    <!--<el-table-column
                             prop="id"
                             label="序号"
                             width="120">
+                    </el-table-column>-->
+                    <el-table-column
+                    label="序号"
+                    type="index"
+                    width="120">
                     </el-table-column>
                     <el-table-column
                             prop="message"
@@ -266,10 +271,15 @@
                             type="selection"
                             width="80">
                     </el-table-column>
-                    <el-table-column
+                    <!--<el-table-column
                             prop="id"
                             label="序号"
                             width="132">
+                    </el-table-column>-->
+                    <el-table-column
+                    label="序号"
+                    type="index"
+                    width="132">
                     </el-table-column>
                     <el-table-column
                             prop="messageLeaving"
@@ -287,8 +297,7 @@
                             width="200">
                     </el-table-column>
                     <el-table-column
-                            label="操作"
-                            width="300">
+                            label="操作">
                         <template scope="scope">
                             <el-button class="list-btn-ground" type="primary" size="small" @click="dialogFormVisible3 = true">编辑</el-button>
                             <el-button class="list-btn-ground" type="success" size="small" @click="edit3(scope.row)" >完成并刷新</el-button>

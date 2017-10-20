@@ -17,12 +17,16 @@
      border
      width=700
      max-height="500">
-     <el-table-column
+    <!-- <el-table-column
        prop="id"
        label="词条编号"
        width=130>
-     </el-table-column>
-     
+     </el-table-column>-->
+     <el-table-column
+        label="序号"
+        type="index"
+        width=130>
+    </el-table-column>
      <el-table-column
        prop="keyword"
        label="词条名"
