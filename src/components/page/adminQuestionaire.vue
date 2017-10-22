@@ -5,12 +5,16 @@
                 <el-tabs v-model="activePane" @tab-click="tabClick">
                     <el-tab-pane label="修改问卷" name="modify">
                         <p class="hint">*所有修改在点击提交问卷按钮后才生效</p>
+                        <el-button type="primary" icon="plus" @click="addQuestionaire" style="margin-left:50px">新建问卷</el-button>
                         <div class="selector" style="margin-bottom:20px">
                             <div class="protype_selector">
                                 <el-select v-model="pro_type.value" placeholder="请选择问卷" @change="sendProType()">
                                     <el-option v-for="item in pro_type.opts" :key="item.value" :label="item.label" :value="item.value">
                                     </el-option>
                                 </el-select>
+                            </div>
+                            <div class="prosales_selector" v-show="display_submit">
+                                <el-input style="width:200px" v-model="questionname" placeholder="请输入问卷名"></el-input>
                             </div>
                         </div>
                         <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
@@ -32,6 +36,7 @@
                             <el-form-item v-show="display_submit">
                                 <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
                                 <el-button @click="addDomain">新增问题</el-button>
+                                <el-button :plain="true" type="danger" @click="deleteQuestionare">删除问卷</el-button>
                             </el-form-item>
                         </el-form>
                     </el-tab-pane>
@@ -109,6 +114,7 @@
                     opts: [], 
                         value: ''
                 },
+                questionname:''
             }
         },
 
@@ -187,7 +193,8 @@
                     var postData=[];
                     for(var i=0;i<this.dynamicValidateForm.domains.length;i++){
                         postData.push({question:this.dynamicValidateForm.domains[i].value,
-                                       questiontype:this.dynamicValidateForm.domains[i].type});
+                                       questiontype:this.dynamicValidateForm.domains[i].type,
+                                       questionname:this.questionname});
                     }
                     console.log(postData);
                     this.$axios({
@@ -222,6 +229,7 @@
                 key: Date.now()
                 });
             },
+            
             getStatistic(){
                 var self = this;
                 self.data={
@@ -247,9 +255,31 @@
                     console.log(error);
                 });
             },
+            deleteQuestionare(){
+                var self=this;
+                self.$axios({
+                    url:'/Question/deleteQuestionare',
+                    method:'get',
+                    baseURL:self.hostUrl,
+                    data:{questionnairename:self.pro_type.value}
+                }).then(response=>{
+                    self.$message('问卷删除成功！');
+                    self.dynamicValidateForm.domains=[];
+                    self.display_submit=false;
+                });
+            },
+            addQuestionaire(){
+                var self=this;
+                self.questionname='';
+                self.dynamicValidateForm.domains=[];
+                self.dynamicValidateForm.domains.push({
+                            value:'',type:'single'});
+                self.display_submit=true;
+            },
             sendProType(){
                 var self=this;
                 console.log("type");
+                self.questionname=self.pro_type.value;
                 self.$axios({
                     url:'/Question/type?type='+self.pro_type.value,
                     method:'get',
@@ -341,11 +371,12 @@
     display: flex;
 }
 .protype_selector{
-    margin-left: 50px;
+    margin-left:50px;
     float:left;
 }
 .prosales_selector{
     margin-left: 40px;
     flex: 1;
+    
 }
 </style>
