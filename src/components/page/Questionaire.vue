@@ -211,13 +211,13 @@
                         method:'post',
                         baseURL: self.hostURL,
                         data: self.answ_data.answers
+                    }).then((response)=>{
+                        localStorage.setItem('pro_type',self.pro_type.value);
+                        // localStorage.setItem('pro_sale',self.pro_sales.value);
+                        self.$router.replace('/user/questionaire/statistic');
                     }).catch((error)=>{
                         console.log(error);
                     });
-                    //发送数据后跳转
-                    localStorage.setItem('pro_type',self.pro_type.value);
-                    // localStorage.setItem('pro_sale',self.pro_sales.value);
-                    self.$router.replace('/user/questionaire/statistic');
                 }else{
                     self.$message('还有内容未填写！');
                 }

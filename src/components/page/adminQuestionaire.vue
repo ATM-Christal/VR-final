@@ -43,7 +43,7 @@
                     <el-tab-pane label="问卷结果统计" name="statistic">
                         <div class="selector">
                             <div class="protype_selector">
-                                <el-select v-model="pro_type.value" placeholder="请选择问卷" @change="sendProType()">
+                                <el-select v-model="pro_type.value" placeholder="请选择问卷" @change="getStatistic()">
                                     <el-option v-for="item in pro_type.opts" :key="item.value" :label="item.label" :value="item.value">
                                     </el-option>
                                 </el-select>
@@ -266,6 +266,8 @@
                     self.$message('问卷删除成功！');
                     self.dynamicValidateForm.domains=[];
                     self.display_submit=false;
+                }).catch((error)=>{
+                    console.log(error);
                 });
             },
             addQuestionaire(){
@@ -279,6 +281,7 @@
             sendProType(){
                 var self=this;
                 console.log("type");
+                self.dynamicValidateForm.domains=[];
                 self.questionname=self.pro_type.value;
                 self.$axios({
                     url:'/Question/type?type='+self.pro_type.value,
@@ -292,6 +295,8 @@
                     //self.dynamicValidateForm.domains= response.data;
                     console.log(self.dynamicValidateForm.domains);
                     self.display_submit=true;
+                }).catch((error)=>{
+                    console.log(error);
                 });
             },
             getQuestions(){
