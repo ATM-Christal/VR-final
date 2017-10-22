@@ -7,506 +7,892 @@
             </el-breadcrumb>
         </div>
         <div class="main-left">
-               <el-menu default-active="#/1" class="el-menu-vertical-demo" :router="true" theme="light" >
-                <el-menu-item  class="menu-item" index='#/1':class="{'isActive': active}"  @click='parameter()'>产品参数</el-menu-item>
-                <el-menu-item  class="menu-item" index='#/2':class="{'isActive': !active}"  @click='security()'>安全性</el-menu-item>
-                <el-menu-item  class="menu-item" index='#/3':class="{'isActive': !active}"  @click='compatibility()'>电磁兼容性</el-menu-item>
-                <el-menu-item  class="menu-item" index='#/4':class="{'isActive': !active}"  @click='properties()'>性能</el-menu-item>
-                <el-menu-item  class="menu-item" index='#/5':class="{'isActive': !active}"  @click='asthenopia()'>视疲劳</el-menu-item>
-              </el-menu> 
-              
+            <el-menu default-active="#/7" class="el-menu-vertical-demo" :router="true" theme="light">
+                <el-menu-item class="menu-item" index='#/7' @click='total()'>总表展示
+                </el-menu-item>
+                <el-menu-item class="menu-item" index='#/1' @click='parameter()'>产品参数
+                </el-menu-item>
+                <el-menu-item class="menu-item" index='#/2' @click='security()'>安全性
+                </el-menu-item>
+                <el-menu-item class="menu-item" index='#/3' @click='compatibility()'>
+                    电磁兼容性
+                </el-menu-item>
+                <el-menu-item class="menu-item" index='#/4' @click='properties()'>性能
+                </el-menu-item>
+                <el-menu-item class="menu-item" index='#/5' @click='asthenopia()'>视疲劳
+                </el-menu-item>
+                <el-menu-item class="menu-item" index='#/6' @click='riskLevel()'>
+                    产品风险
+                </el-menu-item>
+
+            </el-menu>
+
         </div>
         <div class='compare-box'>
-        <table class='compare-table' v-if="show1">
-            <tbody>
+            <table class='compare-table' v-if="show1">
+                <tbody>
                 <tr class="cate-tr">
-                        <td class="cate-title">
-                            <strong>产品外观</strong>
-                        </td>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <img :src="data.picLocation">
-                            </div>
-                        </td>
-                    </tr>
-                     <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            品牌
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.brand}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            销售型号
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.salesmodel}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            产品型号
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.productmodel}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            屏幕类型
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.screentype}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            单眼分辨率
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.monocularresolution}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            重量(kg)
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.weight}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                           CPU(GHz)
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.cpu}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            内存(GB)
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.memory}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            电池容量（mAh)
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.batteryCapacity}}</span>
-                            </div>
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
-
-        <table class='compare-table' v-if="show2">
-            <tbody>
-                <tr class="cate-tr">
-                        <td class="cate-title">
-                            <strong>产品外观</strong>
-                        </td>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <img :src="data.picLocation">
-                            </div>
-                        </td>
+                    <td class="cate-title">
+                        <strong>产品外观</strong>
+                    </td>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <img :src="data.picLocation">
+                        </div>
+                    </td>
                 </tr>
                 <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            工作温度(℃)<el-tooltip content="工作温度小于55℃表示正常" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong>
-                        <br>
-                        </th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.workingtemperature}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            蓝光辐照度(W·m^－2·sr^－1)
-                         </strong>
-                         <br>
-                         <br>
-                         
-                         </th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.bluerayirradiance}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                     <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            声压(dB(A))<el-tooltip content="声压小于100dB表示正常" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong>
-                        </th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.soundpressurelevel}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            播放器最大输出电压(mV)<el-tooltip content="最大输出电压小于150mV表示正常" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong>
-                        <br>
-
-                        </th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.maximumoutputvoltage}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            耳机的宽带特征电压(mV)<el-tooltip content="特征电压大于75mV表示正常" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong>
-                        <br>
-                    
-                         </th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.broadbandcharacteristicvoltageofearphone}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            边界警示
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.boundarywarning}}</span>
-                            </div>
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
-
-        <table class='compare-table' v-if="show3">
-            <tbody>
-                <tr class="cate-tr">
-                        <td class="cate-title">
-                            <strong>产品外观</strong>
-                        </td>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <img :src="data.picLocation">
-                            </div>
-                        </td>
+                    <th class="cate-title"><strong>
+                        品牌
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.brand}}</span>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            辐射骚扰
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <el-button type="text" @click="data.checkVisible = true">点击查看</el-button>
-                            <el-dialog title="辐射骚扰" :visible.sync="data.checkVisible" >
-                                <img :src="data.radiationdisturbance">
-                                <div slot="footer" class="dialog-footer">
-                                    <el-button type="primary" @click="data.checkVisible = false">确 定</el-button>
-                                </div>
-                            </el-dialog>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            静电放电
-                         </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.electrostaticdischarge}}</span>
-                            </div>
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
-
-        <table class='compare-table' v-if="show4">
-            <tbody>
-                <tr class="cate-tr">
-                        <td class="cate-title">
-                            <strong>产品外观</strong>
-                        </td>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <img :src="data.picLocation">
-                            </div>
-                        </td>
+                    <th class="cate-title"><strong>
+                        销售型号
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.salesmodel}}</span>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            视场角(°)<el-tooltip content="≥100为一级，＜100为二级" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong>
-                        </th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.fieldangle}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            刷新率(Hz)<el-tooltip content="＞80为一级，≤80为二级" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.refreshrate}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            系统延迟(ms)<el-tooltip content="≤20为一级，＞20为二级" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.systemdelay}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            跟踪模式(m)
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data. trackingmode}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            跟踪范围
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span>{{data.trackingrange}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                
-            </tbody>
-        </table>
-
-        <table class='compare-table' v-if="show5">
-            <tbody>
-                <tr class="cate-tr">
-                        <td class="cate-title">
-                            <strong>产品外观</strong>
-                        </td>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <img :src="data.picLocation">
-                            </div>
-                        </td>
+                    <th class="cate-title"><strong>
+                        产品型号
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.productmodel}}</span>
+                        </div>
+                    </td>
                 </tr>
-                 <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            视力变化均值<el-tooltip content="＜0.1为一级，≥0.1为二级" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.meanchangeofvisualacuity}}</span>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        屏幕类型
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.screentype}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        单眼分辨率
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.monocularresolution}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        重量(kg)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.weight}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        CPU(GHz)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.cpu}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        内存(GB)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.memory}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        电池容量（mAh)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.batteryCapacity}}</span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class='compare-table' v-if="show2">
+                <tbody>
+                <tr class="cate-tr">
+                    <td class="cate-title">
+                        <strong>产品外观</strong>
+                    </td>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <img :src="data.picLocation">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        工作温度(℃)
+                        <el-tooltip content="工作温度小于55℃表示正常" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                        <br>
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.workingtemperature}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        蓝光辐照度(W·m^－2·sr^－1)
+                    </strong>
+                        <br>
+                        <br>
+
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.bluerayirradiance}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        声压(dB(A))
+                        <el-tooltip content="声压小于100dB表示正常" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.soundpressurelevel}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        播放器最大输出电压(mV)
+                        <el-tooltip content="最大输出电压小于150mV表示正常" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                        <br>
+
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.maximumoutputvoltage}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        耳机的宽带特征电压(mV)
+                        <el-tooltip content="特征电压大于75mV表示正常" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                        <br>
+
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.broadbandcharacteristicvoltageofearphone}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        边界警示
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.boundarywarning}}</span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class='compare-table' v-if="show3">
+                <tbody>
+                <tr class="cate-tr">
+                    <td class="cate-title">
+                        <strong>产品外观</strong>
+                    </td>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <img :src="data.picLocation">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        辐射骚扰
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <el-button type="text" @click="data.checkVisible = true">点击查看</el-button>
+                        <el-dialog title="辐射骚扰" :visible.sync="data.checkVisible">
+                            <img :src="data.radiationdisturbance">
+                            <div slot="footer" class="dialog-footer">
+                                <el-button type="primary" @click="data.checkVisible = false">确 定</el-button>
                             </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            SSQ均值<el-tooltip content="≤90为一级，＞90为二级" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.ssqmean}}</span>
+                        </el-dialog>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        静电放电
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.electrostaticdischarge}}</span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class='compare-table' v-if="show4">
+                <tbody>
+                <tr class="cate-tr">
+                    <td class="cate-title">
+                        <strong>产品外观</strong>
+                    </td>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <img :src="data.picLocation">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        视场角(°)
+                        <el-tooltip content="≥100为一级，＜100为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.fieldangle}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        刷新率(Hz)
+                        <el-tooltip content="＞80为一级，≤80为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.refreshrate}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        系统延迟(ms)
+                        <el-tooltip content="≤20为一级，＞20为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.systemdelay}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        跟踪模式(m)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data. trackingmode}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        跟踪范围
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.trackingrange}}</span>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <table class='compare-table' v-if="show5">
+                <tbody>
+                <tr class="cate-tr">
+                    <td class="cate-title">
+                        <strong>产品外观</strong>
+                    </td>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <img :src="data.picLocation">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        视力变化均值
+                        <el-tooltip content="＜0.1为一级，≥0.1为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.meanchangeofvisualacuity}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        SSQ均值
+                        <el-tooltip content="≤90为一级，＞90为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.ssqmean}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        CVS均值
+                        <el-tooltip content="≤80为一级，＞80为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.cvsmean}}</span>
+                        </div>
+                    </td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+            <table class='compare-table' v-if="show6">
+                <tbody>
+                <tr class="cate-tr">
+                    <td class="cate-title">
+                        <strong>产品外观</strong>
+                    </td>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <img :src="data.picLocation">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        产品风险等级
+                        <el-tooltip content="产品风险等级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.riskLevel}}</span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class='compare-table' v-if="show7">
+                <tbody>
+                <tr class="cate-tr">
+                    <td class="cate-title">
+                        <strong>产品外观</strong>
+                    </td>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <img :src="data.picLocation">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        品牌
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.brand}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        销售型号
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.salesmodel}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        产品型号
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.productmodel}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        屏幕类型
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.screentype}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        单眼分辨率
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.monocularresolution}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        重量(kg)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.weight}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        CPU(GHz)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.cpu}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        内存(GB)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.memory}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        电池容量（mAh)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.batteryCapacity}}</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        工作温度(℃)
+                        <el-tooltip content="工作温度小于55℃表示正常" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                        <br>
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.workingtemperature}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        蓝光辐照度(W·m^－2·sr^－1)
+                    </strong>
+                        <br>
+                        <br>
+
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.bluerayirradiance}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        声压(dB(A))
+                        <el-tooltip content="声压小于100dB表示正常" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.soundpressurelevel}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        播放器最大输出电压(mV)
+                        <el-tooltip content="最大输出电压小于150mV表示正常" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                        <br>
+
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.maximumoutputvoltage}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        耳机的宽带特征电压(mV)
+                        <el-tooltip content="特征电压大于75mV表示正常" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                        <br>
+
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.broadbandcharacteristicvoltageofearphone}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        边界警示
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.boundarywarning}}</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        辐射骚扰
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <el-button type="text" @click="data.checkVisible = true">点击查看</el-button>
+                        <el-dialog title="辐射骚扰" :visible.sync="data.checkVisible">
+                            <img :src="data.radiationdisturbance">
+                            <div slot="footer" class="dialog-footer">
+                                <el-button type="primary" @click="data.checkVisible = false">确 定</el-button>
                             </div>
-                        </td>
-                    </tr>
-                    <tr class="param-list">
-                        <th class="cate-title"><strong>
-                            CVS均值<el-tooltip content="≤80为一级，＞80为二级" placement="top">
-                                                        <img :src="pic_hint" style="width:15px">
-                                                    </el-tooltip>
-                        </strong></th>
-                        <td v-for="data in datas">
-                            <div class="param-content">
-                                <span class='safety' >{{data.cvsmean}}</span>
-                            </div>
-                        </td>
-                    </tr>
-                
-                
-            </tbody>
-        </table>
-        </div>     
+                        </el-dialog>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        静电放电
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.electrostaticdischarge}}</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        视场角(°)
+                        <el-tooltip content="≥100为一级，＜100为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong>
+                    </th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.fieldangle}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        刷新率(Hz)
+                        <el-tooltip content="＞80为一级，≤80为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.refreshrate}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        系统延迟(ms)
+                        <el-tooltip content="≤20为一级，＞20为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.systemdelay}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        跟踪模式(m)
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data. trackingmode}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        跟踪范围
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span>{{data.trackingrange}}</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        视力变化均值
+                        <el-tooltip content="＜0.1为一级，≥0.1为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.meanchangeofvisualacuity}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        SSQ均值
+                        <el-tooltip content="≤90为一级，＞90为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.ssqmean}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        CVS均值
+                        <el-tooltip content="≤80为一级，＞80为二级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.cvsmean}}</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="param-list">
+                    <th class="cate-title"><strong>
+                        产品风险等级
+                        <el-tooltip content="产品风险等级" placement="top">
+                            <img :src="pic_hint" style="width:15px">
+                        </el-tooltip>
+                    </strong></th>
+                    <td v-for="data in datas">
+                        <div class="param-content">
+                            <span class='safety'>{{data.riskLevel}}</span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
 <script>
-import hint from '../../assets/hint.png';    
+    import hint from '../../assets/hint.png';
     export default {
-        data: function(){
+        data: function () {
             return {
-                show1:true,
-                show2:false,
-                show3:false,
-                show4:false,
-                show5:false,
+                show1: false,
+                show2: false,
+                show3: false,
+                show4: false,
+                show5: false,
+                show6: false,
+                show7: true,
                 // show:[true,false,false,false,false],
-                pic_hint:hint,
-                activeName2: 'first',
-                allowSubmit:true,
-                hostURL:"/VR",
-                datas:[{
-                    id:1,
-                    brand:1,
-                    salesmodel:'name',
-                    productmodel:"name1",
-                    picLocation:"./static/img/img.jpg",
+                pic_hint: hint,
+                allowSubmit: true,
+                hostURL: "/VR",
+//                hostURL:"http://119.23.175.192:8080/VR",
+                datas: [{
+                    id: 1,
+                    brand: 1,
+                    salesmodel: 'name',
+                    productmodel: "name1",
+                    picLocation: "./static/img/img.jpg",
                     //产品配置
-                    screentype:"22222",//屏幕类型
-                    monocularresolution:"222222",//单眼分辨率
-                    weight:1,//重量
-                    cpu:1,
-                    memory:1,
-                    batteryCapacity:1,
+                    screentype: "22222",//屏幕类型
+                    monocularresolution: "222222",//单眼分辨率
+                    weight: 1,//重量
+                    cpu: 1,
+                    memory: 1,
+                    batteryCapacity: 1,
                     //安全性
-                    workingtemperature:1,//温升/发热
-                    bluerayirradiance:1,//蓝光辐照度
-                    soundpressurelevel:1,//声压
-                    maximumoutputvoltage:'110,  ≤150mv',//播放器的最大输出电压
-                    broadbandcharacteristicvoltageofearphone:5555,//耳机的宽带特征电压
-                    boundarywarning:"222222222",//边界警示
+                    workingtemperature: 1,//温升/发热
+                    bluerayirradiance: 1,//蓝光辐照度
+                    soundpressurelevel: 1,//声压
+                    maximumoutputvoltage: '110,  ≤150mv',//播放器的最大输出电压
+                    broadbandcharacteristicvoltageofearphone: 5555,//耳机的宽带特征电压
+                    boundarywarning: "222222222",//边界警示
                     // 电磁兼容性
-                    radiationdisturbance:"./static/img/img.jpg",//辐射骚扰
-                    electrostaticdischarge:"./static/img/img.jpg",//静电放电
+                    radiationdisturbance: "./static/img/img.jpg",//辐射骚扰
+                    electrostaticdischarge: "./static/img/img.jpg",//静电放电
                     //性能
-                    fieldangle:1,//视场角
-                    refreshrate:1,//刷新率
-                    systemdelay:1,//系统延迟
-                    trackingmode:1,//跟踪模式
-                    trackingrange:1,//跟踪范围
+                    fieldangle: 1,//视场角
+                    refreshrate: 1,//刷新率
+                    systemdelay: 1,//系统延迟
+                    trackingmode: 1,//跟踪模式
+                    trackingrange: 1,//跟踪范围
                     //20min视疲劳
-                    meanchangeofvisualacuity:1,//视力变化均值
-                    ssqmean:1,//SSQ均值
-                    cvsmean:1,
+                    meanchangeofvisualacuity: 1,//视力变化均值
+                    ssqmean: 1,//SSQ均值
+                    cvsmean: 1,
+                    riskLevel: 1
                 },
-                {
-                    id:1,
-                    brand:1,
-                    salesmodel:'name',
-                    productmodel:"name1",
-                    picLocation:"./static/img/img.jpg",
-                    //产品配置
-                    screentype:"22222",//屏幕类型
-                    monocularresolution:"222222",//单眼分辨率
-                    weight:1,//重量
-                    cpu:1,
-                    memory:1,
-                    batteryCapacity:1,
-                    //安全性
-                    workingtemperature:1,//温升/发热
-                    bluerayirradiance:1,//蓝光辐照度
-                    soundpressurelevel:1,//声压
-                    maximumoutputvoltage:1000,//播放器的最大输出电压
-                    broadbandcharacteristicvoltageofearphone:5555,//耳机的宽带特征电压
-                    boundarywarning:"222222222",//边界警示
-                    // 电磁兼容性
-                    radiationdisturbance:"./static/img/img.jpg",//辐射骚扰
-                    electrostaticdischarge:"./static/img/img.jpg",//静电放电
-                    //性能
-                    fieldangle:1,//视场角
-                    refreshrate:1,//刷新率
-                    systemdelay:1,//系统延迟
-                    trackingmode:1,//跟踪模式
-                    trackingrange:1,//跟踪范围
-                    //20min视疲劳
-                    meanchangeofvisualacuity:1,//视力变化均值
-                    ssqmean:1,//SSQ均值
-                    cvsmean:1, //CVS均值
-                },
-                {
-                    id:1,
-                    brand:1,
-                    salesmodel:'name',
-                    productmodel:"name1",
-                    picLocation:"./static/img/img.jpg",
-                    //产品配置
-                    screentype:"22222",//屏幕类型
-                    monocularresolution:"222222",//单眼分辨率
-                    weight:1,//重量
-                    cpu:1,
-                    memory:1,
-                    batteryCapacity:1,
-                    //安全性
-                    workingtemperature:1,//温升/发热
-                    bluerayirradiance:1,//蓝光辐照度
-                    soundpressurelevel:1,//声压
-                    maximumoutputvoltage:1000,//播放器的最大输出电压
-                    broadbandcharacteristicvoltageofearphone:5555,//耳机的宽带特征电压
-                    boundarywarning:"222222222",//边界警示
-                    // 电磁兼容性
-                    radiationdisturbance:"./static/img/img.jpg",//辐射骚扰
-                    electrostaticdischarge:"./static/img/img.jpg",//静电放电
-                    //性能
-                    fieldangle:1,//视场角
-                    refreshrate:1,//刷新率
-                    systemdelay:1,//系统延迟
-                    trackingmode:1,//跟踪模式
-                    trackingrange:1,//跟踪范围
-                    //20min视疲劳
-                    meanchangeofvisualacuity:1,//视力变化均值
-                    ssqmean:1,//SSQ均值
-                    cvsmean:1, //CVS均值
-                }]
+                    {
+                        id: 1,
+                        brand: 1,
+                        salesmodel: 'name',
+                        productmodel: "name1",
+                        picLocation: "./static/img/img.jpg",
+                        //产品配置
+                        screentype: "22222",//屏幕类型
+                        monocularresolution: "222222",//单眼分辨率
+                        weight: 1,//重量
+                        cpu: 1,
+                        memory: 1,
+                        batteryCapacity: 1,
+                        //安全性
+                        workingtemperature: 1,//温升/发热
+                        bluerayirradiance: 1,//蓝光辐照度
+                        soundpressurelevel: 1,//声压
+                        maximumoutputvoltage: 1000,//播放器的最大输出电压
+                        broadbandcharacteristicvoltageofearphone: 5555,//耳机的宽带特征电压
+                        boundarywarning: "222222222",//边界警示
+                        // 电磁兼容性
+                        radiationdisturbance: "./static/img/img.jpg",//辐射骚扰
+                        electrostaticdischarge: "./static/img/img.jpg",//静电放电
+                        //性能
+                        fieldangle: 1,//视场角
+                        refreshrate: 1,//刷新率
+                        systemdelay: 1,//系统延迟
+                        trackingmode: 1,//跟踪模式
+                        trackingrange: 1,//跟踪范围
+                        //20min视疲劳
+                        meanchangeofvisualacuity: 1,//视力变化均值
+                        ssqmean: 1,//SSQ均值
+                        cvsmean: 1, //CVS均值,
+                        riskLevel: 1
+                    },
+                    {
+                        id: 1,
+                        brand: 1,
+                        salesmodel: 'name',
+                        productmodel: "name1",
+                        picLocation: "./static/img/img.jpg",
+                        //产品配置
+                        screentype: "22222",//屏幕类型
+                        monocularresolution: "222222",//单眼分辨率
+                        weight: 1,//重量
+                        cpu: 1,
+                        memory: 1,
+                        batteryCapacity: 1,
+                        //安全性
+                        workingtemperature: 1,//温升/发热
+                        bluerayirradiance: 1,//蓝光辐照度
+                        soundpressurelevel: 1,//声压
+                        maximumoutputvoltage: 1000,//播放器的最大输出电压
+                        broadbandcharacteristicvoltageofearphone: 5555,//耳机的宽带特征电压
+                        boundarywarning: "222222222",//边界警示
+                        // 电磁兼容性
+                        radiationdisturbance: "./static/img/img.jpg",//辐射骚扰
+                        electrostaticdischarge: "./static/img/img.jpg",//静电放电
+                        //性能
+                        fieldangle: 1,//视场角
+                        refreshrate: 1,//刷新率
+                        systemdelay: 1,//系统延迟
+                        trackingmode: 1,//跟踪模式
+                        trackingrange: 1,//跟踪范围
+                        //20min视疲劳
+                        meanchangeofvisualacuity: 1,//视力变化均值
+                        ssqmean: 1,//SSQ均值
+                        cvsmean: 1, //CVS均值
+                        riskLevel: 1
+                    }]
 
             }//return end
         },
-        methods:{
+        methods: {
             codeParsing(code) {
                 let self = this;
                 var msg = (err_title, err_message)=> {
@@ -573,47 +959,50 @@ import hint from '../../assets/hint.png';
                 }
             },
             addCheckVisible(data){
-                var self=this;
-                self.datas=[];
-                for(var i=0;i<data.length;i++){
-                self.datas.push({
-                    id:data[i].id,
-                    brand:data[i].brand,
-                    salesmodel:data[i].salesmodel,
-                    productmodel:data[i].productmodel,
-                    picLocation:data[i].picLocation,
-                    screentype:data[i].screentype,
-                    monocularresolution:data[i].monocularresolution,
-                    weight:data[i].weight,
-                    cpu:data[i].cpu,
-                    memory:data[i].memory,
-                    batteryCapacity:data[i].batteryCapacity,
-                    workingtemperature:data[i].workingtemperature,
-                    bluerayirradiance:data[i].bluerayirradiance,
-                    soundpressurelevel:data[i].soundpressurelevel,
-                    maximumoutputvoltage:data[i].maximumoutputvoltage,
-                    broadbandcharacteristicvoltageofearphone:data[i].broadbandcharacteristicvoltageofearphone,
-                    boundarywarning:data[i].boundarywarning,
-                    radiationdisturbance:data[i].radiationdisturbance,
-                    electrostaticdischarge:data[i].electrostaticdischarge,
+                var self = this;
+                self.datas = [];
+                for (var i = 0; i < data.length; i++) {
+                    self.datas.push({
+                        id: data[i].id,
+                        brand: data[i].brand,
+                        salesmodel: data[i].salesmodel,
+                        productmodel: data[i].productmodel,
+                        picLocation: data[i].picLocation,
+                        screentype: data[i].screentype,
+                        monocularresolution: data[i].monocularresolution,
+                        weight: data[i].weight,
+                        cpu: data[i].cpu,
+                        memory: data[i].memory,
+                        batteryCapacity: data[i].batteryCapacity,
+                        workingtemperature: data[i].workingtemperature,
+                        bluerayirradiance: data[i].bluerayirradiance,
+                        soundpressurelevel: data[i].soundpressurelevel,
+                        maximumoutputvoltage: data[i].maximumoutputvoltage,
+                        broadbandcharacteristicvoltageofearphone: data[i].broadbandcharacteristicvoltageofearphone,
+                        boundarywarning: data[i].boundarywarning,
+                        radiationdisturbance: data[i].radiationdisturbance,
+                        electrostaticdischarge: data[i].electrostaticdischarge,
 
-                    fieldangle:data[i].fieldangle,
-                    refreshrate:data[i].refreshrate,
-                    systemdelay:data[i].systemdelay,
-                    trackingmode:data[i].trackingmode,
-                    trackingrange:data[i].trackingrange,
+                        fieldangle: data[i].fieldangle,
+                        refreshrate: data[i].refreshrate,
+                        systemdelay: data[i].systemdelay,
+                        trackingmode: data[i].trackingmode,
+                        trackingrange: data[i].trackingrange,
 
-                    meanchangeofvisualacuity:data[i].meanchangeofvisualacuity,
-                    ssqmean:data[i].ssqmean,
-                    cvsmean:data[i].cvsmean,
-                    checkVisible:false})
+                        meanchangeofvisualacuity: data[i].meanchangeofvisualacuity,
+                        ssqmean: data[i].ssqmean,
+                        cvsmean: data[i].cvsmean,
+
+                        riskLevel: data[i].riskLevel,
+                        checkVisible: false
+                    })
                 }
             },
 
             getData(){
                 var self = this;
                 var postId = {
-                    idList:[]
+                    idList: []
                 };
                 var _url = "";
                 // var str = localStorage.getItem('store');
@@ -621,17 +1010,17 @@ import hint from '../../assets/hint.png';
                 // for(let i = 0;i<arr.length;i++){
                 //     arr[i] = parseInt(arr[i]);
                 // }
-                var t=JSON.parse(localStorage.getItem('compare_data'));
-                for(var i=0;i<t.data.length;i++)
+                var t = JSON.parse(localStorage.getItem('compare_data'));
+                for (var i = 0; i < t.data.length; i++)
                     postId.idList.push(t.data[i].id);
                 var kind = localStorage.getItem('kind');
-                if(kind=="ivr"){
+                if (kind == "ivr") {
                     _url = '/ivrCompare';
                 }
-                else if(kind=="svr"){
+                else if (kind == "svr") {
                     _url = '/svrCompare';
                 }
-                else if(kind=="evr"){
+                else if (kind == "evr") {
                     _url = '/evrCompare';
                 }
                 //var tmp=self.datas;
@@ -641,160 +1030,216 @@ import hint from '../../assets/hint.png';
                 //self.addCheckVisible(tmp);
                 //console.log(self.datas);
                 self.$axios({
-                    url:_url,
+                    url: _url,
                     // url:'./static/ivr.json',
-                    method:'post',
-                    data:postId,
+                    method: 'post',
+                    data: postId,
                     baseURL: self.hostURL
-                }).then((response)=>{
+                }).then((response)=> {
                     //self.datas= response.data.data.payload;
                     self.addCheckVisible(response.data.data.payload);
-                }).catch((error)=>{
+                }).catch((error)=> {
                     console.log(error);
                 });
             },
-            // getInfo(id){
-            //     for(var i=0;i<5;i++)
-            //     {
-            //         if(this.show[i]==true)
-            //         {
-                        
-            //             this.show[i]=false;
-            //         }
+            /* getInfo(id){
+             for(var i=0;i<5;i++)
+             {
+             if(this.show[i]==true)
+             {
 
-            //     }
-            //     this.show[id]=true;
-            //     for(var i=0;i<5;i++)
-            //     {
-            //         // if(this.show[i]==true)
-            //         // {
-                        
-            //         //     this.show[i]=false;
-            //         // }
-            //         console.log(this.show[i]);
-            //     }
-            // },
+             this.show[i]=false;
+             }
+
+             }
+             this.show[id]=true;
+             for(var i=0;i<5;i++)
+             {
+             // if(this.show[i]==true)
+             // {
+
+             //     this.show[i]=false;
+             // }
+             console.log(this.show[i]);
+             }
+             },*/
             parameter(){
-                
-                this.show1 = true;this.show2 = false;this.show3 = false;this.show4 = false;this.show5 = false;
+
+                this.show1 = true;
+                this.show2 = false;
+                this.show3 = false;
+                this.show4 = false;
+                this.show5 = false;
+                this.show6 = false;
+                this.show7 = false;
             },
             security(){
-                this.show1 = false;this.show2 = true;this.show3 = false;this.show4 = false;this.show5 = false;
+                this.show1 = false;
+                this.show2 = true;
+                this.show3 = false;
+                this.show4 = false;
+                this.show5 = false;
+                this.show6 = false;
+                this.show7 = false;
             },
             compatibility(){
-                this.show1 = false;this.show2 = false;this.show3 = true;this.show4 = false;this.show5 = false;
+                this.show1 = false;
+                this.show2 = false;
+                this.show3 = true;
+                this.show4 = false;
+                this.show5 = false;
+                this.show6 = false;
+                this.show7 = false;
             },
             properties(){
-                this.show1 = false;this.show2 = false;this.show3 = false;this.show4 = true;this.show5 = false;
+                this.show1 = false;
+                this.show2 = false;
+                this.show3 = false;
+                this.show4 = true;
+                this.show5 = false;
+                this.show6 = false;
+                this.show7 = false;
             },
             asthenopia(){
-                this.show1 = false;this.show2 = false;this.show3 = false;this.show4 = false;this.show5 = true;
-
+                this.show1 = false;
+                this.show2 = false;
+                this.show3 = false;
+                this.show4 = false;
+                this.show5 = true;
+                this.show6 = false;
+                this.show7 = false;
+            },
+            riskLevel(){
+                this.show1 = false;
+                this.show2 = false;
+                this.show3 = false;
+                this.show4 = false;
+                this.show5 = false;
+                this.show6 = true;
+                this.show7 = false;
+            },
+            total(){
+                this.show1 = false;
+                this.show2 = false;
+                this.show3 = false;
+                this.show4 = false;
+                this.show5 = false;
+                this.show6 = false;
+                this.show7 = true;
             }
-
-           
-            
         },
-        
+
         mounted(){
-            var self= this;
-            var user_name=localStorage.getItem("ms_username");
-            if(user_name==""){
+            var self = this;
+            var user_name = localStorage.getItem("ms_username");
+            if (user_name == "") {
                 this.$router.replace('/login');
             }
             self.getData();
         }
     }
-    
+
 </script>
 
 <style scoped>
-.crumbs{
-    text-decoration: none;
-}
-.bread{
-    font-size: 16px;
-}
-.form-box{
-    width:300px;
-    margin-top:50px;
-    margin-left:0px;
-    box-shadow:0 0 8px 0
-        rgba(232,237,250,.9),0 2px 4px 0
-        rgba(232,237,250,.9);
-    padding:50px 50px 50px 10px;  
-}
-.submit-btn{
-    width:220px;
-    margin-left:80px;
-}
-.submit-btn button{
-    width:100%; 
-}
-.compare-box{
-    padding: 28px;
-    width: 880px;
-    border: 1px solid #E1E1E1;
-    box-shadow: 0 0 2px rgba(0,0,0,.1);
-    margin-left:200px;
-}
-.compare-table{
-    border-collapse: collapse;
-    width: 800px;
-    margin-left: 40px;
-    
-}
-.compare-table .cate-title{
-    text-align: left;
-    height: 35px;
-    border: 1px solid #e6e6e6;
-    padding-left: 10px;
-    background: #fafafa;
-}
-.compare-table td{
-    width: 218px;
-    padding: 8px 0;
-    zoom: 1;
-    text-align: center;
-    word-wrap: break-word;
-    word-break: break-all;
-    border: 1px solid #e6e6e6;
-}
-.cate-title strong{
-    position: relative;
-    display: block;
-    padding-left: 17px;
-    height: 20px;
-    font: 16px/20px 'Microsoft YaHei',arial;
-    background-position: -87px 2px;
-    color: #333;
-    font-weight: bold;
-}
-.compare-table th{
-    padding: 8px 10px;
-    width: 102px;
-    border: 1px solid #e6e6e6;
-    background: #fafafa;
-    font-weight: normal;
-    text-align: right;
-    line-height: 18px;
-    font-size: 14px
-}
-.param-content{
-    width: 200px;
-    white-space: nowrap;
-}
-.param-content img{
-    width:100%;
-    margin-left: 7px;
-}
-.main-left{
-    text-align: center;
-    width: 200px;
-    float: left;
-}
-/*.safety{
-    cursor:help;
-}*/
+    .crumbs {
+        text-decoration: none;
+    }
+
+    .bread {
+        font-size: 16px;
+    }
+
+    .form-box {
+        width: 300px;
+        margin-top: 50px;
+        margin-left: 0px;
+        box-shadow: 0 0 8px 0 rgba(232, 237, 250, .9), 0 2px 4px 0 rgba(232, 237, 250, .9);
+        padding: 50px 50px 50px 10px;
+    }
+
+    .submit-btn {
+        width: 220px;
+        margin-left: 80px;
+    }
+
+    .submit-btn button {
+        width: 100%;
+    }
+
+    .compare-box {
+        padding: 28px;
+        width: 880px;
+        border: 1px solid #E1E1E1;
+        box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+        margin-left: 200px;
+    }
+
+    .compare-table {
+        border-collapse: collapse;
+        width: 800px;
+        margin-left: 40px;
+
+    }
+
+    .compare-table .cate-title {
+        text-align: left;
+        height: 35px;
+        border: 1px solid #e6e6e6;
+        padding-left: 10px;
+        background: #fafafa;
+    }
+
+    .compare-table td {
+        width: 218px;
+        padding: 8px 0;
+        zoom: 1;
+        text-align: center;
+        word-wrap: break-word;
+        word-break: break-all;
+        border: 1px solid #e6e6e6;
+    }
+
+    .cate-title strong {
+        position: relative;
+        display: block;
+        padding-left: 17px;
+        height: 20px;
+        font: 16px/20px 'Microsoft YaHei', arial;
+        background-position: -87px 2px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .compare-table th {
+        padding: 8px 10px;
+        width: 102px;
+        border: 1px solid #e6e6e6;
+        background: #fafafa;
+        font-weight: normal;
+        text-align: right;
+        line-height: 18px;
+        font-size: 14px
+    }
+
+    .param-content {
+        width: 200px;
+        white-space: nowrap;
+    }
+
+    .param-content img {
+        width: 100%;
+        margin-left: 7px;
+    }
+
+    .main-left {
+        text-align: center;
+        width: 200px;
+        float: left;
+    }
+
+    /*.safety{
+        cursor:help;
+    }*/
 
 </style>
