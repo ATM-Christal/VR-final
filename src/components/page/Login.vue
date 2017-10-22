@@ -462,7 +462,7 @@ import comment from '../../assets/comment.png';
                             if (response.data.code === 200) {
                                 this.$notify({
                                     title: '成功',
-                                    message: '注册成功!',
+                                    message: '注册成功！请检查邮箱，若未收到激活邮件，请确认是否被归为垃圾邮件。',
                                     type: 'success'
                                 });
                                 self.goToLogin();

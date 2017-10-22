@@ -129,18 +129,10 @@
                 console.log("get statistic")
                 var self = this;
                 self.data={
-                    statistic:[{
-                        question:"1.你是谁？",
-                        onePercentage:"66.67",
-                        twoPercentage:"33.33"
-                    },{
-                        question:"2.我是谁？",
-                        onePercentage:"50.00",
-                        twoPercentage:"50.00"
-                    }]
+                    statistic:[]
                 };
                 self.$axios({
-                    url:'/Answer/statistic?productname='+localStorage.getItem('pro_sale')+'&producttype='+localStorage.getItem('pro_type'),
+                    url:'/Answer/statistic?producttype='+localStorage.getItem('pro_type'),
                     method:'get',
                     baseURL: self.hostURL
                 }).then((response)=>{

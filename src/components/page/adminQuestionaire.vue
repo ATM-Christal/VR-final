@@ -5,6 +5,14 @@
                 <el-tabs v-model="activePane" @tab-click="tabClick">
                     <el-tab-pane label="修改问卷" name="modify">
                         <p class="hint">*所有修改在点击提交问卷按钮后才生效</p>
+                        <div class="selector" style="margin-bottom:20px">
+                            <div class="protype_selector">
+                                <el-select v-model="pro_type.value" placeholder="请选择问卷" @change="sendProType()">
+                                    <el-option v-for="item in pro_type.opts" :key="item.value" :label="item.label" :value="item.value">
+                                    </el-option>
+                                </el-select>
+                            </div>
+                        </div>
                         <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
                             <el-form-item
                                 v-for="(domain, index) in dynamicValidateForm.domains"
@@ -21,7 +29,7 @@
                                 </el-switch>
                                 <el-button @click.prevent="removeDomain(domain)">删除</el-button>
                             </el-form-item>
-                            <el-form-item>
+                            <el-form-item v-show="display_submit">
                                 <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
                                 <el-button @click="addDomain">新增问题</el-button>
                             </el-form-item>
@@ -30,14 +38,8 @@
                     <el-tab-pane label="问卷结果统计" name="statistic">
                         <div class="selector">
                             <div class="protype_selector">
-                                <el-select v-model="pro_type.value" placeholder="请选择产品类型" @change="sendProType()">
+                                <el-select v-model="pro_type.value" placeholder="请选择问卷" @change="sendProType()">
                                     <el-option v-for="item in pro_type.opts" :key="item.value" :label="item.label" :value="item.value">
-                                    </el-option>
-                                </el-select>
-                            </div>
-                            <div class="prosales_selector" >
-                                <el-select v-model="pro_sales.value" placeholder="请选择产品型号" :disabled="pro_sales_disable" @change="getStatistic()">
-                                    <el-option v-for="item in pro_sales.opts" :key="item.value" :label="item.label" :value="item.value">
                                     </el-option>
                                 </el-select>
                             </div>
@@ -82,6 +84,7 @@
                     code: 200,
                     statistic:[],
                 },
+                display_submit:false,
                 dynamicValidateForm: {
                     domains: [{
                         value: '你是谁？',
@@ -103,26 +106,9 @@
                     }]
                 },
                 pro_type:{
-                    opts: [{
-                        value: 'AllInOnePc',
-                        label: '一体机'
-                        }, {
-                        value: 'PcheadSet',
-                        label: 'PC头显'
-                        }, {
-                        value: 'MobileBox',
-                        label: '手机盒子'
-                        }], 
+                    opts: [], 
                         value: ''
                 },
-                pro_sales:{
-                    opts: [{
-                        value: '',
-                        label: ''
-                        }],
-                    value: ''
-                },
-                pro_sales_disable:true
             }
         },
 
@@ -194,24 +180,6 @@
                         break;
                 }
             },
-            getQuestions(){
-                var self=this;
-                self.dynamicValidateForm.domains=[];
-                self.$axios({
-                    url:'/Question',
-                    method:'get',
-                    baseURL: self.hostUrl
-                }).then((response)=>{
-                    for(var i=0;i<response.data.length;i++){
-                        self.dynamicValidateForm.domains.push({
-                            value:response.data[i].question,type:response.data[i].questiontype})
-                    }
-                    //self.dynamicValidateForm.domains= response.data;
-                    console.log(self.dynamicValidateForm.domains);
-                }).catch((error)=>{
-                    console.log(error);
-                });
-            },
             submitForm(formName) {
                 // console.log(formName);
                 this.$refs[formName].validate((valid) => {
@@ -269,7 +237,7 @@
                     // }]
                 };
                 self.$axios({
-                    url:'/Answer/statistic?productname='+self.pro_sales.value+'&producttype='+self.pro_type.value,
+                    url:'/Answer/statistic?producttype='+self.pro_type.value,
                     method:'get',
                     baseURL: self.hostUrl
                 }).then((response)=>{
@@ -287,15 +255,33 @@
                     method:'get',
                     baseURL:self.hostUrl
                 }).then(response=>{
-                    self.pro_sales.opts=[];
                     for(var i=0;i<response.data.length;i++){
-                        self.pro_sales.opts.push({value:response.data[i],label:response.data[i]});
+                        self.dynamicValidateForm.domains.push({
+                            value:response.data[i].question,type:response.data[i].questiontype})
                     }
-                    self.pro_sales.value=response.data[0];
-                    self.pro_sales_disable=false;
+                    //self.dynamicValidateForm.domains= response.data;
+                    console.log(self.dynamicValidateForm.domains);
+                    self.display_submit=true;
                 });
             },
-
+            getQuestions(){
+                var self=this;
+                self.dynamicValidateForm.domains=[];
+                self.$axios({
+                    url:'/Question',
+                    method:'get',
+                    baseURL: self.hostUrl
+                }).then((response)=>{
+                    console.log(response.data);
+                    self.pro_type.opts=[];
+                    for(var i=0;i<response.data.length;i++){
+                        self.pro_type.opts.push({value:response.data[i],label:response.data[i]});
+                    }
+                    
+                }).catch((error)=>{
+                    console.log(error);
+                });
+            },
             
         },
         mounted(){

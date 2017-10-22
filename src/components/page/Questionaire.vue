@@ -11,19 +11,19 @@
             <hr>
             <div class="selector">
                 <div class="protype_selector">
-                    <el-select v-model="pro_type.value" placeholder="请选择产品类型" @change="sendProType()">
+                    <el-select v-model="pro_type.value" placeholder="请选择问卷" @change="sendProType()">
                         <el-option v-for="item in pro_type.opts" :key="item.value" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </div>
-                <div class="prosales_selector" >
+                <!--<div class="prosales_selector" >
                     <el-select v-model="pro_sales.value" placeholder="请选择产品型号" :disabled="pro_sales_disable">
                         <el-option v-for="item in pro_sales.opts" :key="item.value" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
-                </div>
+                </div>-->
             </div>
-            <div class='questionbox'>
+            <div class='questionbox' v-show="display_box">
                 <form id="questions">
                     <div class="single_question" v-for="(a,index) in answ_data.answers">
                         <p style="margin-bottom:10px">{{a.question}}</p>
@@ -54,7 +54,7 @@
                 allowSubmit:true,
                 hostURL:"/VR",
                 uid:"1",
-
+                display_box:false,
                 ques_data:{
                     questions:[{
                         id:1,
@@ -95,14 +95,14 @@
                         }], 
                         value: ''
                 },
-                pro_sales:{
-                    opts: [{
-                        value: '',
-                        label: ''
-                        }],
-                        value: ''
-                },
-                pro_sales_disable:true
+                // pro_sales:{
+                //     opts: [{
+                //         value: '',
+                //         label: ''
+                //         }],
+                //         value: ''
+                // },
+                // pro_sales_disable:true
             }
         },
     
@@ -174,58 +174,18 @@
             },
             getData(id){
                 var self = this;
-                self.ques_data = {
-                    questions:[{
-                        id:1,
-                        question:"1.你是谁？",
-                        questiontype:"single"
-                    },{
-                        id:2,
-                        question:"2.我是谁？",
-                        questiontype:"single"
-                    },{
-                        id:3,
-                        question:"3.你对某个产品有什么建议？",
-                        questiontype:"essay"
-                    }]
-                };
-                self.answ_data={
-                    answers:[{
-                        question:"1.你是谁？",
-                        user:self.uid,
-                        answer:"1",
-                        producttype:"",
-                        productname:""
-                    },{
-                        question:"2.我是谁？",
-                        user:self.uid,
-                        answer:"2",
-                        producttype:"",
-                        productname:""
-                    },{
-                        question:"3.你对某个产品有什么建议？",
-                        user:self.uid,
-                        answer:"",
-                        producttype:"",
-                        productname:""
-                    }]
-                };
+                self.ques_data.questions=[];
+                self.answ_data.answers=[];
+                self.pro_type.opts=[];
                 self.$axios({
                     url:'/Question',
                     method:'get',
                     baseURL: self.hostURL
                 }).then((response)=>{
                     console.log(response.data);
-                    self.ques_data.questions= response.data;
-                    self.answ_data.answers=[];
-                    for(var i=0;i<self.ques_data.questions.length;i++){
-                        self.answ_data.answers.push({
-                            question:self.ques_data.questions[i].question,
-                            user:localStorage.getItem('ms_userid'),
-                            answer:"",
-                            producttype:"",
-                            productname:""
-                        })
+                    self.pro_type.opts=[];
+                    for(var i=0;i<response.data.length;i++){
+                        self.pro_type.opts.push({value:response.data[i],label:response.data[i]});
                     }
                 }).catch((error)=>{
                     console.log(error);
@@ -240,10 +200,10 @@
                         break;
                     }
                 }
-                if(send&&self.pro_sales.value!=""&&self.pro_type.value!=""){
+                if(send&&self.pro_type.value!=""){
                     for(var i=0;i<self.answ_data.answers.length;i++){
                         self.answ_data.answers[i].producttype=self.pro_type.value;
-                        self.answ_data.answers[i].productname=self.pro_sales.value;
+                        // self.answ_data.answers[i].productname=self.pro_sales.value;
                     }
                     
                     self.$axios({
@@ -256,7 +216,7 @@
                     });
                     //发送数据后跳转
                     localStorage.setItem('pro_type',self.pro_type.value);
-                    localStorage.setItem('pro_sale',self.pro_sales.value);
+                    // localStorage.setItem('pro_sale',self.pro_sales.value);
                     self.$router.replace('/user/questionaire/statistic');
                 }else{
                     self.$message('还有内容未填写！');
@@ -266,37 +226,24 @@
             
             sendProType(){
                 var self=this;
-                // self.pro_type={
-                //     opts: [{
-                //         value: 'AllInOnePc',
-                //         label: '一体机'
-                //         }, {
-                //         value: 'PcheadSet',
-                //         label: 'PC头显'
-                //         }, {
-                //         value: 'MobileBox',
-                //         label: '手机盒子'
-                //         }], 
-                //     value: ''
-                // };
-                self.pro_sales={
-                    opts: [{
-                        value: '',
-                        label: ''
-                        }],
-                    value: ''
-                };
-                console.log("type");
+                self.ques_data.questions=[];
+                self.answ_data.answers=[];
                 self.$axios({
                     url:'/Question/type?type='+self.pro_type.value,
                     method:'get',
                     baseURL:self.hostURL
                 }).then(response=>{
-                    self.pro_sales.opts=[];
-                    for(var i=0;i<response.data.length;i++){
-                        self.pro_sales.opts.push({value:response.data[i],label:response.data[i]});
+                    self.ques_data.questions= response.data;
+                    self.answ_data.answers=[];
+                    for(var i=0;i<self.ques_data.questions.length;i++){
+                        self.answ_data.answers.push({
+                            question:self.ques_data.questions[i].question,
+                            user:localStorage.getItem('ms_userid'),
+                            answer:"",
+                            producttype:""
+                        })
                     }
-                    self.pro_sales_disable=false;
+                    self.display_box=true;
                 });
             }
 
