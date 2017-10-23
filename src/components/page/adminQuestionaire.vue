@@ -92,32 +92,38 @@
                 display_submit:false,
                 display_del:false,
                 dynamicValidateForm: {
-                    domains: [{
-                        value: '你是谁？',
-                        type:'single'
-                    },{
-                        value: '你对某个产品有什么建议？',
-                        type:'essay'
-                    }],
+                    domains: [
+                    //     {
+                    //     value: '你是谁？',
+                    //     type:'single'
+                    // },{
+                    //     value: '你对某个产品有什么建议？',
+                    //     type:'essay'
+                    //}
+                    ],
                 },
                 ques_data:{
-                    questions:[{
-                        id:1,
-                        question:"你是谁？",
-                        questiontype:"single"
-                    },{
-                        id:3,
-                        question:"你对某个产品有什么建议？",
-                        questiontype:"essay"
-                    }]
+                    questions:[
+                    //     {
+                    //     id:1,
+                    //     question:"你是谁？",
+                    //     questiontype:"single"
+                    // },{
+                    //     id:3,
+                    //     question:"你对某个产品有什么建议？",
+                    //     questiontype:"essay"
+                    // }
+                    ]
                 },
                 pro_type:{
                     opts: [
+                        {label:"a",value:"a"}
                     ], 
                         value: ''
                 },
                 ques_type:{
                     opts: [
+                        {label:'b',value:'b'}
                     ], 
                         value: ''
                 },
@@ -197,27 +203,32 @@
                 // console.log(formName);
                 this.$refs[formName].validate((valid) => {
                 if (valid) {
-                    var postData=[];
-                    for(var i=0;i<this.dynamicValidateForm.domains.length;i++){
-                        postData.push({question:this.dynamicValidateForm.domains[i].value,
-                                       questiontype:this.dynamicValidateForm.domains[i].type,
-                                       questionname:this.questionname});
-                    }
-                    console.log(postData);
-                    this.$axios({
-                        url:'/admin/Question/modify',
-                        method:'post',
-                        baseURL:this.hostUrl,
-                        data:postData
-                    }).then(response=>{
-                        this.data.code=response.data.code;
-                        if (this.data.code == 200){
-                            this.$message("问卷提交成功！");
-                            this.display_del=true;
-                        }else{
-                            this.codeParsing(this.data.code);
+                    if(this.questionname.trim()!=""){
+                        var postData=[];
+                        for(var i=0;i<this.dynamicValidateForm.domains.length;i++){
+                            postData.push({question:this.dynamicValidateForm.domains[i].value,
+                                        questiontype:this.dynamicValidateForm.domains[i].type,
+                                        questionname:this.questionname});
                         }
-                    });
+                        console.log(postData);
+                        this.$axios({
+                            url:'/admin/Question/modify',
+                            method:'post',
+                            baseURL:this.hostUrl,
+                            data:postData
+                        }).then(response=>{
+                            this.data.code=response.data.code;
+                            if (this.data.code == 200){
+                                this.$message("问卷提交成功！");
+                                this.display_del=true;
+                            }else{
+                                this.codeParsing(this.data.code);
+                            }
+                        });
+                    }else{
+                        this.$message("问卷名未填写！");
+                    }
+            
                 } else {
                     console.log('error submit!!');
                     return false;
@@ -267,7 +278,7 @@
                 var self=this;
                 console.log("delete")
                 self.$axios({
-                    url:'/Question/deleteQuestionare?questionnariename='+questionname,
+                    url:'/Question/deleteQuestionare?questionnariename='+self.questionname,
                     method:'get',
                     baseURL:self.hostUrl,
                     //data:{questionnairename:self.pro_type.value}
@@ -312,7 +323,7 @@
             },
             getQuestions(){
                 var self=this;
-                self.dynamicValidateForm.domains=[];
+                //self.dynamicValidateForm.domains=[];
                 self.$axios({
                     url:'/Question',
                     method:'get',
@@ -322,6 +333,7 @@
                     self.pro_type.opts=[];
                     for(var i=0;i<response.data.length;i++){
                         self.pro_type.opts.push({value:response.data[i],label:response.data[i]});
+                        self.ques_type.opts.push({value:response.data[i],label:response.data[i]});
                     }
                     
                 }).catch((error)=>{
