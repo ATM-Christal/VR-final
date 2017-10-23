@@ -112,13 +112,11 @@
                 },
                 pro_type:{
                     opts: [
-                        {label:'a',value:'a'}
                     ], 
                         value: ''
                 },
                 ques_type:{
                     opts: [
-                        {label:'b',value:'b'}
                     ], 
                         value: ''
                 },
