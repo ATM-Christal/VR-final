@@ -33,10 +33,10 @@
                                 </el-switch>
                                 <el-button @click.prevent="removeDomain(domain)">删除</el-button>
                             </el-form-item>
-                            <el-form-item v-show="display_submit">
-                                <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-                                <el-button @click="addDomain">新增问题</el-button>
-                                <el-button :plain="true" type="danger" @click="deleteQuestionare">删除问卷</el-button>
+                            <el-form-item >
+                                <el-button v-show="display_submit" type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
+                                <el-button v-show="display_submit" @click="addDomain">新增问题</el-button>
+                                <el-button v-show="display_del" :plain="true" type="danger" @click="deleteQuestionare">删除问卷</el-button>
                             </el-form-item>
                         </el-form>
                     </el-tab-pane>
@@ -90,6 +90,7 @@
                     statistic:[],
                 },
                 display_submit:false,
+                display_del:false,
                 dynamicValidateForm: {
                     domains: [{
                         value: '你是谁？',
@@ -212,6 +213,7 @@
                         this.data.code=response.data.code;
                         if (this.data.code == 200){
                             this.$message("问卷提交成功！");
+                            this.display_del=true;
                         }else{
                             this.codeParsing(this.data.code);
                         }
@@ -265,7 +267,7 @@
                 var self=this;
                 console.log("delete")
                 self.$axios({
-                    url:'/Question/deleteQuestionare?questionnariename='+self.pro_type.value,
+                    url:'/Question/deleteQuestionare?questionnariename='+questionname,
                     method:'get',
                     baseURL:self.hostUrl,
                     //data:{questionnairename:self.pro_type.value}
@@ -273,6 +275,7 @@
                     self.$message('问卷删除成功！');
                     self.dynamicValidateForm.domains=[];
                     self.display_submit=false;
+                    self.display_del=false;
                 }).catch((error)=>{
                     console.log(error);
                 });
@@ -302,6 +305,7 @@
                     //self.dynamicValidateForm.domains= response.data;
                     console.log(self.dynamicValidateForm.domains);
                     self.display_submit=true;
+                    self.display_del=true;
                 }).catch((error)=>{
                     console.log(error);
                 });
