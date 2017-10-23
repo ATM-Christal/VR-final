@@ -8,13 +8,13 @@
                         <el-button type="primary" icon="plus" @click="addQuestionaire" style="margin-left:50px">新建问卷</el-button>
                         <div class="selector" style="margin-bottom:20px">
                             <div class="protype_selector">
-                                <el-select v-model="pro_type.value" placeholder="请选择问卷" @change="sendProType()">
-                                    <el-option v-for="item in pro_type.opts" :key="item.value" :label="item.label" :value="item.value">
+                                <el-select v-model="ques_type.value" placeholder="请选择问卷" @change="sendProType()">
+                                    <el-option v-for="item in ques_type.opts" :key="item.value" :label="item.label" :value="item.value">
                                     </el-option>
                                 </el-select>
                             </div>
                             <div class="prosales_selector" v-show="display_submit">
-                                <el-input style="width:200px" v-model="questionname" placeholder="请输入问卷名"></el-input>
+                                <el-input style="width:200" v-model="questionname" placeholder="请输入问卷名"></el-input>
                             </div>
                         </div>
                         <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
@@ -111,7 +111,15 @@
                     }]
                 },
                 pro_type:{
-                    opts: [], 
+                    opts: [
+                        {label:'a',value:'a'}
+                    ], 
+                        value: ''
+                },
+                ques_type:{
+                    opts: [
+                        {label:'b',value:'b'}
+                    ], 
                         value: ''
                 },
                 questionname:''
@@ -257,11 +265,12 @@
             },
             deleteQuestionare(){
                 var self=this;
+                console.log("delete")
                 self.$axios({
-                    url:'/Question/deleteQuestionare',
+                    url:'/Question/deleteQuestionare?questionnariename='+self.pro_type.value,
                     method:'get',
                     baseURL:self.hostUrl,
-                    data:{questionnairename:self.pro_type.value}
+                    //data:{questionnairename:self.pro_type.value}
                 }).then(response=>{
                     self.$message('问卷删除成功！');
                     self.dynamicValidateForm.domains=[];
@@ -282,9 +291,9 @@
                 var self=this;
                 console.log("type");
                 self.dynamicValidateForm.domains=[];
-                self.questionname=self.pro_type.value;
+                self.questionname=self.ques_type.value;
                 self.$axios({
-                    url:'/Question/type?type='+self.pro_type.value,
+                    url:'/Question/type?type='+self.ques_type.value,
                     method:'get',
                     baseURL:self.hostUrl
                 }).then(response=>{
