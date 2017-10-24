@@ -287,6 +287,7 @@
                     self.dynamicValidateForm.domains=[];
                     self.display_submit=false;
                     self.display_del=false;
+                    self.getQuestions();
                 }).catch((error)=>{
                     console.log(error);
                 });
@@ -331,6 +332,7 @@
                 }).then((response)=>{
                     console.log(response.data);
                     self.pro_type.opts=[];
+                    self.ques_type.opts=[];
                     for(var i=0;i<response.data.length;i++){
                         self.pro_type.opts.push({value:response.data[i],label:response.data[i]});
                         self.ques_type.opts.push({value:response.data[i],label:response.data[i]});
