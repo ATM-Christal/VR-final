@@ -10,7 +10,7 @@
         <div class="news-box">
             <h2 class="news-title">{{newsData.title}}</h2>
             <div class="borderline clearfix">
-                <p class="artinfo" ><span class="author">来源：{{newsData.source}}</span> &nbsp;&nbsp;发布时间：{{newsData.lastEditTime}}</p>
+                <p class="artinfo" ><span class="author">来源：{{newsData.source}}</span> {{newsData.lastEditTime}}</p>
             </div>
             <div class="article" v-html="content(newsData.content)"></div>
 
@@ -131,11 +131,11 @@
         data: function(){
             return {
                 activeName2: 'first',
+                            news_id:null,
                 allowSubmit:true,
                 hostURL:"/VR",
                 successType:"success",
                 cancelType:"primary",
-
                 // uid:'1',
                 textarea:"",
                 display_hot:false,
@@ -299,7 +299,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:"new"+localStorage.getItem("salesModel"),
+                        name:"new"+self.news_id,
                         value:val
                     }
                 }).catch((error)=>{
@@ -627,7 +627,7 @@
             }
             //console.log("2222");
             var arr = location.href.split('?');
-            var news_id = arr[1];
+            self.news_id = arr[1];
             //console.log(news_id);
             self.getProThumbs();
             self.getNewsData(news_id);

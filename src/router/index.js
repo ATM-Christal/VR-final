@@ -171,6 +171,10 @@ export default new Router({
             component: resolve => require(['../components/page/AdministratorLogin.vue'], resolve)
         },
         {
+            path: '/admin/administratorNoLogin',
+            component: resolve => require(['../components/page/AdministratorNoLogin.vue'], resolve)
+        },
+        {
             // 管理员入口
             path: '/admin',
             component: resolve => require(['../components/common/adminHome.vue'], resolve),
