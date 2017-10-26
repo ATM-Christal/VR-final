@@ -321,7 +321,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:"new"+localStorage.getItem("salesModel"),
+                        name:"new"+self.news_id,
                         value:val
                     }
                 }).catch((error)=>{
@@ -628,11 +628,11 @@
             //console.log("2222");
             var arr = location.href.split('?');
             self.news_id = arr[1];
-            //console.log(news_id);
+            //console.log(self.news_id);
             self.getProThumbs();
-            self.getNewsData(news_id);
-            self.getHotComments(news_id);  
-            self.getNewComments(news_id); 
+            self.getNewsData(self.news_id);
+            self.getHotComments(self.news_id);
+            self.getNewComments(self.news_id);
         },
     }
 </script>
