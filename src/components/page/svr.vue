@@ -287,7 +287,27 @@
                             </tr>
                         </tbody>
                     </table>
-
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>产品风险</th>
+                            <td>
+                                <div class="tab-content">
+                                    <ul class="category">
+                                        <li>
+                                                <span class="para-name">产品风险等级
+                                                    <el-tooltip content="产品风险等级" placement="top">
+                                                        <img :src="hint_logo" style="width:15px">
+                                                    </el-tooltip>
+                                                </span>
+                                            <span class="para-val">{{data.riskLevel}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -305,6 +325,7 @@ import hint from '../../assets/hint.png';
                 activeName2: 'first',
                 allowSubmit:true,
                 hostURL:"/VR",
+//                hostURL:"http://119.23.175.192:8080/VR",
                 radio1:'yes',
                 radio2:'yes',
                 display1:true,
@@ -344,6 +365,7 @@ import hint from '../../assets/hint.png';
                     ssqmean:"ssqmean",
                     cvsmean:"cvsmean",
                     picLocation:"/static/img/img.jpg",
+                    riskLevel:'低'
                 },
             }
         },
@@ -443,6 +465,7 @@ import hint from '../../assets/hint.png';
                     ssqmean:"ssqmean",
                     cvsmean:"cvsmean",
                     picLocation:"/static/img/img.jpg",
+                    riskLevel:'低'
                 };
                 self.$axios({
                     url:'/svr/'+localStorage.getItem("salesModel"),

@@ -301,7 +301,28 @@
                             </tr>
                         </tbody>
                     </table>
-
+                    <!---->
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>产品风险</th>
+                            <td>
+                                <div class="tab-content">
+                                    <ul class="category">
+                                        <li>
+                                                <span class="para-name">产品风险等级
+                                                    <el-tooltip content="产品风险等级" placement="top">
+                                                        <img :src="hint_logo" style="width:15px">
+                                                    </el-tooltip>
+                                                </span>
+                                            <span class="para-val">{{data.riskLevel}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
@@ -320,6 +341,7 @@ import hint from '../../assets/hint.png';
                 activeName2: 'first',
                 allowSubmit:true,
                 hostURL:"/VR",
+//                hostURL:"http://119.23.175.192:8080/VR",
                 compare_data:{
                     data:[{
                        type:"ivr",
@@ -366,7 +388,8 @@ import hint from '../../assets/hint.png';
                     //20min视疲劳
                     meanchangeofvisualacuity:1,//视力变化均值
                     ssqmean:1,//SSQ均值
-                    cvsmean:1 //CVS均值
+                    cvsmean:1, //CVS均值
+                    riskLevel:'低'
                 }
             }
         },
@@ -472,6 +495,7 @@ import hint from '../../assets/hint.png';
                     meanchangeofvisualacuity:1,//视力变化均值
                     ssqmean:1,//SSQ均值
                     cvsmean:1, //CVS均值
+                    riskLevel:'gao'
                 };
                 self.$axios({
                     url:'/ivr/'+localStorage.getItem("salesModel"),

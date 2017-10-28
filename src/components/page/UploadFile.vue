@@ -954,6 +954,7 @@
         data: function () {
             return {
                 hostUrl: '/VR',
+//                hostURL:'http://119.23.175.192:8080/VR',
                 activePane: 'upsale',
                 pic_product: product,
                 data: {
@@ -1901,7 +1902,7 @@
                 }else{
                     var upsale=self.allData6.filter(t => self.multiSelection6.some(s => s.id === t.id))
                     self.allData6=self.allData6.filter(t => !self.multiSelection6.some(s => s.id === t.id))
-                    self.getPartProducts6(self.etmpPageNum2);
+                    self.getPartProducts6(self.etmpPageNum2,self.allData6);
                     //返回当前tableData6给后端
                     var postData=[];
                     for(var i=0;i<upsale.length;i++){

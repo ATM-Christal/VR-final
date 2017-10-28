@@ -10,7 +10,7 @@
         <div class="news-box">
             <h2 class="news-title">{{newsData.title}}</h2>
             <div class="borderline clearfix">
-                <p class="artinfo" ><span class="author">来源：{{newsData.source}}</span> &nbsp;&nbsp;发布时间：{{newsData.lastEditTime}}</p>
+                <p class="artinfo" ><span class="author">来源：{{newsData.source}}</span> &nbsp;&nbsp;{{newsData.lastEditTime}}</p>
             </div>
             <div class="article">
                 <p v-html="newsData.content">
@@ -136,7 +136,7 @@
                 hostURL:"/VR",
                 successType:"success",
                 cancelType:"primary",
-
+                            news_id:null,
                 // uid:'1',
                 textarea:"",
                 display_hot:false,
@@ -293,7 +293,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:"finance"+localStorage.getItem("salesModel"),
+                        name:"finance"+self.news_id,
                         value:val
                     }
                 }).catch((error)=>{
@@ -315,7 +315,7 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        name:"finance"+localStorage.getItem("salesModel"),
+                        name:"finance"+self.news_id,
                         value:val
                     }
                 }).catch((error)=>{
@@ -564,20 +564,20 @@
             },
             getProThumbs(){
                 var self=this;
-                self.pro_thumbs={};
+                self.news_thumbs={};
                 //console.log("proname: "+localStorage.getItem("proName"));
                 self.$axios({
                     url:'/Thumbs/'+localStorage.getItem('ms_userid'),
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        belong:"finance"+localStorage.getItem("salesModel")
+                        belong:"finance"+self.news_id
                     }
                 }).then((response)=>{
                     // self.pro_thumbs={};
                     //console.log("response.data:upvote "+response.data.upvote);
                     //console.log("self data:upvote "+self.pro_thumbs.upvote);
-                    self.pro_thumbs= response.data;
+                    self.news_thumbs= response.data;
                     //console.log("self data:upvote "+self.pro_thumbs.upvote);
                 }).catch((error)=>{
                     console.log(error);
@@ -591,7 +591,8 @@
                     method:'post',
                     baseURL: self.hostURL,
                     data:{
-                        id:"finance"+item.id,
+                        id:item.id,
+                        belong:"finance"+self.news_id,
                         value:val,
                     }
                 }).catch((error)=>{
@@ -639,12 +640,12 @@
             }
             //console.log("2222");
             var arr = location.href.split('?');
-            var news_id = arr[1];
-            //console.log(news_id);
+                            self.news_id = arr[1];
+            //console.log(self.news_id);
             self.getProThumbs();
-            self.getNewsData(news_id);
-            self.getHotComments(news_id);  
-            self.getNewComments(news_id); 
+            self.getNewsData(self.news_id);
+            self.getHotComments(self.news_id);
+            self.getNewComments(self.news_id);
         },
     }
 </script>

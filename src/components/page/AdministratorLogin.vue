@@ -261,7 +261,7 @@ import comment from '../../assets/comment.png';
 
             loginForm(formName) {
                 const self = this;
-                // sessionStorage.setItem('ms_type',2);
+                 sessionStorage.setItem('ms_type',2);
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
                        this.$axios({
@@ -278,8 +278,8 @@ import comment from '../../assets/comment.png';
                         .then((response) => {
                             self.code = response.data.data;
                              if (self.code === 200) {       
-                                    //localStorage.setItem('ms_username', response.data.adminname);
-                                    //sessionStorage.setItem('ms_type', response.data.type);
+                                    localStorage.setItem('ms_username', response.data.adminname);
+                                    sessionStorage.setItem('ms_type', response.data.type);
                                     self.$router.push('/admin/news-editor');
 
                             } else {
