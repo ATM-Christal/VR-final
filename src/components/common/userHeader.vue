@@ -30,15 +30,34 @@
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
+        <div class="msg-info">
+            <el-dropdown trigger="hover" @command="handleCommand">
+                <span class="el-dropdown-link">
+                    <img :src="msg_img" class="msg-logo">
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item v-if="msg_zero" disabled>暂无未读消息</el-dropdown-item>
+                    <el-dropdown-item v-if="msg_notzero" command="msg">您有<span style="color:red">{{msg_count}}</span>条未读消息</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+        </div>
     </div>
 </template>
 <script>
+import m_none from '../../assets/bell.png';
+import m_red from '../../assets/bell_red.png';
     export default {
         data() {
             return {
-                name: '',
+                name: '1111',
                 hostUrl:'/VR',
                 activeIndex: '/user/news-list',
+                msg_img:m_none,
+                msg_none:m_none,
+                msg_red:m_red,
+                msg_count:0,
+                msg_zero:true,
+                msg_notzero:false,
                 items: [
                     {
                         icon: 'el-icon-menu',
@@ -191,6 +210,8 @@
                         sessionStorage.clear();
                         this.$router.push('/login');
                     });  
+                }else if(command =='msg'){
+                    this.$router.push('/user/msg-center');
                 }
             },
             check(item){
@@ -206,6 +227,40 @@
             },
             onRoutes(){
 
+            },
+            getMsg(){
+                console.log('getMsg');
+                //test
+                // if(this.msg_count!=0){
+                //             this.msg_notzero=true;
+                //             this.msg_zero=false;
+                //             this.msg_img=this.msg_red;
+                //         }else{
+                //             this.msg_notzero=false;
+                //             this.msg_zero=true;
+                //             this.msg_img=this.msg_none;
+                //         }
+                this.$axios({
+                        url: '/user/getMsg',
+                        method: 'get',
+                        baseURL: this.hostUrl,
+                        data:{uid:localStorage.getItem('ms_userid')}
+                    })
+                    .then((response) => {
+                        this.msg_count=response.data.count;
+                        if(this.msg_count!=0){
+                            this.msg_notzero=true;
+                            this.msg_zero=false;
+                            this.msg_img=this.msg_red;
+                        }else{
+                            this.msg_notzero=false;
+                            this.msg_zero=true;
+                            this.msg_img=this.msg_none;
+                        }
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    });
             }
         },
         mounted(){
@@ -251,6 +306,7 @@
              }
              console.log(res);*/
              this.activeIndex = '/user/' + route;
+             this.getMsg();
         }
     }
 </script>
@@ -292,7 +348,6 @@
     .user-info .el-dropdown-link{
         position: relative;
         display: inline-block;
-        padding-left: 50px;
         color: #fff;
         cursor: pointer;
         vertical-align: middle;
@@ -301,8 +356,30 @@
         position: absolute;
         left:0;
         top:15px;
-        width:40px;
-        height:40px;
+        width:32px;
+        height:32px;
+        border-radius: 50%;
+    }
+    .msg-info {
+        float: right;
+        padding-right: 0px;
+        font-size: 16px;
+        color: #fff;
+    }
+    .msg-info .el-dropdown-link{
+        position: relative;
+        display: inline-block;
+        padding-left: 50px;
+        color: #fff;
+        cursor: pointer;
+        vertical-align: middle;
+    }
+    .msg-info .msg-logo{
+        position: absolute;
+        left:20px;
+        top:-12px;
+        width:25px;
+        height:25px;
         border-radius: 50%;
     }
     .el-dropdown-menu__item{

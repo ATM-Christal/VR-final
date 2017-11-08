@@ -28,6 +28,14 @@ export default new Router({
                     component: resolve => require(['../components/page/changePassword.vue'],resolve)
                 },
                 {
+                    path: '/user/msg-center',
+                    component: resolve => require(['../components/page/MsgCenter.vue'],resolve)
+                },
+                {
+                    path: '/user/msg',
+                    component: resolve => require(['../components/page/Msg.vue'],resolve)
+                },
+                {
                     path: '/user/news-finance',
                     component: resolve => require(['../components/page/NewsFinance.vue'],resolve)
                 },
