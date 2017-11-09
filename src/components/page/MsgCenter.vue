@@ -18,7 +18,7 @@
                 <div class="tiezi">
                   <el-col :span="22">
                     <div class = "title-head">
-                      <a @click="tieZiClick(data)" href="javascript:void(0);" class="link" title="">管理员{{data.msgtype==1?'删除':'修改'}}了您发表的{{data.type=='tieZi'?'一条帖子':'一篇评测'}}</a>
+                      <a @click="tieZiClick(data)" href="javascript:void(0);" class="link" title="">管理员{{data.msgtype}}了您发表的{{data.type=='tieZi'?'一条帖子':'一篇评测'}}</a>
                       <pre class ="author-date">{{data.date}}</pre>
                     </div>
                   </el-col>
@@ -57,33 +57,33 @@
                         id: 1,
                         msgid:1,
                         type: 'tieZi',
-                        msgtype:1,
+                        msgtype:'删除',
                         title: 'tiezitiezitiezi',
                         date: '2017-10-16 19:13:34',
-                        readflag:'oldmsg'
+                        readflag:'newmsg'
                     },
                     {
                         id:2,
                         msgid: 2,
                         type: 'mse',
-                        msgtype:2,
+                        msgtype:'修改',
                         title: 'pingcepingcepingce',
                         date: '2017-10-17 19:13:34',
-                        readflag:'oldmsg'
+                        readflag:'newmsg'
                     },
                     {
                         id:3,
                         msgid: 3,
                         type:'tieZi',
-                        msgtype: 1,
+                        msgtype: '删除',
                         title: 'tiezitiezitiezi0',
                         date: '2017-10-18 19:13:34',
-                        readflag:'newmsg'
+                        readflag:'oldmsg'
                     },
                 ],
                 options: [
-                    {label:'未读消息', key:'oldmsg'},
-                    {label:'已读消息', key:'newmsg'},
+                    {label:'未读消息', key:'newmsg'},
+                    {label:'已读消息', key:'oldmsg'},
                 ],
                 hostURL:'/VR',
                 //标签栏
