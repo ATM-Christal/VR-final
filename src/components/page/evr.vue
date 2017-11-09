@@ -289,7 +289,27 @@
                         </tbody>
                     </table>
 
-
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>产品风险</th>
+                            <td>
+                                <div class="tab-content">
+                                    <ul class="category">
+                                        <li>
+                                                <span class="para-name">产品风险等级
+                                                    <el-tooltip content="产品风险等级" placement="top">
+                                                        <img :src="hint_logo" style="width:15px">
+                                                    </el-tooltip>
+                                                </span>
+                                            <span class="para-val">{{data.riskLevel}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
 
 
                 </div>
@@ -359,7 +379,8 @@ import hint from '../../assets/hint.png';
                     //20min视疲劳
                     meanchangeofvisualacuity:1,//视力变化均值
                     ssqmean:1,//SSQ均值
-                    cvsmean:1 //CVS均值
+                    cvsmean:1, //CVS均值
+                    riskLevel:'低'
                 }
             }
         },
@@ -464,6 +485,7 @@ import hint from '../../assets/hint.png';
                     meanchangeofvisualacuity:1,//视力变化均值
                     ssqmean:1,//SSQ均值
                     cvsmean:1, //CVS均值
+                    riskLevel:'低'
                 };
                 self.$axios({
                     url:'/evr/'+localStorage.getItem("salesModel"),

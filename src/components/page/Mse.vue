@@ -724,7 +724,7 @@
             var arr = location.href.split('?');
             var mse_id = arr[1];
             self.e_id = mse_id;
-            console.log(mse_id);
+//            console.log(mse_id);
             self.getMseData(mse_id);
 //        self.getProThumbs();
             self.getHotComments(mse_id, self.pageNum_hc);

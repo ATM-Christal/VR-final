@@ -51,6 +51,7 @@
         data() {
             return {
                 hostURL:'/VR',
+//                hostURL:'http://119.23.175.192:8080/VR',
                 datalist: [],
                 cur_page: 1,
                 multipleSelection: [],
@@ -103,7 +104,7 @@
             },
             codeParsing(code) {
                 let self = this;
-                var msg = (err_title, err_message)=> {
+                var msg = (err_title,err_message)=> {
                     self.$notify({
                         title: err_title,
                         message: err_message,
@@ -185,9 +186,11 @@
                         }
                     }else{
                         self.datalist = [];
-                        //self.datalist = response.data;
+                        self.datalist = response.data;
+                        /*console.log(response.data)
                         var list1=[],list2=[],list3=[],list4=[],list5=[],list6=[];
                         for(var i=0;i<response.data.length;i++){
+                            console.log(response.data[i].type)
                             if(response.data[i].type==1){
                                 list1.push(response.data[i]);
                             }else if(response.data[i].type==2){
@@ -202,6 +205,8 @@
                                 list6.push(response.data[i]);
                             }
                         }
+//                        console.log(list1);
+//                        console.log(list2);
                         self.datalist=list1;
                         for(var i=0;i<list2.length;i++){
                             self.datalist.push(list2[i]);
@@ -217,7 +222,7 @@
                         }
                         for(var i=0;i<list6.length;i++){
                             self.datalist.push(list6[i]);
-                        }
+                        }*/
                     }
                     
                 }).catch((error)=>{

@@ -117,6 +117,7 @@
         data: function(){
             return {
                 hostURL:'/VR',
+//                hostURL:"http://119.23.175.192:8080/VR",
                 ivrURL:'/products/ivr', 
                 svrURL:'/products/svr', 
                 evrURL:'/products/evr',

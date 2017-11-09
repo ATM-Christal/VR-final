@@ -52,7 +52,7 @@
     export default {
         data: function(){
             return {
-//                hostURL:'http://116.56.140.85:8080/VR',
+//                hostURL:'http://119.23.175.192:8080/VR',
                 hostURL:'/VR',
                 activePane: 'first',
                 newsList:[

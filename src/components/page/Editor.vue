@@ -22,16 +22,20 @@
                     </el-select>
                 </el-form-item>
                 <el-form-item label="作者" prop='author'>
-                    <el-input v-model="news.author" placeholder="请输入作者" style="width: 100px;"></el-input>
+                    <!--<el-input v-model="news.author" placeholder="请输入作者" style="width: 100px;"></el-input>-->
+                    <el-input v-model="news.author" placeholder="" style="width: 100px;"></el-input>
                 </el-form-item>
                 <el-form-item label="来源" prop='source'>
-                    <el-input v-model="news.source" placeholder="请输入来源" style="width: 150px;"></el-input>
+                    <!--<el-input v-model="news.source" placeholder="请输入来源" style="width: 150px;"></el-input>-->
+                    <el-input v-model="news.source" placeholder="" style="width: 150px;"></el-input>
                 </el-form-item>
                 <el-form-item label="发布时间" prop='lastEditTime'>
-                    <el-input v-model="news.lastEditTime" placeholder="yyyy-mm-dd" style="width: 150px;"></el-input>
+                    <!--<el-input v-model="news.lastEditTime" placeholder="yyyy-mm-dd" style="width: 150px;"></el-input>-->
+                    <el-input v-model="news.lastEditTime" placeholder="" style="width: 150px;"></el-input>
                 </el-form-item>
                 <el-form-item label="标题图" prop='picLocation'>
-                    <el-input v-model="news.picLocation" style="width: 600px;" placeholder="请输入图片的URL"></el-input>
+                    <!--<el-input v-model="news.picLocation" style="width: 600px;" placeholder="请输入图片的URL"></el-input>-->
+                    <el-input v-model="news.picLocation" style="width: 600px;" placeholder=""></el-input>
                 </el-form-item>
                 <el-form-item label="内容概述" prop='newsAbstract'>
                     <el-input type="textarea" v-model="news.newsAbstract" style="width: 600px;"
@@ -70,6 +74,7 @@
                     placeholder: '请编写您的内容...',
                 },
                 hostURL: '/VR',
+//                hostURL:'http://119.23.175.192:8080/VR',
                 select_cast: '',
                 news: {
                     id: 3,
@@ -203,6 +208,7 @@
                     baseURL: self.hostURL
                 }).then((response)=> {
                     self.news = response.data;
+                    self.news.lastEditTime = self.news.lastEditTime.replace("发布时间：","");
                     self.news.type = self.news.type.toString();
                 }).catch((error)=> {
                     console.log(error);
