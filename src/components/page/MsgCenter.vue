@@ -60,7 +60,7 @@
                         msgtype:1,
                         title: 'tiezitiezitiezi',
                         date: '2017-10-16 19:13:34',
-                        readflag:0
+                        readflag:'oldmsg'
                     },
                     {
                         id:2,
@@ -69,7 +69,7 @@
                         msgtype:2,
                         title: 'pingcepingcepingce',
                         date: '2017-10-17 19:13:34',
-                        readflag:0
+                        readflag:'oldmsg'
                     },
                     {
                         id:3,
@@ -78,12 +78,12 @@
                         msgtype: 1,
                         title: 'tiezitiezitiezi0',
                         date: '2017-10-18 19:13:34',
-                        readflag:1
+                        readflag:'newmsg'
                     },
                 ],
                 options: [
-                    {label:'未读消息', key:'0'},
-                    {label:'已读消息', key:'1'},
+                    {label:'未读消息', key:'oldmsg'},
+                    {label:'已读消息', key:'newmsg'},
                 ],
                 hostURL:'/VR',
                 //标签栏
