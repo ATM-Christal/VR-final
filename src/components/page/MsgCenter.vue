@@ -18,7 +18,7 @@
                 <div class="tiezi">
                   <el-col :span="22">
                     <div class = "title-head">
-                      <a @click="tieZiClick(data)" href="javascript:void(0);" class="link" title="">管理员{{data.msgtype}}了您发表的{{data.type=='tieZi'?'一条帖子':'一篇评测'}}</a>
+                      <a @click="tieZiClick(data)" href="javascript:void(0);" class="link" title="">管理员{{data.msgtype}}了您{{data.type}}</a>
                       <pre class ="author-date">{{data.date}}</pre>
                     </div>
                   </el-col>
@@ -56,29 +56,29 @@
                 datalist: [{
                         id: 1,
                         msgid:1,
-                        type: 'tieZi',
+                        type: 'tiezi',
                         msgtype:'删除',
                         title: 'tiezitiezitiezi',
                         date: '2017-10-16 19:13:34',
-                        readflag:'newmsg'
+                        readflag:0
                     },
                     {
                         id:2,
                         msgid: 2,
-                        type: 'mse',
+                        type: 'pingce',
                         msgtype:'修改',
                         title: 'pingcepingcepingce',
                         date: '2017-10-17 19:13:34',
-                        readflag:'newmsg'
+                        readflag:0
                     },
                     {
                         id:3,
                         msgid: 3,
-                        type:'tieZi',
-                        msgtype: '删除',
+                        type:'baike',
+                        msgtype: '通过',
                         title: 'tiezitiezitiezi0',
                         date: '2017-10-18 19:13:34',
-                        readflag:'oldmsg'
+                        readflag:1
                     },
                 ],
                 options: [
@@ -87,7 +87,7 @@
                 ],
                 hostURL:'/VR',
                 //标签栏
-                activeName: "0",
+                activeName: "newmsg",
                 //帖子标题
                 tieZiTitle:"",
                 //帖子内容
@@ -105,13 +105,32 @@
             getTieZi(page){
                 var self = this;
                 self.datalist=[];
+                // for(var i=0;i<self.datalist.length;i++){
+                //       if(self.datalist[i].type=="tiezi"){
+                //         self.datalist[i].type="发表的帖子";
+                //       }else if(self.datalist[i].type=="pingce"){
+                //         self.datalist[i].type="发表的评测";
+                //       }else if(self.datalist[i].type=="baike"){
+                //         self.datalist[i].type="修改的百科词条";
+                //       }
+                //     }
+                console.log(self.activeName)
                 self.$axios({
-                    url:'/msg_list/'+ page +'?readflag=' + localStorage.getItem("readflag"),
+                    url:'/msg_list/'+ page +'?readflag=' + self.activeName,
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
                     self.datalist = [];
                     self.datalist = response.data;
+                    for(var i=0;i<self.datalist.length;i++){
+                      if(self.datalist[i].type=="tiezi"){
+                        self.datalist[i].type="发表的帖子";
+                      }else if(self.datalist[i].type=="pingce"){
+                        self.datalist[i].type="发表的评测";
+                      }else if(self.datalist[i].type=="baike"){
+                        self.datalist[i].type="修改的百科词条";
+                      }
+                    }
                 }).catch((error)=>{
                     console.log(error);
                     self.$message({
@@ -125,7 +144,7 @@
             getPageTotal(){
                 var self = this;
                 self.$axios({
-                    url:'/total_msg' + '?readflag=' + localStorage.getItem("readflag"),
+                    url:'/total_msg' + '?readflag=' + self.activeName,
                     method:'get',
                     baseURL:self.hostURL
                 }).then((response)=>{
@@ -179,7 +198,7 @@
             //标签页切换
             handleTabClick(){
                 var self = this;
-                localStorage.setItem("readflag", self.activeName);
+                //localStorage.setItem("readflag", self.activeName);
               /*
                console.log("currentPage:");
                console.log(this.currentPage);
@@ -199,7 +218,7 @@
           if(user_name==""){
               this.$router.replace('/login');
           }
-          localStorage.setItem("readflag", self.activeName);
+          //localStorage.setItem("readflag", self.activeName);
           self.getTieZi(self.currentPage);
           self.getPageTotal();
        }

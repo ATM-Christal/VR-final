@@ -9,9 +9,9 @@
     </div>
 
     <div class="tieZi-box">
-      <h2 class="title">管理员{{msgData.msgtype}}了您发表的{{msgData.type=='tieZi'?'一条帖子':'一篇评测'}}</h2>
+      <h2 class="title">管理员{{msgData.msgtype}}了您{{msgData.type}}</h2>
       <div class="borderline"></div>
-      <div class="msg-content">&nbsp&nbsp&nbsp&nbsp管理员于&nbsp{{msgData.date}}&nbsp{{msgData.msgtype}}了您的{{msgData.type=='tieZi'?'一条帖子':'一篇评测'}}：
+      <div class="msg-content">&nbsp&nbsp&nbsp&nbsp管理员于&nbsp{{msgData.date}}&nbsp{{msgData.msgtype}}了您的{{msgData.type}}：
           <a @click="msgClick(msgData.type,msgData.id)" href="javascript:void(0);" class="link" title="">{{msgData.title}}</a></div>
       <!--<div  class="artinfo"><pre><span class="author">发表于{{msgData.date}}</pre></div>
         <div class="article" v-html="content(msgData.title)"></div>-->
