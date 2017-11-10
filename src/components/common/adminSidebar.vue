@@ -46,6 +46,10 @@
                             {
                                 index: '/admin/news-release',
                                 title: '新闻发布'
+                            },
+                            {
+                                index: '/admin/news-fetch',
+                                title: '新闻获取'
                             }
                         ]
                     },

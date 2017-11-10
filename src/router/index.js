@@ -200,6 +200,14 @@ export default new Router({
                     component: resolve => require(['../components/page/Editor.vue'],resolve)
                 },
                 {
+                    path: '/admin/news-fetch',
+                    component: resolve => require(['../components/page/NewsFetch.vue'],resolve)
+                },
+                {
+                    path: '/admin/news-examine',
+                    component: resolve => require(['../components/page/NewsExamine.vue'],resolve)
+                },
+                {
                     path: '/admin/news-release',
                     component: resolve => require(['../components/page/NewsRelease.vue'],resolve)
                 },
